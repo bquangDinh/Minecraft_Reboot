@@ -1,0 +1,25 @@
+#pragma once
+
+#define NUM_VOX_SIDES 6
+
+enum SIDES {
+	FRONT,
+	BACK,
+	LEFT,
+	RIGHT,
+	TOP,
+	BOTTOM
+};
+
+enum DIRECTIONS {
+	FRONT_TO_BACK = 0,
+	LEFT_TO_RIGHT = 1,
+	TOP_TO_BOTTOM = 2
+};
+
+enum VOXEL_TYPE {
+	AIR,
+	GRASS,
+	DIRT,
+	ROCK
+};

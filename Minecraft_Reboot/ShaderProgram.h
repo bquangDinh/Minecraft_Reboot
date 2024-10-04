@@ -45,6 +45,7 @@ public:
 	void SetVector3(const char*, const glm::vec3);
 	void SetFloat(const char*, const float);
 
+	void Destroy();
 private:
 	void checkProgramLinkSuccess(const GLuint, const GLuint);
 };

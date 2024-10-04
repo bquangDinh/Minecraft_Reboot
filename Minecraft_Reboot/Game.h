@@ -6,9 +6,14 @@
 
 #include "GameStates.h"
 #include "ShaderManager.h"
+#include "TextureManager.h"
+
 #include "GameObject.h"
 #include "Camera.h"
+#include "MeshBuilder.h"
 #include "Quad.h"
+
+#define TEXTURE_ATLAS "texture_atlas.png"
 
 using namespace std;
 
@@ -21,7 +26,11 @@ private:
 
 	ShaderManager* shaderManager;
 
+	TextureManager* textureManager;
+
 	Camera* mainCamera;
+		
+	MeshBuilder* meshBuilder;
 
 	const float FOV;
 public:

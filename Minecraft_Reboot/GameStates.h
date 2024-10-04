@@ -22,6 +22,8 @@ public:
 	glm::mat4 getProjectionMatrix() const;
 	
 	static GameStates& getInstance();
+
+	void cleanUp();
 private:
 	// Prevent other classes from instantiating this class
 	GameStates() {}

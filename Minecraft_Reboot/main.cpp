@@ -66,7 +66,7 @@ int main() {
 
 	// Configure some global OpenGL's states
 	glEnable(GL_DEPTH_TEST);
-	glCullFace(GL_BACK);
+	//glCullFace(GL_BACK);
 
 	// Set OpenGL's viewport
 	glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);

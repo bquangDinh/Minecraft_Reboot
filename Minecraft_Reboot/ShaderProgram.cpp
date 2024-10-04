@@ -57,6 +57,10 @@ void ShaderProgram::Use() {
 	glUseProgram(ID);
 }
 
+void ShaderProgram::Destroy() {
+	glDeleteProgram(ID);
+}
+
 void ShaderProgram::SetMatrix4(const char* name, const glm::mat4 matrix, const bool transpose) {
 	// Get the location of the attribute
 	GLuint location = glGetUniformLocation(ID, name);

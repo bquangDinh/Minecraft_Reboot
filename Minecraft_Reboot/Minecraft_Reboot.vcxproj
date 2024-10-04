@@ -142,10 +142,13 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameStates.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MeshBuilder.cpp" />
     <ClCompile Include="Quad.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="Texture2DArray.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
@@ -153,12 +156,16 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameStates.h" />
+    <ClInclude Include="MeshBuilder.h" />
     <ClInclude Include="Quad.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture2DArray.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="VoxelUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fragment_shader.frag" />
@@ -166,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="grass_block_side.png" />
+    <Image Include="texture_atlas.png" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Minecraft_Reboot.rc" />

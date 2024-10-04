@@ -8,6 +8,8 @@
 #include "Shader.h"
 #include "ShaderProgram.h"
 
+#define MAIN_SHADER_PROGRAM "main"
+
 class Game;
 
 using namespace std;
@@ -16,6 +18,8 @@ class ShaderManager
 {
 public:
 	shared_ptr<ShaderProgram> getShaderProgram(string key);
+
+	void cleanUp();
 
 	static ShaderManager& getInstance();
 private:

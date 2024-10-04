@@ -23,6 +23,16 @@ shared_ptr<ShaderProgram> ShaderManager::getShaderProgram(string key)
 	return shaderPrograms[key];
 }
 
+void ShaderManager::cleanUp()
+{
+	for (auto it = shaderPrograms.begin(); it != shaderPrograms.end(); it++)
+	{
+		it->second->Destroy();
+	}
+
+	shaderPrograms.clear();
+}
+
 shared_ptr<ShaderProgram> ShaderManager::loadShaderProgram(string key, const char* vertexShaderFile, const char* fragmentShaderFile)
 {
 	Shader vertexShader(vertexShaderFile, GL_VERTEX_SHADER);

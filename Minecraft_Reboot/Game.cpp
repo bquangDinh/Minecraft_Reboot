@@ -3,6 +3,7 @@
 Game::Game(int screenWidth, int screenHeight):
 	gameStates(&GameStates::getInstance()),
 	shaderManager(&ShaderManager::getInstance()),
+	textureManager(&TextureManager::getInstance()),
 	FOV(45.0f)
 {
 	// Initialize game states
@@ -13,16 +14,29 @@ Game::Game(int screenWidth, int screenHeight):
 }
 
 Game::~Game() {
+	textureManager->cleanUp();
+
+	shaderManager->cleanUp();
+
+	gameStates->cleanUp();
+
 	gameStates = nullptr;
 
 	shaderManager = nullptr;
 
+	textureManager = nullptr;
+
 	delete mainCamera;
+
+	delete meshBuilder;
 }
 
 void Game::init() {
 	// Init Shaders
-	shaderManager->loadShaderProgram("main", "vertex_shader.vert", "fragment_shader.frag");
+	shaderManager->loadShaderProgram(MAIN_SHADER_PROGRAM, "vertex_shader.vert", "fragment_shader.frag");
+
+	// Init Textures
+	textureManager->loadTextureArray(TEXTURE_ATLAS, true, MAIN_TEXTURE_ARRAY);
 
 	// Init main camera
 	mainCamera->init();
@@ -31,16 +45,45 @@ void Game::init() {
 	gameStates->projectionMatrix = glm::perspective(glm::radians(FOV), (float)gameStates->SCREEN_WIDTH / (float)gameStates->SCREEN_HEIGHT, 0.1f, 100.0f);
 	
 	// Add game objects
-	const shared_ptr<GameObject> quad = make_shared<Quad>();
-
-	quad->setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
-
-	gameObjects.push_back(quad);
 
 	// Init game objects
 	for (auto& gameObject : gameObjects) {
 		gameObject->init();
 	}
+
+	// Test mesh builder
+	// Generate a cube with 6 quads
+	// Front
+	Quad q1(
+		glm::vec3(-1.0f, 1.0f, 0.0f),
+		glm::vec3(1.0f, 1.0f, 0.0f),
+		glm::vec3(1.0f, -1.0f, 0.0f),
+		glm::vec3(-1.0f, -1.0f, 0.0f),
+		VOXEL_TYPE::GRASS,
+		SIDES::FRONT,
+		false
+	);
+
+	// Left
+	Quad q2(
+		glm::vec3(-1.0f, 1.0f, -1.0f),
+		glm::vec3(-1.0f, 1.0f, 1.0f),
+		glm::vec3(-1.0f, -1.0f, 1.0f),
+		glm::vec3(-1.0f, -1.0f, -1.0f),
+		VOXEL_TYPE::GRASS,
+		SIDES::LEFT,
+		false
+	);
+
+	meshBuilder = new MeshBuilder();
+
+	meshBuilder->addQuad(q1, 1.0f, 1.0f, false);
+
+	meshBuilder->addQuad(q2, 1.0f, 1.0f, false);
+
+	meshBuilder->generateVBO();
+
+	cout << "Init Game succeed!" << endl;
 }
 
 void Game::update(float deltaTime) {
@@ -63,14 +106,22 @@ void Game::render(float deltaTime) {
 	// Main camera does not need to render
 	// mainCamera.render(deltaTime);
 
+	shaderManager->getShaderProgram(MAIN_SHADER_PROGRAM)->SetMatrix4("view", gameStates->viewMatrix);
+
+	shaderManager->getShaderProgram(MAIN_SHADER_PROGRAM)->SetMatrix4("projection", gameStates->projectionMatrix);
+
 	// Render game objects
 	for (auto& gameObject : gameObjects) {
 		gameObject->render(deltaTime);
 	}
+
+	// Test mesh builder
+	meshBuilder->render();
 }
 
 void Game::destroy() {
 	// Destroy the game here and free up memory
+	meshBuilder->cleanUp();
 
 	// Destroy main camera
 	mainCamera->destroy();

@@ -9,6 +9,11 @@ GameStates& GameStates::getInstance()
 	return instance;
 }
 
+void GameStates::cleanUp()
+{
+
+}
+
 int GameStates::getScreenWidth() const
 {
 	return SCREEN_WIDTH;
