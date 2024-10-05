@@ -4,7 +4,7 @@ Camera::Camera():
 	cameraFront(0.0f, 0.0f, -1.0f),
 	cameraPos(0.0f, 0.0f, 3.0f),
 	cameraUp(0.0f, 1.0f, 0.0f),
-	CAMERA_SPEED(5.0f),
+	CAMERA_SPEED(25.0f),
 	CAMERA_SENSITIVITY(0.25f),
 	PITCH_LIMIT(89.0f),
 	pitch(0.0f),

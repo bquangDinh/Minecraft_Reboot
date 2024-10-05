@@ -34,6 +34,8 @@ private:
 	void addQuadIndices(bool, int);
 
 	int getTextureIndex(int, int);
+
+	void printReports();
 public:
 	MeshBuilder();
 

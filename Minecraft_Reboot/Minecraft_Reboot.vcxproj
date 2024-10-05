@@ -106,7 +106,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;GLFW_INCLUDE_NONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;GLFW_INCLUDE_NONE;ENABLE_LOGGING;ENABLE_DEPTH_TEST;ENABLE_CULL_FACE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -137,26 +137,34 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\OPENGL\OPENGL\glad.c" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Chunk.cpp" />
     <ClCompile Include="FileUtils.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameStates.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MathUtil.cpp" />
     <ClCompile Include="MeshBuilder.cpp" />
+    <ClCompile Include="MeshGenerator.cpp" />
     <ClCompile Include="Quad.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="Texture2DArray.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Voxel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Chunk.h" />
+    <ClInclude Include="db_perlin.hpp" />
     <ClInclude Include="FileUtils.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameStates.h" />
+    <ClInclude Include="MathUtil.h" />
     <ClInclude Include="MeshBuilder.h" />
+    <ClInclude Include="MeshGenerator.h" />
     <ClInclude Include="Quad.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shader.h" />
@@ -165,6 +173,7 @@
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Texture2DArray.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Voxel.h" />
     <ClInclude Include="VoxelUtil.h" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +183,7 @@
   <ItemGroup>
     <Image Include="grass_block_side.png" />
     <Image Include="texture_atlas.png" />
+    <Image Include="texture_atlas2.png" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Minecraft_Reboot.rc" />

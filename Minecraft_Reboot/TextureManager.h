@@ -23,7 +23,7 @@ private:
 public:
 	static TextureManager& getInstance();
 
-	shared_ptr<Texture2DArray> loadTextureArray(const GLchar*, GLboolean, string);
+	shared_ptr<Texture2DArray> loadTextureArray(const GLchar* file, GLboolean alpha, GLboolean flip, string key);
 
 	shared_ptr<Texture2DArray> getTextureArray(string);
 

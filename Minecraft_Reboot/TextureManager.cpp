@@ -15,7 +15,7 @@ TextureManager& TextureManager::getInstance()
 
 TextureManager* TextureManager::_instance = nullptr;
 
-shared_ptr<Texture2DArray> TextureManager::loadTextureArray(const GLchar* file, GLboolean alpha, string key) {
+shared_ptr<Texture2DArray> TextureManager::loadTextureArray(const GLchar* file, GLboolean alpha, GLboolean flip, string key) {
 	// Check if the texture is already loaded
 	if (textureArrays.find(key) != textureArrays.end())
 	{
@@ -29,13 +29,18 @@ shared_ptr<Texture2DArray> TextureManager::loadTextureArray(const GLchar* file, 
 
 	int width, height, nrChannels;
 
-	stbi_set_flip_vertically_on_load(true);
+	if (flip)
+		stbi_set_flip_vertically_on_load(true);
 
 	unsigned char* data = stbi_load(file, &width, &height, &nrChannels, 0);
 
 	if (data)
 	{
-		texture->Generate(width, height, 16, 16, data);
+		printf("Loaded texture: %s\n", file);
+
+		printf("Width: %d, Height: %d, Channels: %d\n", width, height, nrChannels);
+
+		texture->Generate(width, height, 16, 16, nrChannels, data);
 
 		textureArrays[key] = texture;
 

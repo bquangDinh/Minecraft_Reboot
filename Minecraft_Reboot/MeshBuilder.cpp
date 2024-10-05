@@ -6,10 +6,6 @@ MeshBuilder::MeshBuilder(): VAO(0) {
 }
 
 void MeshBuilder::addQuad(const Quad q, int width, int height, bool backface) {
-	//prevent stupid and culling method duplicate more than one texture !
-	if (width <= 1.0f) width = 0;
-	if (height <= 1.0f) height = 0;
-
 	// Obtain texture index for this quad
 	int textureIndex = getTextureIndex(q.getType(), q.getFace());
 
@@ -18,7 +14,7 @@ void MeshBuilder::addQuad(const Quad q, int width, int height, bool backface) {
 	addPointV3(q.p1);
 
 	// Add texture coordinates
-	addPointV2(vec2(0.0f + width, 1.0f + height));
+	addPointV2(vec2(0.0f, height));
 
 	// Add texture index of this quad
 	addPointV1(textureIndex);
@@ -26,21 +22,21 @@ void MeshBuilder::addQuad(const Quad q, int width, int height, bool backface) {
 	/* Add point 2 */
 	addPointV3(q.p2);
 
-	addPointV2(vec2(1.0f + width, 1.0f));
+	addPointV2(vec2(width, height));
 
 	addPointV1(textureIndex);
 
 	/* Add point 3 */
 	addPointV3(q.p3);
 
-	addPointV2(vec2(1.0f, 0.0f));
+	addPointV2(vec2(width, 0.0f));
 
 	addPointV1(textureIndex);
 
 	/* Add point 4 */
 	addPointV3(q.p4);
 
-	addPointV2(vec2(0.0f, 0.0f + height));
+	addPointV2(vec2(0.0f, 0.0f));
 
 	addPointV1(textureIndex);
 
@@ -68,47 +64,51 @@ void MeshBuilder::addPointV1(const float point) {
 
 void MeshBuilder::addQuadIndices(const bool backface, const int offset) {
 	if (backface) {
-		indices.push_back(0 + 4 * offset);
+		indices.push_back(2 + 4 * offset);
 		indices.push_back(1 + 4 * offset);
-		indices.push_back(2 + 4 * offset);
-
-		indices.push_back(2 + 4 * offset);
-		indices.push_back(3 + 4 * offset);
 		indices.push_back(0 + 4 * offset);
+
+		indices.push_back(0 + 4 * offset);
+		indices.push_back(3 + 4 * offset);
+		indices.push_back(2 + 4 * offset);
 	}
 	else {
 		indices.push_back(0 + 4 * offset);
-		indices.push_back(2 + 4 * offset);
 		indices.push_back(1 + 4 * offset);
+		indices.push_back(2 + 4 * offset);
 
 		indices.push_back(2 + 4 * offset);
-		indices.push_back(0 + 4 * offset);
 		indices.push_back(3 + 4 * offset);
+		indices.push_back(0 + 4 * offset);
 	}
 }
 
 int MeshBuilder::getTextureIndex(int type, int face) {
 	if (type == VOXEL_TYPE::GRASS) {
 		if (face == SIDES::TOP) {
-			return 0;
+			return 39;
 		}
 		else if (face == SIDES::BOTTOM) {
-			return 2;
+			return 13;
 		}
 		else {
-			return 3;
+			return 12;
 		}
 	}
 
 	if (type == VOXEL_TYPE::DIRT) {
-		return 2;
+		return 13;
 	}
 
 	if (type == VOXEL_TYPE::ROCK) {
-		return 1;
+		return 14;
 	}
 
-	return 2;
+	if (type == VOXEL_TYPE::WATER) {
+		return 192;
+	}
+
+	return 12;
 }
 
 void MeshBuilder::generateVBO() {
@@ -157,13 +157,11 @@ void MeshBuilder::generateVBO() {
 	//// Unbind VAO
 	glBindVertexArray(0);
 
-	//// Unbind VBO
-	//glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-	//// Unbind EBO
-	//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-
 	vboGenerated = true;
+
+#ifdef ENABLE_LOGGING
+	printReports();
+#endif // ENABLE_LOGGING
 }
 
 void MeshBuilder::cleanUp() {
@@ -203,7 +201,89 @@ void MeshBuilder::render() {
 
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
 
-	//glDrawArrays(GL_TRIANGLES, 0, vertices.size());
-
 	glBindVertexArray(0);
 }
+
+void MeshBuilder::printReports() {
+	cout << "Vertices Element Count: " << vertices.size() << "(" << sizeof(float) * vertices.size() << " bytes)" << endl;
+
+	cout << "Indices Element Count: " << indices.size() << "(" << sizeof(unsigned int) * indices.size() << " bytes)" << endl;
+
+	cout << "Face Count: " << faceCount << endl;
+
+	cout << "Vertices Count: " << 4 * faceCount << endl;
+}
+
+//void Texture2DArray::Generate(GLuint width, GLuint height, GLuint texelsX, GLuint texelsY, const int nrChannels, unsigned char* data) {
+//	this->width = width;
+//
+//	this->height = height;
+//
+//	unsigned int tileW = width / texelsX;
+//
+//	unsigned int tileH = height / texelsY;
+//
+//	const int tilesCount = texelsX * texelsY;
+//
+//	if (nrChannels == 4) {
+//		internalFormat = GL_RGBA8;
+//		imageFormat = GL_RGBA;
+//	}
+//	else {
+//		internalFormat = GL_RGB8;
+//		imageFormat = GL_RGB;
+//	}
+//
+//	// Create the texture
+//	glActiveTexture(GL_TEXTURE0);
+//	glBindTexture(GL_TEXTURE_2D_ARRAY, ID);
+//
+//	// Width and Height is texels, not pixels
+//	// Allocate storage for the texture
+//	glTexImage3D(GL_TEXTURE_2D_ARRAY, 0, internalFormat, texelsX, texelsY, tilesCount, 0, imageFormat, GL_UNSIGNED_BYTE, nullptr);
+//
+//	/* Load each tile data to OpenGL */
+//	std::vector<unsigned char> tiles(tileW * tileH * nrChannels);
+//
+//	// Each tile has 4 channels, thus tileW * nrChannels
+//	const int tileSizeX = tileW * nrChannels;
+//
+//	const int rows = tileH;
+//
+//	printf("tileSizeX: %d, rows: %d\n", tileSizeX, rows);
+//
+//	// Load data for each tile
+//	for (int iy = 0; iy < texelsY; iy++) {
+//		for (int ix = 0; ix < texelsX; ix++) {
+//			// At the tile[X][Y] position
+//			unsigned char* ptr = data + ix * tileSizeX + iy * tileSizeX * texelsX * tileH;
+//
+//			// Copy the tile data to the vector
+//			for (int i = 0; i < tileH; i++) {
+//				std::copy(ptr + i * tileSizeX * texelsX, ptr + i * tileSizeX * texelsX + tileSizeX, tiles.begin() + i * tileSizeX);
+//			}
+//
+//			// Flat out the index x,y to a single index
+//			int index = ix + iy * texelsX;
+//
+//			std::cout << "ix: " << ix << ", iy: " << iy << ", index: " << index << "\n" << std::endl;
+//
+//			// Load the tile data to OpenGL
+//			glTexSubImage3D(GL_TEXTURE_2D_ARRAY, 0, 0, 0, index, tileW, tileH, 1, imageFormat, GL_UNSIGNED_BYTE, tiles.data());
+//		}
+//	}
+//
+//	// Set the texture wrapping/filtering options
+//	glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_S, wrapS);
+//	glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_T, wrapT);
+//	glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_WRAP_R, wrapR);
+//
+//	glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MIN_FILTER, filterMin);
+//	glTexParameteri(GL_TEXTURE_2D_ARRAY, GL_TEXTURE_MAG_FILTER, filterMag);
+//
+//	// Generate Mipmaps
+//	glGenerateMipmap(GL_TEXTURE_2D_ARRAY);
+//
+//	// Unbind the texture
+//	glBindTexture(GL_TEXTURE_2D_ARRAY, 0);
+//}

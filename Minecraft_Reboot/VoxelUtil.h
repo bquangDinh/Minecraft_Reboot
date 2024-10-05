@@ -21,5 +21,6 @@ enum VOXEL_TYPE {
 	AIR,
 	GRASS,
 	DIRT,
-	ROCK
+	ROCK,
+	WATER,
 };

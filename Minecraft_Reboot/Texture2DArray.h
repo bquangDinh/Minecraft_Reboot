@@ -2,6 +2,7 @@
 
 #include <glad/glad.h>
 #include <vector>
+#include <iostream>
 
 class Texture2DArray
 {
@@ -15,7 +16,7 @@ public:
 
 	Texture2DArray();
 
-	void Generate(GLuint, GLuint, GLuint, GLuint, unsigned char*);
+	void Generate(GLuint width, GLuint height, int texelsX, int texelsY, const int nrChannels, unsigned char*);
 
 	void Use() const;
 };

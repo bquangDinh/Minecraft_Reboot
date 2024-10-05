@@ -10,10 +10,8 @@
 
 #include "GameObject.h"
 #include "Camera.h"
-#include "MeshBuilder.h"
-#include "Quad.h"
 
-#define TEXTURE_ATLAS "texture_atlas.png"
+#define TEXTURE_ATLAS "texture_atlas2.png"
 
 using namespace std;
 
@@ -30,8 +28,6 @@ private:
 
 	Camera* mainCamera;
 		
-	MeshBuilder* meshBuilder;
-
 	const float FOV;
 public:
 	Game(int, int);
