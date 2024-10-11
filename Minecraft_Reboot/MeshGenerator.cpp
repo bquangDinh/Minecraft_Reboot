@@ -29,8 +29,10 @@ Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3 dimensions) {
 					if ((int)height == 1) height += 1;
 
 					heightOffset = rand() % ((int)height - 1) + 1;
-
-					if ((y < height - heightOffset)) {
+					
+					if (y == 1) {
+						voxels[index] = Voxel{ VOXEL_TYPE::SAND, false };
+					} else if ((y < height - heightOffset)) {
 						voxels[index] = Voxel{ VOXEL_TYPE::ROCK, false };
 					}
 					else if (y >= height - 1) {
@@ -91,7 +93,7 @@ bool MeshGenerator::perlinNoise3DF(vec3 pos, vec3 dimensions, float& height) {
 
 	vec3 normalizedPos = pos / vec3(scale);
 
-	float noise = perlinNoise2D(normalizedPos.x, normalizedPos.z);
+	float noise = perlinNoise2D(normalizedPos.x, normalizedPos.z, 10.0f, 0.5f, 2.0f, 2.0f);
 
 	float terrainHeightAtXZ = noise * scale;
 

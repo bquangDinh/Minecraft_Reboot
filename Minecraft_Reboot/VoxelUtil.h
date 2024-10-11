@@ -23,4 +23,5 @@ enum VOXEL_TYPE {
 	DIRT,
 	ROCK,
 	WATER,
+	SAND
 };

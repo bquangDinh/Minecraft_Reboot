@@ -12,23 +12,10 @@ Game::Game(int screenWidth, int screenHeight):
 	gameStates->SCREEN_WIDTH = screenWidth;
 	gameStates->SCREEN_HEIGHT = screenHeight;
 
-	mainCamera = new Camera();
+	mainCamera = make_unique<Camera>();
 }
 
 Game::~Game() {
-	textureManager->cleanUp();
-
-	shaderManager->cleanUp();
-
-	gameStates->cleanUp();
-
-	gameStates = nullptr;
-
-	shaderManager = nullptr;
-
-	textureManager = nullptr;
-
-	delete mainCamera;
 }
 
 void Game::init() {
@@ -57,7 +44,7 @@ void Game::init() {
 	gameStates->projectionMatrix = glm::perspective(glm::radians(FOV), (float)gameStates->SCREEN_WIDTH / (float)gameStates->SCREEN_HEIGHT, 0.1f, 1000.0f);
 	
 	// Add game objects
-	gameObjects.push_back(make_shared<Chunk>(vec3(0.0f, 0.0f, 0.0f), vec3(120.0f, 32.0f, 120.0f)));
+	gameObjects.push_back(make_shared<Chunk>(vec3(0.0f, 0.0f, 0.0f), vec3(120.0f, 120.0f, 120.0f)));
 
 	// Init game objects
 	for (auto& gameObject : gameObjects) {
@@ -81,7 +68,7 @@ void Game::update(float deltaTime) {
 
 void Game::render(float deltaTime) {
 	// Render the game here
-	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+	glClearColor(0.059f, 0.204f, 0.376f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// Main camera does not need to render
@@ -112,6 +99,20 @@ void Game::destroy() {
 	}
 
 	gameObjects.clear();
+
+	textureManager->cleanUp();
+
+	shaderManager->cleanUp();
+
+	gameStates->cleanUp();
+
+	gameStates = nullptr;
+
+	shaderManager = nullptr;
+
+	textureManager = nullptr;
+
+	cout << "Destroy Game succeed!" << endl;
 }
 
 void Game::processKeyInput(int key, int action) {

@@ -60,6 +60,14 @@ void Chunk::render(float deltaTime)
 void Chunk::destroy()
 {
 	meshBuilder->cleanUp();
+
+	delete meshBuilder;
+
+	meshBuilder = nullptr;
+
+	delete voxelsData;
+	
+	voxelsData = nullptr;
 }
 
 int Chunk::getActualFaceIndex(int direction, bool backface)

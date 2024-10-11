@@ -108,6 +108,10 @@ int MeshBuilder::getTextureIndex(int type, int face) {
 		return 192;
 	}
 
+	if (type == VOXEL_TYPE::SAND) {
+		return 29;
+	}
+
 	return 12;
 }
 

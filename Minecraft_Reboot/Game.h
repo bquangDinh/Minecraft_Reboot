@@ -26,7 +26,7 @@ private:
 
 	TextureManager* textureManager;
 
-	Camera* mainCamera;
+	unique_ptr<Camera> mainCamera;
 		
 	const float FOV;
 public:

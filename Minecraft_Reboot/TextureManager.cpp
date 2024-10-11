@@ -46,6 +46,8 @@ shared_ptr<Texture2DArray> TextureManager::loadTextureArray(const GLchar* file, 
 
 		stbi_image_free(data);
 
+		data = nullptr;
+
 		return texture;
 	}
 	else
@@ -53,6 +55,8 @@ shared_ptr<Texture2DArray> TextureManager::loadTextureArray(const GLchar* file, 
 		cout << "Failed to load texture: " << file << endl;
 
 		stbi_image_free(data);
+
+		data = nullptr;
 
 		return nullptr;
 	}
