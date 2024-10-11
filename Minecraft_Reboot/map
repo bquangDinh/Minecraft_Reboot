@@ -1,6 +1,6 @@
  Minecraft_Reboot
 
- Timestamp is 67097205 (Fri Oct 11 14:44:21 2024)
+ Timestamp is 67097493 (Fri Oct 11 14:55:15 2024)
 
  Preferred load address is 0000000140000000
 
@@ -95,10 +95,13 @@
  0001:00000000       __enc$textbss$begin        0000000140001000     <linker-defined>
  0001:000433bd       __enc$textbss$end          00000001400443bd     <linker-defined>
  0002:00006f20       __JustMyCode_Default       000000014004bf20 f i glad.obj
+ 0002:00006f23       _CrtDumpMemoryLeaks        000000014004bf23 f   ucrtd:ucrtbased.dll
+ 0002:00006f29       _CrtSetReportMode          000000014004bf29 f   ucrtd:ucrtbased.dll
  0002:00006f30       __local_stdio_scanf_options 000000014004bf30 f i glad.obj
  0002:00006f70       _vsscanf_s_l               000000014004bf70 f i glad.obj
  0002:000078a0       gladLoadGL                 000000014004c8a0 f   glad.obj
  0002:00007910       gladLoadGLLoader           000000014004c910 f   glad.obj
+ 0002:000092e0       ?getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ 000000014004e2e0 f   GameStates.obj
  0002:0000c620       sscanf_s                   0000000140051620 f i glad.obj
  0002:0000c710       vsscanf_s                  0000000140051710 f i glad.obj
  0002:0000c780       ??$?0HHHM@?$vec@$03M$0A@@glm@@QEAA@HHHM@Z 0000000140051780 f i Camera.obj
@@ -589,16 +592,12 @@
  0002:00026820       ?_Incref@_Ref_count_base@std@@QEAAXXZ 000000014006b820 f i GameStates.obj
  0002:00026870       ?__autoclassinit2@?$_Ref_count@VGameStates@@@std@@QEAAX_K@Z 000000014006b870 f i GameStates.obj
  0002:000268b0       ?__autoclassinit2@?$shared_ptr@VGameStates@@@std@@QEAAX_K@Z 000000014006b8b0 f i GameStates.obj
- 0002:000268f0       ?__autoclassinit2@GameStates@@QEAAX_K@Z 000000014006b8f0 f i GameStates.obj
- 0002:00026930       ?cleanUp@GameStates@@QEAAXXZ 000000014006b930 f   GameStates.obj
- 0002:00026970       ?getCurPosX@GameStates@@QEBAMXZ 000000014006b970 f   GameStates.obj
- 0002:000269c0       ?getCurPosY@GameStates@@QEBAMXZ 000000014006b9c0 f   GameStates.obj
- 0002:00026a10       ?getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ 000000014006ba10 f   GameStates.obj
- 0002:00026ba0       ?getKey@GameStates@@QEBA_NH@Z 000000014006bba0 f   GameStates.obj
- 0002:00026c00       ?getProjectionMatrix@GameStates@@QEBAPEAU?$mat@$03$03M$0A@@glm@@XZ 000000014006bc00 f   GameStates.obj
- 0002:00026c50       ?getScreenHeight@GameStates@@QEBAHXZ 000000014006bc50 f   GameStates.obj
- 0002:00026ca0       ?getScreenWidth@GameStates@@QEBAHXZ 000000014006bca0 f   GameStates.obj
- 0002:00026cf0       ?getViewMatrix@GameStates@@QEBAPEAU?$mat@$03$03M$0A@@glm@@XZ 000000014006bcf0 f   GameStates.obj
+ 0002:000268f0       ?cleanUp@GameStates@@QEAAXXZ 000000014006b8f0 f   GameStates.obj
+ 0002:00026930       ?getCurPosX@GameStates@@QEBAMXZ 000000014006b930 f   GameStates.obj
+ 0002:00026970       ?getCurPosY@GameStates@@QEBAMXZ 000000014006b970 f   GameStates.obj
+ 0002:00026a10       ?getKey@GameStates@@QEBA_NH@Z 000000014006ba10 f   GameStates.obj
+ 0002:00026ba0       ?getScreenHeight@GameStates@@QEBAHXZ 000000014006bba0 f   GameStates.obj
+ 0002:00026c00       ?getScreenWidth@GameStates@@QEBAHXZ 000000014006bc00 f   GameStates.obj
  0002:00026d40       ?__autoclassinit2@Game@@QEAAX_K@Z 000000014006bd40 f i main.obj
  0002:00026d80       ?framebufferSizeCallback@@YAXPEAUGLFWwindow@@HH@Z 000000014006bd80 f   main.obj
  0002:00026de0       ?keyCallback@@YAXPEAUGLFWwindow@@HHHH@Z 000000014006bde0 f   main.obj
@@ -4399,7 +4398,9 @@
  0006:00000dc8       __imp__callnewh            0000000140138dc8     ucrtd:ucrtbased.dll
  0006:00000dd0       __imp_malloc               0000000140138dd0     ucrtd:ucrtbased.dll
  0006:00000dd8       __imp_fgetc                0000000140138dd8     ucrtd:ucrtbased.dll
- 0006:00000de0       \177ucrtbased_NULL_THUNK_DATA 0000000140138de0     ucrtd:ucrtbased.dll
+ 0006:00000de0       __imp__CrtDumpMemoryLeaks  0000000140138de0     ucrtd:ucrtbased.dll
+ 0006:00000de8       __imp__CrtSetReportMode    0000000140138de8     ucrtd:ucrtbased.dll
+ 0006:00000df0       \177ucrtbased_NULL_THUNK_DATA 0000000140138df0     ucrtd:ucrtbased.dll
  0006:00000ec8       __IMPORT_DESCRIPTOR_KERNEL32 0000000140138ec8     kernel32:KERNEL32.dll
  0006:00000edc       __IMPORT_DESCRIPTOR_USER32 0000000140138edc     user32:USER32.dll
  0006:00000ef0       __IMPORT_DESCRIPTOR_GDI32  0000000140138ef0     gdi32:GDI32.dll
@@ -5685,6 +5686,8 @@
  0000:00000000       _volmd                     0000000140000000     main.obj
  0000:00000000       _volmd                     0000000140000000     main.obj
  0000:00000000       _volmd                     0000000140000000     main.obj
+ 0000:ffebc000       .debug$S                   0000000140000000     ucrtd:ucrtbased.dll
+ 0000:ffebc000       .debug$S                   0000000140000000     ucrtd:ucrtbased.dll
  0000:ffebc000       .debug$S                   0000000140000000     ucrtd:ucrtbased.dll
  0000:ffebc000       .debug$S                   0000000140000000     ucrtd:ucrtbased.dll
  0000:ffebc000       .debug$S                   0000000140000000     ucrtd:ucrtbased.dll
@@ -8355,37 +8358,33 @@
  0003:0001a4bc       $unwind$?getCurPosX@GameStates@@QEBAMXZ 00000001400f24bc     GameStates.obj
  0003:0001a4d0       $unwind$?getCurPosY@GameStates@@QEBAMXZ 00000001400f24d0     GameStates.obj
  0003:0001a4e4       $unwind$?getKey@GameStates@@QEBA_NH@Z 00000001400f24e4     GameStates.obj
- 0003:0001a4f8       $unwind$?getViewMatrix@GameStates@@QEBAPEAU?$mat@$03$03M$0A@@glm@@XZ 00000001400f24f8     GameStates.obj
- 0003:0001a50c       $unwind$?getProjectionMatrix@GameStates@@QEBAPEAU?$mat@$03$03M$0A@@glm@@XZ 00000001400f250c     GameStates.obj
- 0003:0001a520       $unwind$?getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ 00000001400f2520     GameStates.obj
+ 0003:0001a4f4       $unwind$?getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ 00000001400f24f4     GameStates.obj
+ 0003:0001a50c       $unwind$?dtor$0@?0??getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ@4HA 00000001400f250c     GameStates.obj
+ 0003:0001a520       $unwind$?dtor$1@?0??getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ@4HA 00000001400f2520     GameStates.obj
  0003:0001a53a       $cppxdata$?getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ 00000001400f253a     GameStates.obj
  0003:0001a543       $stateUnwindMap$?getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ 00000001400f2543     GameStates.obj
  0003:0001a54f       $ip2state$?getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ 00000001400f254f     GameStates.obj
- 0003:0001a55c       $unwind$?dtor$0@?0??getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ@4HA 00000001400f255c     GameStates.obj
- 0003:0001a56c       $unwind$?dtor$1@?0??getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ@4HA 00000001400f256c     GameStates.obj
- 0003:0001a57c       $unwind$?cleanUp@GameStates@@QEAAXXZ 00000001400f257c     GameStates.obj
- 0003:0001a590       $unwind$??0GameStates@@AEAA@XZ 00000001400f2590     GameStates.obj
- 0003:0001a5a4       $unwind$?__autoclassinit2@GameStates@@QEAAX_K@Z 00000001400f25a4     GameStates.obj
- 0003:0001a5b8       $unwind$?_Incref@?$_Ptr_base@VGameStates@@@std@@IEBAXXZ 00000001400f25b8     GameStates.obj
- 0003:0001a5cc       $unwind$??0?$shared_ptr@VGameStates@@@std@@QEAA@AEBV01@@Z 00000001400f25cc     GameStates.obj
- 0003:0001a5e0       $unwind$?__autoclassinit2@?$shared_ptr@VGameStates@@@std@@QEAAX_K@Z 00000001400f25e0     GameStates.obj
- 0003:0001a5f4       $unwind$??$?0VGameStates@@$0A@@?$shared_ptr@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z 00000001400f25f4     GameStates.obj
+ 0003:0001a55c       $unwind$?cleanUp@GameStates@@QEAAXXZ 00000001400f255c     GameStates.obj
+ 0003:0001a56c       $unwind$??0GameStates@@AEAA@XZ 00000001400f256c     GameStates.obj
+ 0003:0001a57c       $unwind$?_Incref@?$_Ptr_base@VGameStates@@@std@@IEBAXXZ 00000001400f257c     GameStates.obj
+ 0003:0001a590       $unwind$??0?$shared_ptr@VGameStates@@@std@@QEAA@AEBV01@@Z 00000001400f2590     GameStates.obj
+ 0003:0001a5a4       $unwind$?__autoclassinit2@?$shared_ptr@VGameStates@@@std@@QEAAX_K@Z 00000001400f25a4     GameStates.obj
+ 0003:0001a5cc       $unwind$?dtor$0@?0???$?0VGameStates@@$0A@@?$shared_ptr@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z@4HA 00000001400f25cc     GameStates.obj
+ 0003:0001a5e0       $unwind$?dtor$1@?0???$?0VGameStates@@$0A@@?$shared_ptr@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z@4HA 00000001400f25e0     GameStates.obj
+ 0003:0001a5f4       $unwind$??__Finstance@?1??getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ@YAXXZ 00000001400f25f4     GameStates.obj
  0003:0001a612       $cppxdata$??$?0VGameStates@@$0A@@?$shared_ptr@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z 00000001400f2612     GameStates.obj
  0003:0001a61b       $stateUnwindMap$??$?0VGameStates@@$0A@@?$shared_ptr@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z 00000001400f261b     GameStates.obj
  0003:0001a627       $ip2state$??$?0VGameStates@@$0A@@?$shared_ptr@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z 00000001400f2627     GameStates.obj
- 0003:0001a634       $unwind$?dtor$0@?0???$?0VGameStates@@$0A@@?$shared_ptr@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z@4HA 00000001400f2634     GameStates.obj
- 0003:0001a644       $unwind$?dtor$1@?0???$?0VGameStates@@$0A@@?$shared_ptr@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z@4HA 00000001400f2644     GameStates.obj
- 0003:0001a654       $unwind$??__Finstance@?1??getInstance@GameStates@@SA?AV?$shared_ptr@VGameStates@@@std@@XZ@YAXXZ 00000001400f2654     GameStates.obj
- 0003:0001a668       $unwind$??$_Copy_construct_from@VGameStates@@@?$_Ptr_base@VGameStates@@@std@@IEAAXAEBV?$shared_ptr@VGameStates@@@1@@Z 00000001400f2668     GameStates.obj
- 0003:0001a67c       $unwind$??0?$_Temporary_owner@VGameStates@@@std@@QEAA@QEAVGameStates@@@Z 00000001400f267c     GameStates.obj
- 0003:0001a690       $unwind$??1?$_Temporary_owner@VGameStates@@@std@@QEAA@XZ 00000001400f2690     GameStates.obj
- 0003:0001a6a4       $unwind$??0?$_Ref_count@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z 00000001400f26a4     GameStates.obj
- 0003:0001a6b8       $unwind$?_Destroy@?$_Ref_count@VGameStates@@@std@@EEAAXXZ 00000001400f26b8     GameStates.obj
- 0003:0001a6cc       $unwind$?_Delete_this@?$_Ref_count@VGameStates@@@std@@EEAAXXZ 00000001400f26cc     GameStates.obj
- 0003:0001a6e0       $unwind$??1?$_Ref_count@VGameStates@@@std@@UEAA@XZ 00000001400f26e0     GameStates.obj
- 0003:0001a6f4       $unwind$?__autoclassinit2@?$_Ref_count@VGameStates@@@std@@QEAAX_K@Z 00000001400f26f4     GameStates.obj
- 0003:0001a708       $unwind$??_G?$_Ref_count@VGameStates@@@std@@UEAAPEAXI@Z 00000001400f2708     GameStates.obj
- 0003:0001a71c       $unwind$??$_Set_ptr_rep_and_enable_shared@VGameStates@@@?$shared_ptr@VGameStates@@@std@@AEAAXQEAVGameStates@@QEAV_Ref_count_base@1@@Z 00000001400f271c     GameStates.obj
+ 0003:0001a634       $unwind$??$_Copy_construct_from@VGameStates@@@?$_Ptr_base@VGameStates@@@std@@IEAAXAEBV?$shared_ptr@VGameStates@@@1@@Z 00000001400f2634     GameStates.obj
+ 0003:0001a644       $unwind$??0?$_Temporary_owner@VGameStates@@@std@@QEAA@QEAVGameStates@@@Z 00000001400f2644     GameStates.obj
+ 0003:0001a654       $unwind$??1?$_Temporary_owner@VGameStates@@@std@@QEAA@XZ 00000001400f2654     GameStates.obj
+ 0003:0001a668       $unwind$??0?$_Ref_count@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z 00000001400f2668     GameStates.obj
+ 0003:0001a67c       $unwind$?_Destroy@?$_Ref_count@VGameStates@@@std@@EEAAXXZ 00000001400f267c     GameStates.obj
+ 0003:0001a690       $unwind$?_Delete_this@?$_Ref_count@VGameStates@@@std@@EEAAXXZ 00000001400f2690     GameStates.obj
+ 0003:0001a6a4       $unwind$??1?$_Ref_count@VGameStates@@@std@@UEAA@XZ 00000001400f26a4     GameStates.obj
+ 0003:0001a6b8       $unwind$?__autoclassinit2@?$_Ref_count@VGameStates@@@std@@QEAAX_K@Z 00000001400f26b8     GameStates.obj
+ 0003:0001a6cc       $unwind$??_G?$_Ref_count@VGameStates@@@std@@UEAAPEAXI@Z 00000001400f26cc     GameStates.obj
+ 0003:0001a6e0       $unwind$??$_Set_ptr_rep_and_enable_shared@VGameStates@@@?$shared_ptr@VGameStates@@@std@@AEAAXQEAVGameStates@@QEAV_Ref_count_base@1@@Z 00000001400f26e0     GameStates.obj
  0003:0001a730       $unwind$time               00000001400f2730     main.obj
  0003:0001a744       $unwind$?__autoclassinit2@Game@@QEAAX_K@Z 00000001400f2744     main.obj
  0003:0001a758       $unwind$??__Egame@@YAXXZ   00000001400f2758     main.obj
@@ -9577,6 +9576,7 @@
  0003:0001fc54       $unwind$_glfwInputWindowDamage 00000001400f7c54     glfw3:window.obj
  0003:0001fc5c       $unwind$_glfwInputWindowCloseRequest 00000001400f7c5c     glfw3:window.obj
  0003:0001fc64       $unwind$_glfwInputWindowMonitor 00000001400f7c64     glfw3:window.obj
+ 0003:0001fc6c       $unwind$??$?0VGameStates@@$0A@@?$shared_ptr@VGameStates@@@std@@QEAA@PEAVGameStates@@@Z 00000001400f7c6c     GameStates.obj
  0003:0001fc9c       $unwind$glfwGetInputMode   00000001400f7c9c     glfw3:input.obj
  0003:0001fca4       $unwind$glfwSetInputMode   00000001400f7ca4     glfw3:input.obj
  0003:0001fcac       $unwind$glfwRawMouseMotionSupported 00000001400f7cac     glfw3:input.obj
@@ -13012,34 +13012,34 @@
  0007:00000854       __B5D87B11_memory          000000014013d854     GameStates.obj
  0007:00000855       __B8600E7F_GameStates@h    000000014013d855     GameStates.obj
  0007:00000856       __3C701775_GameStates@cpp  000000014013d856     GameStates.obj
- 0007:00000883       __59D929D7_khrplatform@h   000000014013d883     main.obj
- 0007:00000884       __69FD1B93_glad@h          000000014013d884     main.obj
- 0007:00000885       __68D132EB_concurrencysal@h 000000014013d885     main.obj
- 0007:00000886       __4DC47379_sal@h           000000014013d886     main.obj
- 0007:00000887       __B6ADDB23_vadefs@h        000000014013d887     main.obj
- 0007:00000888       __A2A1025A_vcruntime@h     000000014013d888     main.obj
- 0007:00000889       __1B0272D9_corecrt@h       000000014013d889     main.obj
- 0007:0000088a       __13F5961F_stddef@h        000000014013d88a     main.obj
- 0007:0000088b       __CEA0B545_stdint@h        000000014013d88b     main.obj
- 0007:0000088c       __AAF1E570_glfw3@h         000000014013d88c     main.obj
- 0007:0000088d       __467C4747_xkeycheck@h     000000014013d88d     main.obj
- 0007:0000088e       __4FC715A5_yvals_core@h    000000014013d88e     main.obj
- 0007:0000088f       __B9985323_float@h         000000014013d88f     main.obj
- 0007:00000890       __6F903AFB_cfloat          000000014013d890     main.obj
- 0007:00000891       __70D69B7A_limits@h        000000014013d891     main.obj
- 0007:00000892       __2E6DAE0D_climits         000000014013d892     main.obj
- 0007:00000893       __72E6C6A2_vcruntime_new@h 000000014013d893     main.obj
- 0007:00000894       __D36623B7_vcruntime_new_debug@h 000000014013d894     main.obj
- 0007:00000895       __935DC21B_crtdbg@h        000000014013d895     main.obj
- 0007:00000896       __BB79C343_crtdefs@h       000000014013d896     main.obj
- 0007:00000897       __F3AEDF63_use_ansi@h      000000014013d897     main.obj
- 0007:00000898       __1CC23A40_yvals@h         000000014013d898     main.obj
- 0007:00000899       __BB16330F_corecrt_math@h  000000014013d899     main.obj
- 0007:0000089a       __3BF2A406_math@h          000000014013d89a     main.obj
- 0007:0000089b       __45DED006_corecrt_malloc@h 000000014013d89b     main.obj
- 0007:0000089c       __FD6DBD68_corecrt_search@h 000000014013d89c     main.obj
- 0007:0000089d       __E2E33A61_corecrt_wstdlib@h 000000014013d89d     main.obj
- 0007:0000089e       __6E5ACABA_stdlib@h        000000014013d89e     main.obj
+ 0007:00000883       __68D132EB_concurrencysal@h 000000014013d883     main.obj
+ 0007:00000884       __4DC47379_sal@h           000000014013d884     main.obj
+ 0007:00000885       __B6ADDB23_vadefs@h        000000014013d885     main.obj
+ 0007:00000886       __A2A1025A_vcruntime@h     000000014013d886     main.obj
+ 0007:00000887       __1B0272D9_corecrt@h       000000014013d887     main.obj
+ 0007:00000888       __45DED006_corecrt_malloc@h 000000014013d888     main.obj
+ 0007:00000889       __13F5961F_stddef@h        000000014013d889     main.obj
+ 0007:0000088a       __FD6DBD68_corecrt_search@h 000000014013d88a     main.obj
+ 0007:0000088b       __E2E33A61_corecrt_wstdlib@h 000000014013d88b     main.obj
+ 0007:0000088c       __70D69B7A_limits@h        000000014013d88c     main.obj
+ 0007:0000088d       __6E5ACABA_stdlib@h        000000014013d88d     main.obj
+ 0007:0000088e       __72E6C6A2_vcruntime_new@h 000000014013d88e     main.obj
+ 0007:0000088f       __D36623B7_vcruntime_new_debug@h 000000014013d88f     main.obj
+ 0007:00000890       __935DC21B_crtdbg@h        000000014013d890     main.obj
+ 0007:00000891       __59D929D7_khrplatform@h   000000014013d891     main.obj
+ 0007:00000892       __69FD1B93_glad@h          000000014013d892     main.obj
+ 0007:00000893       __CEA0B545_stdint@h        000000014013d893     main.obj
+ 0007:00000894       __AAF1E570_glfw3@h         000000014013d894     main.obj
+ 0007:00000895       __467C4747_xkeycheck@h     000000014013d895     main.obj
+ 0007:00000896       __4FC715A5_yvals_core@h    000000014013d896     main.obj
+ 0007:00000897       __B9985323_float@h         000000014013d897     main.obj
+ 0007:00000898       __6F903AFB_cfloat          000000014013d898     main.obj
+ 0007:00000899       __2E6DAE0D_climits         000000014013d899     main.obj
+ 0007:0000089a       __BB79C343_crtdefs@h       000000014013d89a     main.obj
+ 0007:0000089b       __F3AEDF63_use_ansi@h      000000014013d89b     main.obj
+ 0007:0000089c       __1CC23A40_yvals@h         000000014013d89c     main.obj
+ 0007:0000089d       __BB16330F_corecrt_math@h  000000014013d89d     main.obj
+ 0007:0000089e       __3BF2A406_math@h          000000014013d89e     main.obj
  0007:0000089f       __AA828CFF_cstdlib         000000014013d89f     main.obj
  0007:000008a0       __08A0ED2A_xtr1common      000000014013d8a0     main.obj
  0007:000008a1       __0EF3BC42_intrin0@inl@h   000000014013d8a1     main.obj
@@ -15659,8 +15659,3 @@
  0008:0000011c       ?stbi__vertically_flip_on_load_local@@3HA 000000014013f11c     TextureManager.obj
  0008:00000120       ?stbi__g_failure_reason@@3PEBDEB 000000014013f120     TextureManager.obj
  000a:00000170       $R000000                   0000000140141170     Minecraft_Reboot.res
-
- Exports
-
-  ordinal    name
-

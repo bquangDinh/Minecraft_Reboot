@@ -36,13 +36,3 @@ bool GameStates::getKey(int key) const
 {
 	return Keys[key];
 }
-
-glm::mat4* GameStates::getViewMatrix() const
-{
-	return viewMatrix;
-}
-
-glm::mat4* GameStates::getProjectionMatrix() const
-{
-	return projectionMatrix;
-}

@@ -18,18 +18,10 @@ public:
 	float getCurPosY() const;
 
 	bool getKey(int) const;
-
-	glm::mat4* getViewMatrix() const;
-
-	glm::mat4* getProjectionMatrix() const;
 	
 	static shared_ptr<GameStates> getInstance();
 
 	void cleanUp();
-
-	glm::mat4* viewMatrix;
-
-	glm::mat4* projectionMatrix;
 
 	bool Keys[1024] = { false };
 

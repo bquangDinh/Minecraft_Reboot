@@ -1,9 +1,16 @@
+// Detect memory leak uing CRT library
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
+// OpenGL
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h> 
 
+// Game
 #include "Game.h"
 
 using namespace std;
@@ -106,10 +113,13 @@ int main() {
 
 	glfwTerminate();
 
+	_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
+	_CrtDumpMemoryLeaks();
+
 	return 0;
 }
 
-// Called when the given window is resized
+// Calle d when the given window is resized
 void framebufferSizeCallback(GLFWwindow* window, int width, int height) {
 	// resize OpenGL's viewport
 	glViewport(0, 0, width, height);
