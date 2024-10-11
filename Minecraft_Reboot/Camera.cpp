@@ -2,20 +2,23 @@
 
 Camera::Camera(): 
 	cameraFront(0.0f, 0.0f, -1.0f),
-	//cameraPos(0.0f, 0.0f, 3.0f),
 	cameraUp(0.0f, 1.0f, 0.0f),
+	projectionMatrix(mat4(1.0f)),
 	CAMERA_SPEED(25.0f),
 	CAMERA_SENSITIVITY(0.25f),
 	PITCH_LIMIT(89.0f),
+	FOV(45.0f),
 	pitch(0.0f),
 	yaw(-90.0f),
-	firstAround(false)
+	firstAround(true),
+	firstGetProjectionMatrix(true)
 {
 	lastX = gameStates->getScreenWidth() / 2.0f;
 	lastY = gameStates->getScreenHeight() / 2.0f;
 }
 
 void Camera::init() {
+	// Initialize the camera here
 }
 
 void Camera::update(float deltaTime) {
@@ -39,6 +42,16 @@ mat4 Camera::getViewMatrix() {
 	view = lookAt(this->transform.position, cameraFront + this->transform.position, cameraUp);
 
 	return view;
+}
+
+mat4 Camera::getProjectionMatrix() {
+	if (firstGetProjectionMatrix) {
+		projectionMatrix = perspective(radians(FOV), (float)gameStates->getScreenWidth() / (float)gameStates->getScreenHeight(), 0.1f, 100.0f);
+
+		firstGetProjectionMatrix = false;
+	}
+	
+	return projectionMatrix;
 }
 
 void Camera::processKeyInputs(float deltaTime) {

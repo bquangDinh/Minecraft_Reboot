@@ -3,17 +3,13 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-TextureManager& TextureManager::getInstance()
+shared_ptr<TextureManager> TextureManager::getInstance()
 {
-	if (_instance == nullptr)
-	{
-		_instance = new TextureManager();
-	}
+	static shared_ptr<TextureManager> instance(new TextureManager());	// Guaranteed to be destroyed.
+																		// Instantiated on first use.
 
-	return *_instance;
+	return instance;
 }
-
-TextureManager* TextureManager::_instance = nullptr;
 
 shared_ptr<Texture2DArray> TextureManager::loadTextureArray(const GLchar* file, GLboolean alpha, GLboolean flip, string key) {
 	// Check if the texture is already loaded

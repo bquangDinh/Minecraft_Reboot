@@ -2,7 +2,7 @@
 
 MeshBuilder::MeshBuilder(): VAO(0) {
 	// Load shader program
-	shaderProgram = ShaderManager::getInstance().getShaderProgram(MAIN_SHADER_PROGRAM);
+	shaderProgram = ShaderManager::getInstance()->getShaderProgram(MAIN_SHADER_PROGRAM);
 }
 
 void MeshBuilder::addQuad(const Quad q, int width, int height, bool backface) {
@@ -193,7 +193,7 @@ void MeshBuilder::render() {
 		return;
 	}
 
-	TextureManager::getInstance().getTextureArray(MAIN_TEXTURE_ARRAY)->Use();
+	TextureManager::getInstance()->getTextureArray(MAIN_TEXTURE_ARRAY)->Use();
 
 	shaderProgram->Use();
 

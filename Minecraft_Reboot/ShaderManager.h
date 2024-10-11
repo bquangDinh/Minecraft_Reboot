@@ -21,12 +21,10 @@ public:
 
 	void cleanUp();
 
-	static ShaderManager& getInstance();
+	static shared_ptr<ShaderManager> getInstance();
 private:
 	// Prevent other classes from instantiating this class
 	ShaderManager() {};
-
-	static ShaderManager* _instance;
 
 	unordered_map<string, shared_ptr<ShaderProgram>> shaderPrograms;
 

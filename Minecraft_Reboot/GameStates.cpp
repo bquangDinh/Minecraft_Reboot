@@ -1,11 +1,9 @@
 #include "GameStates.h"
-#include "Game.h"
 
-GameStates& GameStates::getInstance()
+shared_ptr<GameStates> GameStates::getInstance()
 {
-	static GameStates instance; // Guaranteed to be destroyed.
-								// Instantiated on first use.
-
+	static shared_ptr<GameStates> instance(new GameStates());	// Guaranteed to be destroyed.
+																// Instantiated on first use.
 	return instance;
 }
 
@@ -39,12 +37,12 @@ bool GameStates::getKey(int key) const
 	return Keys[key];
 }
 
-glm::mat4 GameStates::getViewMatrix() const
+glm::mat4* GameStates::getViewMatrix() const
 {
 	return viewMatrix;
 }
 
-glm::mat4 GameStates::getProjectionMatrix() const
+glm::mat4* GameStates::getProjectionMatrix() const
 {
 	return projectionMatrix;
 }

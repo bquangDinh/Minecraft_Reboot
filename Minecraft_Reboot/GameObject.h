@@ -5,6 +5,8 @@
 #include "GameStates.h"
 #include "ShaderManager.h"
 
+using namespace std;
+
 struct Transform {
 	glm::vec3 position;
 	glm::vec3 rotation;
@@ -54,9 +56,9 @@ struct Transform {
 class GameObject
 {
 protected:
-	GameStates* gameStates;
+	shared_ptr<GameStates> gameStates;
 
-	ShaderManager* shaderManager;
+	shared_ptr<ShaderManager> shaderManager;
 
 	Transform transform;
 public:

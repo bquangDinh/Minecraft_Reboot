@@ -1,18 +1,16 @@
 #include "Game.h"
 
 #include "Chunk.h"
+#include "Player.h"
 
 Game::Game(int screenWidth, int screenHeight):
-	gameStates(&GameStates::getInstance()),
-	shaderManager(&ShaderManager::getInstance()),
-	textureManager(&TextureManager::getInstance()),
-	FOV(45.0f)
+	gameStates(GameStates::getInstance()),
+	shaderManager(ShaderManager::getInstance()),
+	textureManager(TextureManager::getInstance())
 {
 	// Initialize game states
 	gameStates->SCREEN_WIDTH = screenWidth;
 	gameStates->SCREEN_HEIGHT = screenHeight;
-
-	mainCamera = make_unique<Camera>();
 }
 
 Game::~Game() {
@@ -37,13 +35,9 @@ void Game::init() {
 	// Init Textures
 	textureManager->loadTextureArray(TEXTURE_ATLAS, true, true, MAIN_TEXTURE_ARRAY);
 
-	// Init main camera
-	mainCamera->init();
-
-	// Init projection matrix
-	gameStates->projectionMatrix = glm::perspective(glm::radians(FOV), (float)gameStates->SCREEN_WIDTH / (float)gameStates->SCREEN_HEIGHT, 0.1f, 1000.0f);
-	
 	// Add game objects
+	gameObjects.push_back(make_shared<Player>());
+
 	gameObjects.push_back(make_shared<Chunk>(vec3(0.0f, 0.0f, 0.0f), vec3(120.0f, 120.0f, 120.0f)));
 
 	// Init game objects
@@ -55,45 +49,25 @@ void Game::init() {
 }
 
 void Game::update(float deltaTime) {
-	// Update the game here
-	mainCamera->update(deltaTime);
-
-	// Update view matrix
-	gameStates->viewMatrix = mainCamera->getViewMatrix();
-
 	for (auto& gameObject : gameObjects) {
 		gameObject->update(deltaTime);
 	}
 }
 
 void Game::render(float deltaTime) {
-	// Render the game here
+	// Render background color
 	glClearColor(0.059f, 0.204f, 0.376f, 1.0f);
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	// Main camera does not need to render
-	// mainCamera.render(deltaTime);
-
-	shaderManager->getShaderProgram(MAIN_SHADER_PROGRAM)->SetMatrix4("view", gameStates->viewMatrix);
-
-	shaderManager->getShaderProgram(MAIN_SHADER_PROGRAM)->SetMatrix4("projection", gameStates->projectionMatrix);
 
 	// Render game objects
 	for (auto& gameObject : gameObjects) {
 		gameObject->render(deltaTime);
 	}
-
-	// Test mesh builder
-	//meshBuilder->render();
 }
 
 void Game::destroy() {
 	// Destroy the game here and free up memory
-	//meshBuilder->cleanUp();
-
-	// Destroy main camera
-	mainCamera->destroy();
-
 	for (auto& gameObject : gameObjects) {
 		gameObject->destroy();
 	}

@@ -18,9 +18,13 @@ private:
 	// Camera up vector
 	vec3 cameraUp;
 
+	mat4 projectionMatrix;
+
 	const float CAMERA_SPEED;
 
 	const float CAMERA_SENSITIVITY;
+
+	const float FOV;
 
 	// Limit how much the camera can look up or down
 	const float PITCH_LIMIT;
@@ -34,6 +38,8 @@ private:
 	float lastX, lastY;
 
 	bool firstAround;
+
+	bool firstGetProjectionMatrix;
 
 	void processKeyInputs(float);
 
@@ -52,6 +58,8 @@ public:
 	Camera();
 
 	mat4 getViewMatrix();
+
+	mat4 getProjectionMatrix();
 
 	void init() override;
 

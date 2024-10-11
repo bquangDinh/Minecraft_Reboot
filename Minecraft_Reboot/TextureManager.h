@@ -18,10 +18,8 @@ private:
 
 	// Prevent other classes from instantiating this class
 	TextureManager() {};
-
-	static TextureManager* _instance;
 public:
-	static TextureManager& getInstance();
+	static shared_ptr<TextureManager> getInstance();
 
 	shared_ptr<Texture2DArray> loadTextureArray(const GLchar* file, GLboolean alpha, GLboolean flip, string key);
 

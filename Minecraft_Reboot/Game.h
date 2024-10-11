@@ -9,7 +9,6 @@
 #include "TextureManager.h"
 
 #include "GameObject.h"
-#include "Camera.h"
 
 #define TEXTURE_ATLAS "texture_atlas2.png"
 
@@ -20,15 +19,11 @@ class Game
 private:
 	std::vector<shared_ptr<GameObject>> gameObjects;
 
-	GameStates* gameStates;
+	shared_ptr<GameStates> gameStates;
 
-	ShaderManager* shaderManager;
+	shared_ptr<ShaderManager> shaderManager;
 
-	TextureManager* textureManager;
-
-	unique_ptr<Camera> mainCamera;
-		
-	const float FOV;
+	shared_ptr<TextureManager> textureManager;
 public:
 	Game(int, int);
 

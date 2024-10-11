@@ -1,8 +1,10 @@
 #pragma once
 
-class Game;
-
 #include "glm/glm.hpp"
+
+#include <memory>
+
+using namespace std;
 
 class GameStates
 {
@@ -17,25 +19,25 @@ public:
 
 	bool getKey(int) const;
 
-	glm::mat4 getViewMatrix() const;
+	glm::mat4* getViewMatrix() const;
 
-	glm::mat4 getProjectionMatrix() const;
+	glm::mat4* getProjectionMatrix() const;
 	
-	static GameStates& getInstance();
+	static shared_ptr<GameStates> getInstance();
 
 	void cleanUp();
-private:
-	// Prevent other classes from instantiating this class
-	GameStates() {}
+
+	glm::mat4* viewMatrix;
+
+	glm::mat4* projectionMatrix;
 
 	bool Keys[1024] = { false };
 
 	float curPosX = 0, curPosY = 0;
 
 	int SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0;
-
-	glm::mat4 viewMatrix, projectionMatrix;
-
-	friend Game;
+private:
+	// Prevent other classes from instantiating this class
+	GameStates() {}
 };
 

@@ -1,8 +1,8 @@
 #include "GameObject.h"
 
 GameObject::GameObject(): 
-	gameStates(&GameStates::getInstance()),
-	shaderManager(&ShaderManager::getInstance())
+	gameStates(GameStates::getInstance()),
+	shaderManager(ShaderManager::getInstance())
 {}
 
 GameObject::~GameObject()

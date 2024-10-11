@@ -1,17 +1,13 @@
 #include "ShaderManager.h"
 #include "Game.h"
 
-ShaderManager& ShaderManager::getInstance()
+shared_ptr<ShaderManager> ShaderManager::getInstance()
 {
-	if (_instance == nullptr)
-	{
-		_instance = new ShaderManager();
-	}
+	static shared_ptr<ShaderManager> instance(new ShaderManager());	// Guaranteed to be destroyed.
+																	// Instantiated on first use.
 
-	return *_instance;
+	return instance;
 }
-
-ShaderManager* ShaderManager::_instance = nullptr;
 
 shared_ptr<ShaderProgram> ShaderManager::getShaderProgram(string key)
 {
