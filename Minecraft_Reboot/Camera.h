@@ -15,9 +15,6 @@ private:
 	// Camera direction
 	vec3 cameraFront;
 
-	// Camera position
-	vec3 cameraPos;
-
 	// Camera up vector
 	vec3 cameraUp;
 

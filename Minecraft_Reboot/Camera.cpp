@@ -2,7 +2,7 @@
 
 Camera::Camera(): 
 	cameraFront(0.0f, 0.0f, -1.0f),
-	cameraPos(0.0f, 0.0f, 3.0f),
+	//cameraPos(0.0f, 0.0f, 3.0f),
 	cameraUp(0.0f, 1.0f, 0.0f),
 	CAMERA_SPEED(25.0f),
 	CAMERA_SENSITIVITY(0.25f),
@@ -36,7 +36,7 @@ void Camera::destroy() {
 mat4 Camera::getViewMatrix() {
 	mat4 view = mat4(1.0f);
 
-	view = lookAt(cameraPos, cameraFront + cameraPos, cameraUp);
+	view = lookAt(this->transform.position, cameraFront + this->transform.position, cameraUp);
 
 	return view;
 }
@@ -61,19 +61,19 @@ void Camera::processKeyInputs(float deltaTime) {
 }
 
 void Camera::moveForward(float deltaTime) {
-	cameraPos += cameraFront * CAMERA_SPEED * deltaTime;
+	this->transform.setPosition(this->transform.position + cameraFront * CAMERA_SPEED * deltaTime);
 }
 
 void Camera::moveBackward(float deltaTime) {
-	cameraPos -= cameraFront * CAMERA_SPEED * deltaTime;
+	this->transform.setPosition(this->transform.position - cameraFront * CAMERA_SPEED * deltaTime);
 }
 
 void Camera::moveLeft(float deltaTime) {
-	cameraPos -= normalize(cross(cameraFront, cameraUp)) * CAMERA_SPEED * deltaTime;
+	this->transform.setPosition(this->transform.position - normalize(cross(cameraFront, cameraUp)) * CAMERA_SPEED * deltaTime);
 }
 
 void Camera::moveRight(float deltaTime) {
-	cameraPos += normalize(cross(cameraFront, cameraUp)) * CAMERA_SPEED * deltaTime;
+	this->transform.setPosition(this->transform.position + normalize(cross(cameraFront, cameraUp)) * CAMERA_SPEED * deltaTime);
 }
 
 void Camera::turnAround(float x, float y) {
@@ -108,6 +108,7 @@ void Camera::turnAround(float x, float y) {
 	}
 
 	vec3 front;
+
 	front.x = cos(radians(yaw)) * cos(radians(pitch));
 	front.y = sin(radians(pitch));
 	front.z = sin(radians(yaw)) * cos(radians(pitch));

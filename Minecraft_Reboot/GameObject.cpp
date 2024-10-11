@@ -11,8 +11,3 @@ GameObject::~GameObject()
 
 	shaderManager = nullptr;
 }
-
-void GameObject::setPosition(glm::vec3 position)
-{
-	this->position = position;
-}
