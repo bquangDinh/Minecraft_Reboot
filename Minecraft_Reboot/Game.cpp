@@ -1,7 +1,6 @@
 #include "Game.h"
 
-#include "Chunk.h"
-#include "Player.h"
+#include "ChunkManager.h"
 
 Game::Game(int screenWidth, int screenHeight):
 	gameStates(GameStates::getInstance()),
@@ -36,9 +35,16 @@ void Game::init() {
 	textureManager->loadTextureArray(TEXTURE_ATLAS, true, true, MAIN_TEXTURE_ARRAY);
 
 	// Add game objects
-	gameObjects.push_back(make_shared<Player>());
+	shared_ptr<Player> player = make_shared <Player>();
 
-	gameObjects.push_back(make_shared<Chunk>(vec3(0.0f, 0.0f, 0.0f), vec3(120.0f, 120.0f, 120.0f)));
+	// TODO: better way to pass player to chunk manager
+	shared_ptr<ChunkManager> chunkManager = make_shared<ChunkManager>(player);
+
+	gameObjects.push_back(player);
+
+	gameObjects.push_back(chunkManager);
+
+	//gameObjects.push_back(make_shared<Chunk>(vec3(0.0f, 0.0f, 0.0f), vec3(120.0f, 120.0f, 120.0f)));
 
 	// Init game objects
 	for (auto& gameObject : gameObjects) {

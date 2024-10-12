@@ -1,12 +1,14 @@
 #include "Chunk.h"
 
+const float Chunk::VOXEL_UNIT = 1.0f;
+
 Chunk::Chunk(const vec3 position, const vec3 dimensions) :
 	position(position), 
 	dimensions(dimensions),
-	VOXEL_UNIT(1.0f),
 	initialized(false)
 {
 	model = glm::translate(mat4(1.0f), position);
+
 	meshBuilder = new MeshBuilder();
 }
 
@@ -34,13 +36,18 @@ void Chunk::init()
 
 	//voxelsData = MeshGenerator::GenerateShape(dimensions, SHAPE_GENERATION_METHODS::SPHERE);
 
-	voxelsData = MeshGenerator::GenerateTerrain(dimensions, TERRAIN_GENERATION_METHODS::PERLIN);
+	voxelsData = MeshGenerator::GenerateTerrain(dimensions, position, TERRAIN_GENERATION_METHODS::PERLIN);
 
 	// Perform meshing on voxels data
 	greedyMeshing();
 
 	// Generate VBO
 	meshBuilder->generateVBO();
+
+	// We no longer need to voxels data since the data has been transferred to VBO
+	delete voxelsData;
+
+	voxelsData = nullptr;
 
 	initialized = true;
 }
@@ -65,9 +72,9 @@ void Chunk::destroy()
 
 	meshBuilder = nullptr;
 
-	delete voxelsData;
+	//delete voxelsData;
 	
-	voxelsData = nullptr;
+	//voxelsData = nullptr;
 }
 
 int Chunk::getActualFaceIndex(int direction, bool backface)

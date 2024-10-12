@@ -30,11 +30,11 @@ enum SHAPE_GENERATION_METHODS {
 class MeshGenerator
 {
 public:
-	static Voxel* GenerateTerrain(const vec3 dimensions, const TERRAIN_GENERATION_METHODS method);
-	static Voxel* GenerateShape(const vec3 dimensions, SHAPE_GENERATION_METHODS method);
+	static Voxel* GenerateTerrain(const vec3& dimensions, const vec3& position, const TERRAIN_GENERATION_METHODS method);
+	static Voxel* GenerateShape(const vec3& dimensions, const vec3& position, SHAPE_GENERATION_METHODS method);
 
 private:
-	static Voxel* GeneratePerlinTerrain(const vec3 dimensions);
+	static Voxel* GeneratePerlinTerrain(const vec3& dimensions, const vec3& position);
 
 	static Voxel* ShapeGenerator(const vec3 pos, const vec3, bool(*checkFunc)(const vec3, const vec3));
 

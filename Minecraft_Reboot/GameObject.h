@@ -59,9 +59,9 @@ protected:
 	shared_ptr<GameStates> gameStates;
 
 	shared_ptr<ShaderManager> shaderManager;
-
-	Transform transform;
 public:
+	Transform transform;
+
 	GameObject();
 
 	virtual ~GameObject();

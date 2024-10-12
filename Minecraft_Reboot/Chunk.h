@@ -19,7 +19,7 @@ enum MESHING_METHOD {
 class Chunk: public GameObject
 {
 private:
-	const float VOXEL_UNIT;
+	static const float VOXEL_UNIT;
 
 	const Voxel* voxelsData;
 

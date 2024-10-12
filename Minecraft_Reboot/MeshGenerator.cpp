@@ -1,23 +1,27 @@
 #include "MeshGenerator.h"
 
-Voxel* MeshGenerator::GenerateTerrain(const vec3 dimensions, const TERRAIN_GENERATION_METHODS method) {
+Voxel* MeshGenerator::GenerateTerrain(const vec3& dimensions, const vec3& position, const TERRAIN_GENERATION_METHODS method) {
 	if (method == TERRAIN_GENERATION_METHODS::PERLIN) {
-		return GeneratePerlinTerrain(dimensions);
+		return GeneratePerlinTerrain(dimensions, position);
 	}
 
 	return nullptr;
 }
 
-Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3 dimensions) {
+Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3& dimensions, const vec3& position) {
 	// Allocate memory for the voxel array
 	Voxel* voxels = new Voxel[dimensions.x * dimensions.y * dimensions.z];
 	
 	int index;
 	float height, heightOffset;
 
+	vec3 globalPos;
+
 	for (int x = 0; x < dimensions.x; x++) {
 		for (int y = 0; y < dimensions.y; y++) {
 			for (int z = 0; z < dimensions.z; z++) {
+				globalPos = vec3(x, y, z) + position * dimensions;
+				
 				index = MathUtil::flattenIndex(vec3(x, y, z), dimensions);
 
 				if (y == 0) {
@@ -25,7 +29,7 @@ Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3 dimensions) {
 					continue;
 				}
 
-				if (perlinNoise3DF(vec3(x, y, z), dimensions, height)) {
+				if (perlinNoise3DF(globalPos, dimensions, height)) {
 					if ((int)height == 1) height += 1;
 
 					heightOffset = rand() % ((int)height - 1) + 1;
@@ -52,7 +56,7 @@ Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3 dimensions) {
 	return voxels;
 }
 
-Voxel* MeshGenerator::GenerateShape(const vec3 dimensions, SHAPE_GENERATION_METHODS method) {
+Voxel* MeshGenerator::GenerateShape(const vec3& dimensions, const vec3& position, SHAPE_GENERATION_METHODS method) {
 	if (method == SHAPE_GENERATION_METHODS::SPHERE) {
 		return ShapeGenerator(vec3(0.0f), dimensions, sphereCheckFunc);
 
@@ -93,7 +97,7 @@ bool MeshGenerator::perlinNoise3DF(vec3 pos, vec3 dimensions, float& height) {
 
 	vec3 normalizedPos = pos / vec3(scale);
 
-	float noise = perlinNoise2D(normalizedPos.x, normalizedPos.z, 10.0f, 0.5f, 2.0f, 2.0f);
+	float noise = perlinNoise2D(normalizedPos.x, normalizedPos.z, 3, 0.5f, 2.0f, 2.0f);
 
 	float terrainHeightAtXZ = noise * scale;
 

@@ -7,9 +7,9 @@
 
 class Player: public GameObject
 {
-private:
-	unique_ptr<Camera> playerCamera;
 public:
+	Camera* playerCamera;
+
 	Player();
 
 	~Player();

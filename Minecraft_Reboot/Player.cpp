@@ -6,11 +6,12 @@ Player::Player()
 	transform.rotation = glm::vec3(0.0f, 0.0f, 0.0f);
 	transform.scale = glm::vec3(1.0f, 1.0f, 1.0f);
 
-	playerCamera = make_unique<Camera>();
+	playerCamera = new Camera();
 }
 
 Player::~Player()
 {
+	delete playerCamera;
 }
 
 void Player::init()
