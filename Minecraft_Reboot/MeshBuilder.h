@@ -39,9 +39,13 @@ private:
 public:
 	MeshBuilder();
 
+	bool isGeneratedBuffer();
+
 	void addQuad(const Quad, int, int, bool);
 
 	void generateVBO();
+
+	void generateFromSharedBuffers(float* verticesBuffer, const int startVerticesIndex, unsigned int* indicesBuffer, const int startIndicesIndex);
 
 	void cleanUp();
 

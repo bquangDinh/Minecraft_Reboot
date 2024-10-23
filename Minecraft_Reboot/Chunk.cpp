@@ -5,7 +5,11 @@ const float Chunk::VOXEL_UNIT = 1.0f;
 Chunk::Chunk(const vec3 position, const vec3 dimensions) :
 	position(position), 
 	dimensions(dimensions),
-	initialized(false)
+	initialized(false),
+	voxelsData(nullptr),
+	sharedVerticesBuffer(nullptr),
+	sharedIndicesBuffer(nullptr),
+	isSharedBuffersUsed(false)
 {
 	model = glm::translate(mat4(1.0f), position);
 
@@ -21,6 +25,44 @@ Chunk::~Chunk()
 	voxelsData = nullptr;
 
 	meshBuilder = nullptr;
+
+	if (sharedVerticesBuffer != nullptr) {
+		delete sharedVerticesBuffer;
+
+		sharedVerticesBuffer = nullptr;
+	}
+
+	if (sharedIndicesBuffer != nullptr) {
+		delete sharedIndicesBuffer;
+
+		sharedIndicesBuffer = nullptr;
+	}
+}
+
+void Chunk::useSharedBuffers(
+	float** sharedVerticesBuffer, 
+	const int startVerticesIndex, 
+	unsigned int** sharedIndicesBuffer, 
+	const int startIndicesIndex
+)
+{
+	assert(*sharedVerticesBuffer != nullptr);
+
+	assert(*sharedIndicesBuffer != nullptr);
+
+	assert(startVerticesIndex >= 0);
+
+	assert(startIndicesIndex >= 0);
+
+	this->sharedVerticesBuffer = sharedVerticesBuffer;
+
+	this->sharedIndicesBuffer = sharedIndicesBuffer;
+
+	this->startVerticesIndex = startVerticesIndex;
+
+	this->startIndicesIndex = startIndicesIndex;
+
+	isSharedBuffersUsed = true;
 }
 
 void Chunk::init()
@@ -38,12 +80,10 @@ void Chunk::init()
 
 	voxelsData = MeshGenerator::GenerateTerrain(dimensions, position, TERRAIN_GENERATION_METHODS::PERLIN);
 
-	cout << "About to do meshing" << endl;
+	assert(voxelsData != nullptr);
 
 	// Perform meshing on voxels data
 	greedyMeshing();
-
-	cout << "Done meshing" << endl;
 
 	// We no longer need to voxels data since the data has been transferred to VBO
 	delete voxelsData;
@@ -55,15 +95,22 @@ void Chunk::init()
 
 void Chunk::update(float deltaTime)
 {
-	//
+	if (!meshBuilder->isGeneratedBuffer()) {
+		if (isSharedBuffersUsed) {
+			meshBuilder->generateFromSharedBuffers(*sharedVerticesBuffer, startVerticesIndex, *sharedIndicesBuffer, startIndicesIndex);
+		}
+	}
 }
 
 void Chunk::render(float deltaTime)
 {
 	if (!initialized) return;
 
-	// Generate VBO
-	meshBuilder->generateVBO();
+	if (!meshBuilder->isGeneratedBuffer()) {
+		if (!isSharedBuffersUsed) {
+			meshBuilder->generateVBO();
+		}
+	}
 
 	meshBuilder->render();
 }
@@ -75,6 +122,10 @@ void Chunk::destroy()
 	delete meshBuilder;
 
 	meshBuilder = nullptr;
+
+	sharedVerticesBuffer = nullptr;
+
+	sharedIndicesBuffer = nullptr;
 
 	//delete voxelsData;
 	

@@ -39,10 +39,10 @@ int main() {
 	// GLFW handles Windows-based functionalities such as creating window, managing states of a window, etc
 	glfwInit();
 
-	// Since we would be using OpenGL 3.3
+	// Since we would be using OpenGL 4.6
 	// We need to tell GLFW so it can arrange configuration accordingly
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 4);
 
 	// Since we would be using core-profile OpenGL
 	// We need to tell GLFW about that too
@@ -90,7 +90,7 @@ int main() {
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	// Initialize Game
-	game.init(window);
+	game.init(&window);
 
 	//float deltaTime = 0.0f, lastTime = 0.0f;
 

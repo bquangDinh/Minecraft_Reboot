@@ -31,7 +31,15 @@ private:
 		
 	MeshBuilder* meshBuilder;
 
+	float** sharedVerticesBuffer;
+
+	unsigned int** sharedIndicesBuffer;
+
+	int startVerticesIndex, startIndicesIndex;
+
 	bool initialized;
+
+	bool isSharedBuffersUsed;
 
 	// Meshing algorithm
 	void stupidMeshing();
@@ -51,6 +59,8 @@ public:
 	Chunk(const vec3, const vec3);
 
 	~Chunk();
+
+	void useSharedBuffers(float** sharedBuffer, const int startVerticesIndex, unsigned int** sharedIndicesBuffer, const int startIndicesIndex);
 
 	void init() override;
 

@@ -15,7 +15,7 @@ Game::Game(int screenWidth, int screenHeight):
 Game::~Game() {
 }
 
-void Game::init(GLFWwindow* window) {
+void Game::init(GLFWwindow** window) {
 #ifdef ENABLE_DEPTH_TEST
 	glEnable(GL_DEPTH_TEST);
 #endif // ENABLE_DEPTH_TEST
@@ -115,10 +115,10 @@ void Game::render() {
 		}
 
 		// Call events and swap buffers
-		glfwSwapBuffers(window);
+		glfwSwapBuffers(*window);
 		glfwPollEvents();
 
-		if (glfwWindowShouldClose(window)) {
+		if (glfwWindowShouldClose(*window)) {
 			isRunning = false;
 		}
 	}
@@ -143,6 +143,8 @@ void Game::destroy() {
 	shaderManager = nullptr;
 
 	textureManager = nullptr;
+
+	window = nullptr;
 
 	cout << "Destroy Game succeed!" << endl;
 }

@@ -5,6 +5,10 @@ MeshBuilder::MeshBuilder(): VAO(0) {
 	shaderProgram = ShaderManager::getInstance()->getShaderProgram(MAIN_SHADER_PROGRAM);
 }
 
+bool MeshBuilder::isGeneratedBuffer() {
+	return vboGenerated;
+}
+
 void MeshBuilder::addQuad(const Quad q, int width, int height, bool backface) {
 	// Obtain texture index for this quad
 	int textureIndex = getTextureIndex(q.getType(), q.getFace());
@@ -116,12 +120,6 @@ int MeshBuilder::getTextureIndex(int type, int face) {
 }
 
 void MeshBuilder::generateVBO() {
-	if (vboGenerated) {
-		//cout << "VBO already gsenerated!" << endl;
-
-		return;
-	}
-
 	// Generate VAO
 	glGenVertexArrays(1, &VAO);
 	
@@ -162,6 +160,33 @@ void MeshBuilder::generateVBO() {
 	glBindVertexArray(0);
 
 	vboGenerated = true;
+
+#ifdef ENABLE_LOGGING
+	printReports();
+#endif // ENABLE_LOGGING
+}
+
+void MeshBuilder::generateFromSharedBuffers(
+	float* verticesBuffer, 
+	const int startVerticesIndex, 
+	unsigned int* indicesBuffer, 
+	const int startIndicesIndex
+) {
+	cout << "Vertices count " << vertices.size() << " Indices count " << indices.size() << endl;
+
+	cout << "Start vertices index " << startVerticesIndex << " Start indices index " << startIndicesIndex << endl;
+
+	for (int i = 0; i < vertices.size(); ++i) {
+		verticesBuffer[startVerticesIndex + i] = vertices[i];
+	}
+
+	for (int i = 0; i < indices.size(); ++i) {
+		indicesBuffer[startIndicesIndex + i] = indices[i];
+	}
+
+	vboGenerated = true;
+
+	cout << "VBO generated from shared buffers! " << startVerticesIndex << " " << startIndicesIndex << endl;
 
 #ifdef ENABLE_LOGGING
 	printReports();

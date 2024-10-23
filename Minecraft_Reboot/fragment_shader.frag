@@ -7,5 +7,9 @@ in vec2 texCoord;
 in float texIndex;
 
 void main() {
+	if (texIndex == -1.0){
+		discard;
+	}
+
 	FragColor = texture(ourTexture, vec3(texCoord, texIndex));
 } 

@@ -1,10 +1,13 @@
 #pragma once
 
+#define _USE_MATH_DEFINES
+
 #include <memory>
 #include <unordered_map>
 #include <cmath> 
 #include <mutex>
 #include <thread>
+#include <atomic>
 
 #include "GameObject.h"
 #include "Chunk.h"
@@ -31,7 +34,23 @@ private:
 
 	std::mutex chunksMutex;
 
+	std::atomic<bool> dataUpdated{ false };
+
+	long int vertexCount, indicesCount;
+
+	int numberOfChunks;
+
+	GLuint verticesBufferID, indicesBufferID, VAO;
+
+	float* verticesBuffer;
+
+	unsigned int* indicesBuffer;
+
 	tuple<int, int> getChunkCoordsFromPlayerPos(const vec3& pos);
+
+	void initShareBuffers();
+
+	int numberOfChunksInRenderDistance();
 
 	bool isChunkInRenderDistance(const tuple<int, int>& chunkCoord, const tuple<int, int>& playerCoord);
 

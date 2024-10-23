@@ -27,7 +27,7 @@ private:
 
 	shared_ptr<TextureManager> textureManager;
 
-	GLFWwindow* window;
+	GLFWwindow** window;
 
 	std::atomic<bool> isRunning{ true };
 
@@ -41,7 +41,7 @@ public:
 
 	~Game();
 
-	void init(GLFWwindow* window);
+	void init(GLFWwindow** window);
 
 	void destroy();
 
