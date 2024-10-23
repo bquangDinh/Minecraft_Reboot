@@ -14,6 +14,8 @@ void ChunkManager::init()
 
 void ChunkManager::update(float deltaTime)
 {
+	std::lock_guard<std::mutex> lock(chunksMutex);
+
 	tuple<int, int> playerCoord = getChunkCoordsFromPlayerPos(player->playerCamera->transform.position);
 
 	for (auto it = chunks.begin(); it != chunks.end();)
@@ -39,9 +41,14 @@ void ChunkManager::update(float deltaTime)
 		{
 			if (chunks.find(make_tuple(x, z)) == chunks.end())
 			{
+				cout << "About to load chunk: " << x << ", " << z << endl;
+
 				loadChunk(make_tuple(x, z));
 
 				cout << "Loaded chunk: " << x << ", " << z << endl;
+			}
+			else {
+				updateChunk(make_tuple(x, z), deltaTime);
 			}
 		}
 	}
@@ -49,6 +56,8 @@ void ChunkManager::update(float deltaTime)
 
 void ChunkManager::render(float deltaTime)
 {
+	std::lock_guard<std::mutex> lock(chunksMutex);
+
 	for (auto& chunk : chunks)
 	{
 		chunk.second->render(deltaTime);
@@ -87,4 +96,9 @@ void ChunkManager::loadChunk(const tuple<int, int>& chunkCoord)
 void ChunkManager::unloadChunk(const tuple<int, int>& chunkCoord)
 {
 	chunks[chunkCoord]->destroy();
+}
+
+void ChunkManager::updateChunk(const tuple<int, int>& chunkCoord, float deltaTime)
+{
+	chunks[chunkCoord]->update(deltaTime);
 }

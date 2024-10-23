@@ -90,25 +90,27 @@ int main() {
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	// Initialize Game
-	game.init();
+	game.init(window);
 
-	float deltaTime = 0.0f, lastTime = 0.0f;
+	//float deltaTime = 0.0f, lastTime = 0.0f;
 
-	while (!glfwWindowShouldClose(window)) {
-		float currentTime = (float)glfwGetTime();
+	//while (!glfwWindowShouldClose(window)) {
+	//	float currentTime = (float)glfwGetTime();
 
-		deltaTime = currentTime - lastTime;
+	//	deltaTime = currentTime - lastTime;
 
-		lastTime = currentTime;
+	//	lastTime = currentTime;
 
-		game.update(deltaTime);
+	//	game.update(deltaTime);
 
-		game.render(deltaTime);
+	//	game.render(deltaTime);
 
-		// Call events and swap buffers
-		glfwSwapBuffers(window);
-		glfwPollEvents();
-	}
+	//	// Call events and swap buffers
+	//	glfwSwapBuffers(window);
+	//	glfwPollEvents();
+	//}
+
+	game.run();
 
 	game.destroy();
 

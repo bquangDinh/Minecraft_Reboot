@@ -38,11 +38,12 @@ void Chunk::init()
 
 	voxelsData = MeshGenerator::GenerateTerrain(dimensions, position, TERRAIN_GENERATION_METHODS::PERLIN);
 
+	cout << "About to do meshing" << endl;
+
 	// Perform meshing on voxels data
 	greedyMeshing();
 
-	// Generate VBO
-	meshBuilder->generateVBO();
+	cout << "Done meshing" << endl;
 
 	// We no longer need to voxels data since the data has been transferred to VBO
 	delete voxelsData;
@@ -60,6 +61,9 @@ void Chunk::update(float deltaTime)
 void Chunk::render(float deltaTime)
 {
 	if (!initialized) return;
+
+	// Generate VBO
+	meshBuilder->generateVBO();
 
 	meshBuilder->render();
 }
@@ -106,6 +110,8 @@ bool Chunk::isFaceBlocking(vec3 pos, int direction, bool backface) {
 	}
 
 	int consideredIndex = MathUtil::flattenIndex(pos, dimensions);
+
+	assert(consideredIndex >= 0 && consideredIndex < dimensions.x * dimensions.y * dimensions.z);
 
 	// If the considered voxel is transparent, then the face is visible
 	if (voxelsData[consideredIndex].transparent) {
@@ -293,7 +299,11 @@ void Chunk::greedyMeshing() {
 		throw std::runtime_error("Voxels data is null. You may forgot to call MeshGenerator before this call");
 	}
 
-	int direction, workAxis1, workAxis2, face;
+	if (position.x == -3 && position.z == 5) {
+		cout << "Greedy meshing for chunk at position: " << position.x << ", " << position.z << endl;
+	}
+
+	int direction, workAxis1, workAxis2, face, index;
 	vec3 startPos, quadSize, m, n, offsetPos, currentPos;
 	vec4 p1, p2, p3, p4;
 	bool backface;
@@ -320,10 +330,14 @@ void Chunk::greedyMeshing() {
 			// If a voxel is merged, then it will be marked as true
 			bool** merged = (bool**)malloc(dimensions[workAxis1] * sizeof(bool*));
 
+			assert(merged != nullptr);
+
 			// Populate the merged array
 			for (int i = 0; i < dimensions[workAxis1]; ++i) {
 				merged[i] = (bool*)malloc(dimensions[workAxis2] * sizeof(bool));
 				
+				assert(merged[i] != nullptr);
+
 				// Initialize the array with false elements
 				memset(merged[i], false, (int)dimensions[workAxis2] * sizeof(bool));
 			}
@@ -333,9 +347,15 @@ void Chunk::greedyMeshing() {
 					quadSize = vec3();
 					
 					// Get the voxel at the current position
-					Voxel voxel = voxelsData[MathUtil::flattenIndex(startPos, dimensions)];
+					index = MathUtil::flattenIndex(startPos, dimensions);
+
+					assert(index >= 0 && index < dimensions.x * dimensions.y * dimensions.z);
+
+					Voxel voxel = voxelsData[index];
 					
 					// If this voxel is already merged to some other voxel, skip it
+					assert((int)startPos[workAxis1] >= 0 && (int)startPos[workAxis1] < dimensions[workAxis1] && (int)startPos[workAxis2] >= 0 && (int)startPos[workAxis2] < dimensions[workAxis2]);
+
 					if (merged[(int)startPos[workAxis1]][(int)startPos[workAxis2]]) continue;
 
 					// If the voxel is not visible or it is blocked by another voxel, skip it

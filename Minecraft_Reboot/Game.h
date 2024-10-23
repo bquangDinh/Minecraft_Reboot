@@ -3,6 +3,8 @@
 #include <GLFW/glfw3.h>
 #include <vector>
 #include <memory>
+#include <thread>
+#include <atomic>
 
 #include "GameStates.h"
 #include "ShaderManager.h"
@@ -24,18 +26,26 @@ private:
 	shared_ptr<ShaderManager> shaderManager;
 
 	shared_ptr<TextureManager> textureManager;
+
+	GLFWwindow* window;
+
+	std::atomic<bool> isRunning{ true };
+
+	void updatePlayer();
+
+	void update();
+
+	void render();
 public:
 	Game(int, int);
 
 	~Game();
 
-	void init();
-
-	void update(float);
-
-	void render(float);
+	void init(GLFWwindow* window);
 
 	void destroy();
+
+	void run();
 
 	void processKeyInput(int, int);
 

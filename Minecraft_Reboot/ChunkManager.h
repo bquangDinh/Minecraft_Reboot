@@ -3,6 +3,8 @@
 #include <memory>
 #include <unordered_map>
 #include <cmath> 
+#include <mutex>
+#include <thread>
 
 #include "GameObject.h"
 #include "Chunk.h"
@@ -27,6 +29,8 @@ private:
 
 	unordered_map<tuple<int, int>, unique_ptr<Chunk>, ChunkHash> chunks;
 
+	std::mutex chunksMutex;
+
 	tuple<int, int> getChunkCoordsFromPlayerPos(const vec3& pos);
 
 	bool isChunkInRenderDistance(const tuple<int, int>& chunkCoord, const tuple<int, int>& playerCoord);
@@ -34,6 +38,8 @@ private:
 	void loadChunk(const tuple<int, int>& chunkCoord);
 
 	void unloadChunk(const tuple<int, int>& chunkCoord);
+
+	void updateChunk(const tuple<int, int>& chunkCoord, float deltaTime);
 public:
 	ChunkManager(shared_ptr<Player>);
 

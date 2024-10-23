@@ -15,7 +15,7 @@ Game::Game(int screenWidth, int screenHeight):
 Game::~Game() {
 }
 
-void Game::init() {
+void Game::init(GLFWwindow* window) {
 #ifdef ENABLE_DEPTH_TEST
 	glEnable(GL_DEPTH_TEST);
 #endif // ENABLE_DEPTH_TEST
@@ -27,6 +27,8 @@ void Game::init() {
 #ifdef WIREFRAME_MODE
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 #endif // WIREFRAME_MODE
+
+	this->window = window;
 
 	// Init Shaders
 	shaderManager->loadShaderProgram(MAIN_SHADER_PROGRAM, "vertex_shader.vert", "fragment_shader.frag");
@@ -54,21 +56,71 @@ void Game::init() {
 	cout << "Init Game succeed!" << endl;
 }
 
-void Game::update(float deltaTime) {
-	for (auto& gameObject : gameObjects) {
-		gameObject->update(deltaTime);
+void Game::run() {
+	std::thread updatePlayerThread(&Game::updatePlayer, this);
+
+	std::thread updateThread(&Game::update, this);
+
+	// OpenGL rendering will be on main thread
+	render();
+
+	// Done threading
+	updateThread.join();
+
+	updatePlayerThread.join();
+}
+
+void Game::updatePlayer() {
+	while (isRunning) {
+		// Get the first game object which is the player
+		auto player = gameObjects[0];
+
+		player->update(0.016f);
+
+		// Sleep for 16ms
+		std::this_thread::sleep_for(std::chrono::milliseconds(16));
 	}
 }
 
-void Game::render(float deltaTime) {
-	// Render background color
-	glClearColor(0.059f, 0.204f, 0.376f, 1.0f);
+void Game::update() {
+	while (isRunning) {
+		// Update everything else except the first game object which is the player
+		for (int i = 1; i < gameObjects.size(); i++) {
+			gameObjects[i]->update(0.016f);
+		}
 
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		// Sleep for 16ms
+		std::this_thread::sleep_for(std::chrono::milliseconds(16));
+	}
+}
 
-	// Render game objects
-	for (auto& gameObject : gameObjects) {
-		gameObject->render(deltaTime);
+void Game::render() {
+	float deltaTime = 0.0f, lastTime = 0.0f;
+
+	while (isRunning) {
+		float currentTime = (float)glfwGetTime();
+
+		deltaTime = currentTime - lastTime;
+
+		lastTime = currentTime;
+
+		// Render background color
+		glClearColor(0.059f, 0.204f, 0.376f, 1.0f);
+
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		// Render game objects
+		for (auto& gameObject : gameObjects) {
+			gameObject->render(deltaTime);
+		}
+
+		// Call events and swap buffers
+		glfwSwapBuffers(window);
+		glfwPollEvents();
+
+		if (glfwWindowShouldClose(window)) {
+			isRunning = false;
+		}
 	}
 }
 

@@ -117,7 +117,7 @@ int MeshBuilder::getTextureIndex(int type, int face) {
 
 void MeshBuilder::generateVBO() {
 	if (vboGenerated) {
-		cout << "VBO already generated!" << endl;
+		//cout << "VBO already gsenerated!" << endl;
 
 		return;
 	}
