@@ -14,25 +14,16 @@ void ChunkManager::init()
 
 void ChunkManager::update(float deltaTime)
 {
-	std::lock_guard<std::mutex> lock(chunksMutex);
-
 	tuple<int, int> playerCoord = getChunkCoordsFromPlayerPos(player->playerCamera->transform.position);
 
 	for (auto it = chunks.begin(); it != chunks.end();)
 	{
 		if (!isChunkInRenderDistance(it->first, playerCoord))
 		{
-			unloadChunk(it->first);
-
-			cout << "Unloaded chunk: " << get<0>(it->first) << ", " << get<1>(it->first) << endl;
-
-			// Erase the element and get the next ite
-			it = chunks.erase(it);
+			queueChunkForDelete(it->first);
 		}
-		else
-		{
-			it++;
-		}
+
+		++it;
 	}
 
 	for (int x = get<0>(playerCoord) - CHUNK_RENDER_DISTANCE; x <= get<0>(playerCoord) + CHUNK_RENDER_DISTANCE; x++)
@@ -48,7 +39,7 @@ void ChunkManager::update(float deltaTime)
 				cout << "Loaded chunk: " << x << ", " << z << endl;
 			}
 			else {
-				updateChunk(make_tuple(x, z), deltaTime);
+				//updateChunk(make_tuple(x, z), deltaTime);
 			}
 		}
 	}
@@ -56,12 +47,15 @@ void ChunkManager::update(float deltaTime)
 
 void ChunkManager::render(float deltaTime)
 {
-	std::lock_guard<std::mutex> lock(chunksMutex);
-
 	for (auto& chunk : chunks)
 	{
-		chunk.second->render(deltaTime);
+		if (!chunk.second->pendingDeletion)
+		{
+			chunk.second->render(deltaTime);
+		}
 	}
+
+	deletePendingChunks();
 }
 
 void ChunkManager::destroy()
@@ -72,6 +66,33 @@ void ChunkManager::destroy()
 	}
 
 	chunks.clear();
+
+	// Clear the chunks map
+	while (!chunksToDelete.empty())
+	{
+		chunksToDelete.front()->destroy();
+
+		chunksToDelete.pop();
+	}
+}
+
+void ChunkManager::deletePendingChunks() {
+	int deleteLimit = 5; // Limit the number of chunks deleted per frame
+
+	while (!chunksToDelete.empty() && deleteLimit > 0)
+	{
+		auto chunk = chunksToDelete.front();
+
+		cout << "Deleting chunk" << endl;
+
+		chunk->destroy();
+
+		chunks.erase(*chunk->chunkCoord);
+
+		chunksToDelete.pop();
+
+		deleteLimit--;
+	}
 }
 
 tuple<int, int> ChunkManager::getChunkCoordsFromPlayerPos(const vec3& pos)
@@ -84,18 +105,36 @@ bool ChunkManager::isChunkInRenderDistance(const tuple<int, int>& chunkCoord, co
 	return abs(get<0>(chunkCoord) - get<0>(playerCoord)) <= CHUNK_RENDER_DISTANCE && abs(get<1>(chunkCoord) - get<1>(playerCoord)) <= CHUNK_RENDER_DISTANCE;
 }
 
+void ChunkManager::queueChunkForDelete(const tuple<int, int>& chunkCoord)
+{
+	// Mark this chunk is pending for deletion
+	if (chunks.find(chunkCoord) == chunks.end())
+	{
+		// already deleted
+		return;
+	}
+
+	cout << "Queueing chunk for deletion: " << get<0>(chunkCoord) << ", " << get<1>(chunkCoord) << endl;
+
+	chunks[chunkCoord]->pendingDeletion = true;
+
+	chunksToDelete.push(chunks[chunkCoord]);
+}
+
 void ChunkManager::loadChunk(const tuple<int, int>& chunkCoord)
 {
-	unique_ptr<Chunk> chunk = make_unique<Chunk>(vec3(get<0>(chunkCoord) * CHUNK_SIZE, 0.0f, get<1>(chunkCoord) * CHUNK_SIZE), vec3(CHUNK_SIZE, CHUNK_SIZE, CHUNK_SIZE));
+	shared_ptr<Chunk> chunk = make_shared<Chunk>(vec3(get<0>(chunkCoord) * CHUNK_SIZE, 0.0f, get<1>(chunkCoord) * CHUNK_SIZE), vec3(CHUNK_SIZE, CHUNK_SIZE, CHUNK_SIZE));
+
+	chunk->chunkCoord = new tuple<int, int>(chunkCoord);
 
 	chunk->init();
 
-	chunks[chunkCoord] = move(chunk);
+	chunks[chunkCoord] = chunk;
 }
 
 void ChunkManager::unloadChunk(const tuple<int, int>& chunkCoord)
 {
-	chunks[chunkCoord]->destroy();
+	//
 }
 
 void ChunkManager::updateChunk(const tuple<int, int>& chunkCoord, float deltaTime)

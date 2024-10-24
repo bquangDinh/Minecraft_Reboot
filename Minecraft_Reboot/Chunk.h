@@ -48,6 +48,10 @@ private:
 	// Check if the two voxels can be merged at the current position and the comparing position
 	bool shouldMergeTwoVoxel(vec3 currentPos, vec3 comparingPos, int direction, bool backface);
 public:
+	tuple<int, int>* chunkCoord;
+
+	bool pendingDeletion; // Flag to mark if the chunk should be deleted
+
 	Chunk(const vec3, const vec3);
 
 	~Chunk();

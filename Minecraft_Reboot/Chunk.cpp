@@ -5,7 +5,8 @@ const float Chunk::VOXEL_UNIT = 1.0f;
 Chunk::Chunk(const vec3 position, const vec3 dimensions) :
 	position(position), 
 	dimensions(dimensions),
-	initialized(false)
+	initialized(false),
+	pendingDeletion(false)
 {
 	model = glm::translate(mat4(1.0f), position);
 
@@ -21,6 +22,8 @@ Chunk::~Chunk()
 	voxelsData = nullptr;
 
 	meshBuilder = nullptr;
+
+	cout << "CHUNK destroyed" << endl;
 }
 
 void Chunk::init()

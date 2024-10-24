@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <unordered_map>
+#include <queue>
 #include <cmath> 
 #include <mutex>
 #include <thread>
@@ -27,7 +28,9 @@ private:
 
 	shared_ptr<Player> player;
 
-	unordered_map<tuple<int, int>, unique_ptr<Chunk>, ChunkHash> chunks;
+	unordered_map<tuple<int, int>, shared_ptr<Chunk>, ChunkHash> chunks;
+
+	std::queue<shared_ptr<Chunk>> chunksToDelete; // Queue for chunks to be deleted
 
 	std::mutex chunksMutex;
 
@@ -35,11 +38,15 @@ private:
 
 	bool isChunkInRenderDistance(const tuple<int, int>& chunkCoord, const tuple<int, int>& playerCoord);
 
+	void queueChunkForDelete(const tuple<int, int>& chunkCoord);
+
 	void loadChunk(const tuple<int, int>& chunkCoord);
 
 	void unloadChunk(const tuple<int, int>& chunkCoord);
 
 	void updateChunk(const tuple<int, int>& chunkCoord, float deltaTime);
+
+	void deletePendingChunks();
 public:
 	ChunkManager(shared_ptr<Player>);
 
