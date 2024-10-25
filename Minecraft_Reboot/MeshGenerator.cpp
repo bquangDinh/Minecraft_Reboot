@@ -15,12 +15,14 @@ Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3& dimensions, const vec3& 
 	int index;
 	float height, heightOffset;
 
-	vec3 globalPos;
+	vec4 globalPos;
+
+	mat4 model = glm::translate(mat4(1.0f), position);
 
 	for (int x = 0; x < dimensions.x; x++) {
 		for (int y = 0; y < dimensions.y; y++) {
 			for (int z = 0; z < dimensions.z; z++) {
-				globalPos = vec3(x, y, z) + position * dimensions;
+				globalPos = model * vec4(vec3(x, y, z), 1.0f);
 				
 				index = MathUtil::flattenIndex(vec3(x, y, z), dimensions);
 
@@ -29,7 +31,7 @@ Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3& dimensions, const vec3& 
 					continue;
 				}
 
-				if (perlinNoise3DF(globalPos, dimensions, height)) {
+				if (perlinNoise3DF(vec3(globalPos), dimensions, height)) {
 					if ((int)height == 1) height += 1;
 
 					heightOffset = rand() % ((int)height - 1) + 1;
