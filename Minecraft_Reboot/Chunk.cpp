@@ -6,7 +6,9 @@ Chunk::Chunk(const vec3 position, const vec3 dimensions) :
 	position(position), 
 	dimensions(dimensions),
 	initialized(false),
-	pendingDeletion(false)
+	pendingDeletion(false),
+	voxelsData(nullptr),
+	chunkCoord(nullptr)
 {
 	model = glm::translate(mat4(1.0f), position);
 
@@ -15,15 +17,13 @@ Chunk::Chunk(const vec3 position, const vec3 dimensions) :
 
 Chunk::~Chunk()
 {
-	delete voxelsData;
+	//delete voxelsData;
 
-	delete meshBuilder;
+	//delete meshBuilder;
 
-	voxelsData = nullptr;
+	//voxelsData = nullptr;
 
-	meshBuilder = nullptr;
-
-	cout << "CHUNK destroyed" << endl;
+	//meshBuilder = nullptr;
 }
 
 void Chunk::init()
@@ -41,14 +41,14 @@ void Chunk::init()
 
 	voxelsData = MeshGenerator::GenerateTerrain(dimensions, position, TERRAIN_GENERATION_METHODS::PERLIN);
 
-	cout << "About to do meshing" << endl;
+	//voxelsData->printMemoryUsage();
 
 	// Perform meshing on voxels data
 	greedyMeshing();
 
-	cout << "Done meshing" << endl;
-
 	// We no longer need to voxels data since the data has been transferred to VBO
+	voxelsData->clear();
+
 	delete voxelsData;
 
 	voxelsData = nullptr;
@@ -78,10 +78,6 @@ void Chunk::destroy()
 	delete meshBuilder;
 
 	meshBuilder = nullptr;
-
-	//delete voxelsData;
-	
-	//voxelsData = nullptr;
 }
 
 int Chunk::getActualFaceIndex(int direction, bool backface)
@@ -112,12 +108,15 @@ bool Chunk::isFaceBlocking(vec3 pos, int direction, bool backface) {
 		return false;
 	}
 
-	int consideredIndex = MathUtil::flattenIndex(pos, dimensions);
-
-	assert(consideredIndex >= 0 && consideredIndex < dimensions.x * dimensions.y * dimensions.z);
-
 	// If the considered voxel is transparent, then the face is visible
-	if (voxelsData[consideredIndex].transparent) {
+	Voxel* voxel = voxelsData->find(pos);
+
+	if (voxel == nullptr) {
+		// Nothing here
+		return false;
+	}
+
+	if (voxel->transparent) {
 		return false;
 	}
 
@@ -125,13 +124,17 @@ bool Chunk::isFaceBlocking(vec3 pos, int direction, bool backface) {
 }
 
 bool Chunk::shouldMergeTwoVoxel(vec3 currentPos, vec3 comparingPos, int direction, bool backface) {
-	Voxel v1 = voxelsData[MathUtil::flattenIndex(currentPos, dimensions)];
+	Voxel* v1 = voxelsData->find(currentPos);
 
-	Voxel v2 = voxelsData[MathUtil::flattenIndex(comparingPos, dimensions)];
+	Voxel* v2 = voxelsData->find(comparingPos);
+
+	if (v1 == nullptr || v2 == nullptr) {
+		return false;
+	}
 
 	// Only merge two voxels if they are the same type and they are solid
 	// And the comparing voxel is not blocked by another voxel
-	return v1 == v2 && v2.isSolid() && !isFaceBlocking(comparingPos, direction, backface);
+	return v1 == v2 && v2->isSolid() && !isFaceBlocking(comparingPos, direction, backface);
 }
 
 void Chunk::stupidMeshing()
@@ -164,10 +167,14 @@ void Chunk::stupidMeshing()
 			for (startPos[workAxis1] = 0; startPos[workAxis1] < dimensions[workAxis1]; ++startPos[workAxis1]) {
 				for (startPos[workAxis2] = 0; startPos[workAxis2] < dimensions[workAxis2]; ++startPos[workAxis2]) {
 					// Get the voxel at the current position
-					Voxel voxel = voxelsData[MathUtil::flattenIndex(startPos, dimensions)];
+					Voxel* voxel = voxelsData->find(startPos);
+
+					if (voxel == nullptr) {
+						continue;
+					}
 
 					// If the voxel is not visible, skip it
-					if (voxel.transparent) continue;
+					if (voxel->transparent) continue;
 
 					// Get the size of the quad
 					quadSize[workAxis1] = VOXEL_UNIT;
@@ -202,9 +209,9 @@ void Chunk::stupidMeshing()
 						vec3(p2), 
 						vec3(p3), 
 						vec3(p4), 
-						voxel.type,
+						voxel->type,
 						actualFace,
-						voxel.transparent
+						voxel->transparent
 					);
 
 					if (direction == 0) {
@@ -247,10 +254,14 @@ void Chunk::cullingMeshing() {
 			for (startPos[workAxis1] = 0; startPos[workAxis1] < dimensions[workAxis1]; ++startPos[workAxis1]) {
 				for (startPos[workAxis2] = 0; startPos[workAxis2] < dimensions[workAxis2]; ++startPos[workAxis2]) {
 					// Get the voxel at the current position
-					Voxel voxel = voxelsData[MathUtil::flattenIndex(startPos, dimensions)];
+					Voxel* voxel = voxelsData->find(startPos);
+
+					if (voxel == nullptr) {
+						continue;
+					}
 
 					// If the voxel is not visible, skip it
-					if (voxel.transparent || isFaceBlocking(startPos, direction, backface)) continue;
+					if (voxel->transparent || isFaceBlocking(startPos, direction, backface)) continue;
 
 					// Get the size of the quad
 					quadSize[workAxis1] = VOXEL_UNIT;
@@ -285,9 +296,9 @@ void Chunk::cullingMeshing() {
 						vec3(p2),
 						vec3(p3),
 						vec3(p4),
-						voxel.type,
+						voxel->type,
 						actualFace,
-						voxel.transparent
+						voxel->transparent
 					);
 
 					meshBuilder->addQuad(q, quadSize[workAxis1], quadSize[workAxis2], backface);
@@ -354,15 +365,19 @@ void Chunk::greedyMeshing() {
 
 					assert(index >= 0 && index < dimensions.x * dimensions.y * dimensions.z);
 
-					Voxel voxel = voxelsData[index];
+					Voxel* voxel = voxelsData->find(startPos);
 					
+					if (voxel == nullptr) {
+						continue;
+					}
+
 					// If this voxel is already merged to some other voxel, skip it
 					assert((int)startPos[workAxis1] >= 0 && (int)startPos[workAxis1] < dimensions[workAxis1] && (int)startPos[workAxis2] >= 0 && (int)startPos[workAxis2] < dimensions[workAxis2]);
 
 					if (merged[(int)startPos[workAxis1]][(int)startPos[workAxis2]]) continue;
 
 					// If the voxel is not visible or it is blocked by another voxel, skip it
-					if (voxel.transparent || isFaceBlocking(startPos, direction, backface)) continue;
+					if (voxel->transparent || isFaceBlocking(startPos, direction, backface)) continue;
 
 					// Figure out the size of the quad
 					for (
@@ -430,9 +445,9 @@ void Chunk::greedyMeshing() {
 						vec3(p2),
 						vec3(p3),
 						vec3(p4),
-						voxel.type,
+						voxel->type,
 						actualFace,
-						voxel.transparent
+						voxel->transparent
 					);
 
 					if (direction == 0) {

@@ -4,7 +4,7 @@ Camera::Camera():
 	cameraFront(0.0f, 0.0f, -1.0f),
 	cameraUp(0.0f, 1.0f, 0.0f),
 	projectionMatrix(mat4(1.0f)),
-	CAMERA_SPEED(25.0f),
+	CAMERA_SPEED(50.0f),
 	CAMERA_SENSITIVITY(0.25f),
 	PITCH_LIMIT(89.0f),
 	FOV(45.0f),
@@ -46,7 +46,7 @@ mat4 Camera::getViewMatrix() {
 
 mat4 Camera::getProjectionMatrix() {
 	if (firstGetProjectionMatrix) {
-		projectionMatrix = perspective(radians(FOV), (float)gameStates->getScreenWidth() / (float)gameStates->getScreenHeight(), 0.1f, 100.0f);
+		projectionMatrix = perspective(radians(FOV), (float)gameStates->getScreenWidth() / (float)gameStates->getScreenHeight(), 0.1f, 1000.0f);
 
 		firstGetProjectionMatrix = false;
 	}

@@ -135,7 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\OPENGL\OPENGL\glad.c" />
+    <ClCompile Include="..\..\..\..\Downloads\glad\src\glad.c" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Chunk.cpp" />
     <ClCompile Include="ChunkManager.cpp" />
@@ -147,6 +147,7 @@
     <ClCompile Include="MathUtil.cpp" />
     <ClCompile Include="MeshBuilder.cpp" />
     <ClCompile Include="MeshGenerator.cpp" />
+    <ClCompile Include="Octree.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Quad.cpp" />
     <ClCompile Include="Shader.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="MathUtil.h" />
     <ClInclude Include="MeshBuilder.h" />
     <ClInclude Include="MeshGenerator.h" />
+    <ClInclude Include="Octree.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Quad.h" />
     <ClInclude Include="resource.h" />

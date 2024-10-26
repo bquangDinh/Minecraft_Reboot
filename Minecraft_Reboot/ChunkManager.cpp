@@ -32,11 +32,9 @@ void ChunkManager::update(float deltaTime)
 		{
 			if (chunks.find(make_tuple(x, z)) == chunks.end())
 			{
-				cout << "About to load chunk: " << x << ", " << z << endl;
-
 				loadChunk(make_tuple(x, z));
 
-				cout << "Loaded chunk: " << x << ", " << z << endl;
+				//cout << "Loaded chunk: " << x << ", " << z << endl;
 			}
 			else {
 				//updateChunk(make_tuple(x, z), deltaTime);
@@ -83,8 +81,6 @@ void ChunkManager::deletePendingChunks() {
 	{
 		auto chunk = chunksToDelete.front();
 
-		cout << "Deleting chunk" << endl;
-
 		chunk->destroy();
 
 		chunks.erase(*chunk->chunkCoord);
@@ -93,6 +89,8 @@ void ChunkManager::deletePendingChunks() {
 
 		deleteLimit--;
 	}
+
+	//cout << "Pending chunks left: " << chunksToDelete.size() << endl;
 }
 
 tuple<int, int> ChunkManager::getChunkCoordsFromPlayerPos(const vec3& pos)

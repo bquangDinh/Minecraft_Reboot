@@ -7,6 +7,7 @@
 #include "Quad.h"
 #include "MeshGenerator.h"
 #include "MeshBuilder.h"
+#include "Octree.h"
 
 using namespace glm;
 
@@ -21,7 +22,7 @@ class Chunk: public GameObject
 private:
 	static const float VOXEL_UNIT;
 
-	const Voxel* voxelsData;
+	Octree* voxelsData;
 
 	vec3 dimensions;
 

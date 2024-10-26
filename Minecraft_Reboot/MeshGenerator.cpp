@@ -1,6 +1,6 @@
 #include "MeshGenerator.h"
 
-Voxel* MeshGenerator::GenerateTerrain(const vec3& dimensions, const vec3& position, const TERRAIN_GENERATION_METHODS method) {
+Octree* MeshGenerator::GenerateTerrain(const vec3& dimensions, const vec3& position, const TERRAIN_GENERATION_METHODS method) {
 	if (method == TERRAIN_GENERATION_METHODS::PERLIN) {
 		return GeneratePerlinTerrain(dimensions, position);
 	}
@@ -8,11 +8,20 @@ Voxel* MeshGenerator::GenerateTerrain(const vec3& dimensions, const vec3& positi
 	return nullptr;
 }
 
-Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3& dimensions, const vec3& position) {
+Octree* MeshGenerator::GeneratePerlinTerrain(const vec3& dimensions, const vec3& position) {
 	// Allocate memory for the voxel array
-	Voxel* voxels = new Voxel[dimensions.x * dimensions.y * dimensions.z];
+	//Voxel* voxels = new Voxel[dimensions.x * dimensions.y * dimensions.z];
 	
-	int index;
+	// Check if dimenions is power of 2
+	if (!MathUtil::isPowerOf2(dimensions.x) || !MathUtil::isPowerOf2(dimensions.y) || !MathUtil::isPowerOf2(dimensions.z)) {
+		std::cout << "Dimensions must be power of 2" << std::endl;
+		return nullptr;
+	}
+
+	// Create an Octree
+	// Assume all dimensions equal, I'll change later
+	Octree* octree = new Octree(BoundingBox(vec3(dimensions.x / 2.0f, dimensions.y / 2.0f, dimensions.z / 2.0f), dimensions.x));
+
 	float height, heightOffset;
 
 	vec4 globalPos;
@@ -24,10 +33,9 @@ Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3& dimensions, const vec3& 
 			for (int z = 0; z < dimensions.z; z++) {
 				globalPos = model * vec4(vec3(x, y, z), 1.0f);
 				
-				index = MathUtil::flattenIndex(vec3(x, y, z), dimensions);
-
 				if (y == 0) {
-					voxels[index] = Voxel{ VOXEL_TYPE::WATER, false };
+					octree->insert(vec3(x, y, z), std::make_unique<Voxel>(VOXEL_TYPE::WATER, false, vec3(x, y, z)));
+
 					continue;
 				}
 
@@ -37,25 +45,26 @@ Voxel* MeshGenerator::GeneratePerlinTerrain(const vec3& dimensions, const vec3& 
 					heightOffset = rand() % ((int)height - 1) + 1;
 					
 					if (y == 1) {
-						voxels[index] = Voxel{ VOXEL_TYPE::SAND, false };
+						octree->insert(vec3(x, y, z), std::make_unique<Voxel>(VOXEL_TYPE::SAND, false, vec3(x, y, z)));
 					} else if ((y < height - heightOffset)) {
-						voxels[index] = Voxel{ VOXEL_TYPE::ROCK, false };
+						octree->insert(vec3(x, y, z), std::make_unique<Voxel>(VOXEL_TYPE::ROCK, false, vec3(x, y, z)));
 					}
 					else if (y >= height - 1) {
-						voxels[index] = Voxel{ VOXEL_TYPE::GRASS, false };
+						octree->insert(vec3(x, y, z), std::make_unique<Voxel>(VOXEL_TYPE::GRASS, false, vec3(x, y, z)));
 					}
 					else {
-						voxels[index] = Voxel{ VOXEL_TYPE::DIRT, false };
+						octree->insert(vec3(x, y, z), std::make_unique<Voxel>(VOXEL_TYPE::DIRT, false, vec3(x, y, z)));
 					}
 				}
 				else {
-					voxels[index] = Voxel{ VOXEL_TYPE::AIR, true };
+					// AIR
+					// SKIP
 				}
 			}
 		}
 	}
 
-	return voxels;
+	return octree;
 }
 
 Voxel* MeshGenerator::GenerateShape(const vec3& dimensions, const vec3& position, SHAPE_GENERATION_METHODS method) {
@@ -82,10 +91,10 @@ Voxel* MeshGenerator::ShapeGenerator(const vec3 pos, const vec3 dimensions, bool
 				index = MathUtil::flattenIndex(vec3(x, y, z), dimensions);
 
 				if (checkFunc(vec3(x, y, z), dimensions)) {
-					voxels[index] = Voxel{ VOXEL_TYPE::GRASS, false };
+					voxels[index] = Voxel{ VOXEL_TYPE::GRASS, false, vec3(0) };
 				}
 				else {
-					voxels[index] = Voxel{ VOXEL_TYPE::AIR, true };
+					voxels[index] = Voxel{ VOXEL_TYPE::AIR, true, vec3(0) };
 				}
 			}
 		}
@@ -99,9 +108,18 @@ bool MeshGenerator::perlinNoise3DF(vec3 pos, vec3 dimensions, float& height) {
 
 	vec3 normalizedPos = pos / vec3(scale);
 
-	float noise = perlinNoise2D(normalizedPos.x, normalizedPos.z, 3, 0.5f, 2.0f, 2.0f);
+	normalizedPos.x = normalizedPos.x * cos(0.5f) - normalizedPos.y * sin(0.5f);
+	normalizedPos.y = normalizedPos.x * sin(0.5f) + normalizedPos.y * cos(0.5f);
 
-	float terrainHeightAtXZ = noise * scale;
+	float lowFreq = 0.005f;
+	float midFreq = 0.05f;
+	float highFreq = 0.2f;
+
+	float lowNoise = perlinNoise2D(normalizedPos.x, normalizedPos.y, normalizedPos.z, 6, 0.5f, 2.2f, lowFreq, dimensions.y);
+	float midNoise = perlinNoise2D(normalizedPos.x, normalizedPos.y, normalizedPos.z, 6, 0.5f, 2.2f, midFreq, dimensions.y);
+	float highNoise = perlinNoise2D(normalizedPos.x, normalizedPos.y, normalizedPos.z, 6, 0.5f, 2.2f, highFreq, dimensions.y);
+
+	float terrainHeightAtXZ = (lowNoise + midNoise + highNoise) * scale;
 
 	height = terrainHeightAtXZ;
 
@@ -122,6 +140,7 @@ bool MeshGenerator::sphereCheckFunc(const vec3 pos, const vec3 dimensions) {
 float MeshGenerator::perlinNoise2D(
 	float x, 
 	float y,
+	float z,
 	float octaves, 
 	float persistence,
 	float lacunarity,
@@ -140,7 +159,7 @@ float MeshGenerator::perlinNoise2D(
 
 	for (int i = 0; i < octaves; i++) {
 		// Sample noise value
-		noise = db::perlin(x * frequency, y * frequency) * amplitude;
+		noise = db::perlin(x * frequency, y * frequency, z * frequency) * amplitude;
 
 		totalNoiseValue += noise;
 

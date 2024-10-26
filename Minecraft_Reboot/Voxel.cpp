@@ -2,7 +2,18 @@
 
 Voxel::Voxel(): transparent(true), type(VOXEL_TYPE::AIR) {}
 
-Voxel::Voxel(int type, bool transparent) : type(type), transparent(transparent) {}
+//Voxel::Voxel(int type, bool transparent) : type(type), transparent(transparent), pos(0.0f) {}
+
+Voxel::Voxel(int type, bool transparent, vec3 pos): 
+	type(type), 
+	transparent(transparent), 
+	pos(pos) 
+{}
+
+Voxel::Voxel(const Voxel& other) {
+	type = other.type;
+	transparent = other.transparent;
+}
 
 Voxel& Voxel::operator=(const Voxel& other) {
 	type = other.type;
