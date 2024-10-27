@@ -26,9 +26,7 @@ void Player::update(float deltaTime)
 
 void Player::render(float deltaTime)
 {
-	shaderManager->getShaderProgram(MAIN_SHADER_PROGRAM)->SetMatrix4("view", playerCamera->getViewMatrix());
-
-	shaderManager->getShaderProgram(MAIN_SHADER_PROGRAM)->SetMatrix4("projection", playerCamera->getProjectionMatrix());
+	playerCamera->render(deltaTime);
 }
 
 void Player::destroy()

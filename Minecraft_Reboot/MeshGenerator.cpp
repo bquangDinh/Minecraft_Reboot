@@ -13,14 +13,10 @@ Octree* MeshGenerator::GeneratePerlinTerrain(const vec3& dimensions, const vec3&
 	//Voxel* voxels = new Voxel[dimensions.x * dimensions.y * dimensions.z];
 	
 	// Check if dimenions is power of 2
-	if (!MathUtil::isPowerOf2(dimensions.x) || !MathUtil::isPowerOf2(dimensions.y) || !MathUtil::isPowerOf2(dimensions.z)) {
-		std::cout << "Dimensions must be power of 2" << std::endl;
-		return nullptr;
-	}
+	assert(MathUtil::isPowerOf2(dimensions.x) && MathUtil::isPowerOf2(dimensions.y) && MathUtil::isPowerOf2(dimensions.z));
 
 	// Create an Octree
-	// Assume all dimensions equal, I'll change later
-	Octree* octree = new Octree(BoundingBox(vec3(dimensions.x / 2.0f, dimensions.y / 2.0f, dimensions.z / 2.0f), dimensions.x));
+	Octree* octree = new Octree(BoundingBox(0.5f * dimensions, dimensions));
 
 	float height, heightOffset;
 
@@ -104,26 +100,26 @@ Voxel* MeshGenerator::ShapeGenerator(const vec3 pos, const vec3 dimensions, bool
 }
 
 bool MeshGenerator::perlinNoise3DF(vec3 pos, vec3 dimensions, float& height) {
-	float scale = 50.0f;
+	float scale = dimensions.y;
 
 	vec3 normalizedPos = pos / vec3(scale);
 
-	normalizedPos.x = normalizedPos.x * cos(0.5f) - normalizedPos.y * sin(0.5f);
-	normalizedPos.y = normalizedPos.x * sin(0.5f) + normalizedPos.y * cos(0.5f);
+	normalizedPos.x = normalizedPos.x * cos(0.5f) - normalizedPos.z * sin(0.5f);
+	normalizedPos.z = normalizedPos.x * sin(0.5f) + normalizedPos.z * cos(0.5f);
 
 	float lowFreq = 0.005f;
 	float midFreq = 0.05f;
-	float highFreq = 0.2f;
+	float highFreq = 0.25f;
 
 	float lowNoise = perlinNoise2D(normalizedPos.x, normalizedPos.y, normalizedPos.z, 6, 0.5f, 2.2f, lowFreq, dimensions.y);
 	float midNoise = perlinNoise2D(normalizedPos.x, normalizedPos.y, normalizedPos.z, 6, 0.5f, 2.2f, midFreq, dimensions.y);
 	float highNoise = perlinNoise2D(normalizedPos.x, normalizedPos.y, normalizedPos.z, 6, 0.5f, 2.2f, highFreq, dimensions.y);
 
-	float terrainHeightAtXZ = (lowNoise + midNoise + highNoise) * scale;
+	float noise = (lowNoise + midNoise + highNoise) * scale;
 
-	height = terrainHeightAtXZ;
+	height = noise;
 
-	return pos.y < terrainHeightAtXZ;
+	return pos.y < noise;
 }
 
 bool MeshGenerator::cubeCheckFunc(const vec3 pos, const vec3 dimensions) {

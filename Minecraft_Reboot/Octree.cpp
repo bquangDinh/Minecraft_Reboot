@@ -1,13 +1,13 @@
 #include "Octree.h"
 
-BoundingBox::BoundingBox(const vec3& center, float size) : center(center), size(size) {
+BoundingBox::BoundingBox(const vec3& center, const vec3& dimensions) : center(center), dimensions(dimensions) {
 
 }
 
 bool BoundingBox::contains(const vec3& point) const {
-	return point.x >= center.x - size / 2 && point.x <= center.x + size / 2 &&
-		point.y >= center.y - size / 2 && point.y <= center.y + size / 2 &&
-		point.z >= center.z - size / 2 && point.z <= center.z + size / 2;
+	return point.x >= center.x - dimensions.x / 2 && point.x <= center.x + dimensions.x / 2 &&
+		point.y >= center.y - dimensions.y / 2 && point.y <= center.y + dimensions.y / 2 &&
+		point.z >= center.z - dimensions.z / 2 && point.z <= center.z + dimensions.z / 2;
 }
 
 BoundingBox BoundingBox::childBox(int index) {
@@ -34,29 +34,29 @@ BoundingBox BoundingBox::childBox(int index) {
 	// The size of the new bounding box is halved
 	// The new bounding box is returned
 	if (index & 1) {
-		newCenter.x += size / 4;
+		newCenter.x += dimensions.x / 4;
 	}
 	else {
-		newCenter.x -= size / 4;
+		newCenter.x -= dimensions.x / 4;
 	}
 
 	if (index & 2) {
-		newCenter.y += size / 4;
+		newCenter.y += dimensions.y / 4;
 	}
 	else {
-		newCenter.y -= size / 4;
+		newCenter.y -= dimensions.y / 4;
 	}
 
 	if (index & 4) {
-		newCenter.z += size / 4;
+		newCenter.z += dimensions.z / 4;
 	}
 	else {
-		newCenter.z -= size / 4;
+		newCenter.z -= dimensions.z / 4;
 	}
 
 	//printf("New center: %f %f %f\n\n", newCenter.x, newCenter.y, newCenter.z);
 
-	return BoundingBox(newCenter, size / 2);
+	return BoundingBox(newCenter, 0.5f * dimensions);
 }
 
 Node::Node(const BoundingBox& box) : box(box), voxel(nullptr) {
@@ -151,6 +151,22 @@ Voxel* Octree::find(Node* node, const vec3& position) {
 	}
 
 	return nullptr;
+}
+
+void Octree::traverse(std::function<void(Node*)> cb) {
+	traverse(root, cb);
+}
+
+void Octree::traverse(Node* node, std::function<void(Node*)> cb) {
+	if (node == nullptr) {
+		return;
+	}
+
+	cb(node);
+
+	for (int i = 0; i < 8; i++) {
+		traverse(node->children[i], cb);
+	}
 }
 
 void Octree::clear() {

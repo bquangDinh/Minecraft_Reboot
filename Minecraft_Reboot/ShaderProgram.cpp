@@ -62,35 +62,55 @@ void ShaderProgram::Destroy() {
 }
 
 void ShaderProgram::SetMatrix4(const char* name, const glm::mat4 matrix, const bool transpose) {
+	this->Use();
+
 	// Get the location of the attribute
 	GLuint location = glGetUniformLocation(ID, name);
 
 	// Set value
 	glUniformMatrix4fv(location, 1, transpose, glm::value_ptr(matrix));
+
+	// Unbind shader program
+	glUseProgram(0);
 }
 
 void ShaderProgram::SetVector2(const char* name, const glm::vec2 vec2) {
+	this->Use();
+
 	// Get the location of the attribute
 	GLuint location = glGetUniformLocation(ID, name);
 
 	// Set value
 	glUniform2f(location, vec2.x, vec2.y);
+
+	// Unbind shader program
+	glUseProgram(0);
 }
 
 void ShaderProgram::SetVector3(const char* name, const glm::vec3 vec3) {
+	this->Use();
+
 	// Get the location of the attribute
 	GLuint location = glGetUniformLocation(ID, name);
 
 	// Set value
 	glUniform3f(location, vec3.x, vec3.y, vec3.z);
+
+	// Unbind shader program
+	glUseProgram(0);
 }
 
 void ShaderProgram::SetFloat(const char* name, const float value) {
+	this->Use();
+
 	// Get the location of the attribute
 	GLuint location = glGetUniformLocation(ID, name);
 
 	// Set value
 	glUniform1f(location, value);
+
+	// Unbind shader program
+	glUseProgram(0);
 }
 
 void ShaderProgram::checkProgramLinkSuccess(const GLuint vextexShader, const GLuint fragmentShader) {

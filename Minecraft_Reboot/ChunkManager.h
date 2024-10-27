@@ -22,7 +22,7 @@ struct ChunkHash {
 class ChunkManager : public GameObject
 {
 private:
-	const int CHUNK_SIZE;
+	const vec3 CHUNK_SIZE;
 
 	const int CHUNK_RENDER_DISTANCE;
 
@@ -32,13 +32,23 @@ private:
 
 	std::queue<shared_ptr<Chunk>> chunksToDelete; // Queue for chunks to be deleted
 
-	std::mutex chunksMutex;
+	std::queue<tuple<int, int>> chunksToCreate;
+
+	std::mutex chunksMutex, queueMutex;
+
+	std::condition_variable queueCondition;
+
+	std::atomic<bool> hasChunksInCreationQueue, done;
+
+	std::vector<unique_ptr<std::thread>> chunkCreationThreads;
 
 	tuple<int, int> getChunkCoordsFromPlayerPos(const vec3& pos);
 
 	bool isChunkInRenderDistance(const tuple<int, int>& chunkCoord, const tuple<int, int>& playerCoord);
 
 	void queueChunkForDelete(const tuple<int, int>& chunkCoord);
+
+	void queueChunkForCreation(const tuple<int, int>& chunkCoord);
 
 	void loadChunk(const tuple<int, int>& chunkCoord);
 
@@ -47,6 +57,8 @@ private:
 	void updateChunk(const tuple<int, int>& chunkCoord, float deltaTime);
 
 	void deletePendingChunks();
+	
+	void createPendingChunks();
 public:
 	ChunkManager(shared_ptr<Player>);
 

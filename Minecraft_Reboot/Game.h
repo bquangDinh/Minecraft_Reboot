@@ -29,8 +29,6 @@ private:
 
 	GLFWwindow* window;
 
-	std::atomic<bool> isRunning{ true };
-
 	void updatePlayer();
 
 	void update();

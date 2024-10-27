@@ -4,6 +4,8 @@
 
 #include <memory>
 
+#include <atomic>
+
 using namespace std;
 
 class GameStates
@@ -28,6 +30,8 @@ public:
 	float curPosX = 0, curPosY = 0;
 
 	int SCREEN_WIDTH = 0, SCREEN_HEIGHT = 0;
+
+	atomic<bool> isRunning = true;
 private:
 	// Prevent other classes from instantiating this class
 	GameStates() {}

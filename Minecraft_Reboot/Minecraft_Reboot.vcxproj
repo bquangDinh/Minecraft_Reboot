@@ -148,6 +148,7 @@
     <ClCompile Include="MeshBuilder.cpp" />
     <ClCompile Include="MeshGenerator.cpp" />
     <ClCompile Include="Octree.cpp" />
+    <ClCompile Include="OctreeVisual.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Quad.cpp" />
     <ClCompile Include="Shader.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="MeshBuilder.h" />
     <ClInclude Include="MeshGenerator.h" />
     <ClInclude Include="Octree.h" />
+    <ClInclude Include="OctreeVisual.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Quad.h" />
     <ClInclude Include="resource.h" />
@@ -183,7 +185,10 @@
     <ClInclude Include="VoxelUtil.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="fragment_oct_shader.frag" />
     <None Include="fragment_shader.frag" />
+    <None Include="shader1.bin" />
+    <None Include="vertex_oct_shader.vert" />
     <None Include="vertex_shader.vert" />
   </ItemGroup>
   <ItemGroup>

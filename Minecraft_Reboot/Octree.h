@@ -2,6 +2,7 @@
 
 #include "glm/glm.hpp"
 #include "memory"
+#include <functional>
 
 #include "Voxel.h"
 
@@ -10,9 +11,9 @@ using namespace glm;
 struct BoundingBox {
 	vec3 center; // center point of the bounding box
 
-	float size; // size of the bounding box all in 3 dimensions
+	vec3 dimensions; // size of the bounding box all in 3 dimensions
 
-	BoundingBox(const vec3& center, float size);
+	BoundingBox(const vec3& center, const vec3& dimensions);
 
 	// Check if the point is inside the bounding box
 	bool contains(const vec3& point) const;
@@ -52,6 +53,8 @@ private:
 	void subdivide(Node* node);
 
 	size_t calculateMemoryUsage(Node* node);
+
+	void traverse(Node* node, std::function<void(Node*)>);
 public:
 	Octree(const BoundingBox& box);
 
@@ -60,6 +63,8 @@ public:
 	void insert(const vec3& position, std::unique_ptr<Voxel> voxel);
 
 	Voxel* find(const vec3& position);
+
+	void traverse(std::function<void(Node*)>);
 
 	void clear();
 

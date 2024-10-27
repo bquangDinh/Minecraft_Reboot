@@ -8,6 +8,7 @@
 #include "MeshGenerator.h"
 #include "MeshBuilder.h"
 #include "Octree.h"
+#include "OctreeVisual.h"
 
 using namespace glm;
 
@@ -31,6 +32,8 @@ private:
 	mat4 model;
 		
 	MeshBuilder* meshBuilder;
+
+	OctreeVisual* octreeVisual;
 
 	bool initialized;
 

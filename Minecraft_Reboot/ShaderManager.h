@@ -9,6 +9,7 @@
 #include "ShaderProgram.h"
 
 #define MAIN_SHADER_PROGRAM "main"
+#define OCTREE_SHADER_PROGRAM "octree"
 
 class Game;
 

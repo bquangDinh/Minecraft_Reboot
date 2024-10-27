@@ -195,17 +195,20 @@ void MeshBuilder::render() {
 
 	TextureManager::getInstance()->getTextureArray(MAIN_TEXTURE_ARRAY)->Use();
 
-	shaderProgram->Use();
-
 	mat4 model = mat4(1.0f);
 
 	shaderProgram->SetMatrix4("model", model);
+
+	shaderProgram->Use();
 
 	glBindVertexArray(VAO);
 
 	glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
 
 	glBindVertexArray(0);
+
+	// Unbind shader program
+	glUseProgram(0);
 }
 
 void MeshBuilder::printReports() {

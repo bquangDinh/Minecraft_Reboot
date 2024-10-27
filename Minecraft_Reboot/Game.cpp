@@ -33,6 +33,9 @@ void Game::init(GLFWwindow* window) {
 	// Init Shaders
 	shaderManager->loadShaderProgram(MAIN_SHADER_PROGRAM, "vertex_shader.vert", "fragment_shader.frag");
 
+	// Shader Program for Octree Visualization
+	shaderManager->loadShaderProgram(OCTREE_SHADER_PROGRAM, "vertex_oct_shader.vert", "fragment_oct_shader.frag");
+
 	// Init Textures
 	textureManager->loadTextureArray(TEXTURE_ATLAS, true, true, MAIN_TEXTURE_ARRAY);
 
@@ -46,7 +49,7 @@ void Game::init(GLFWwindow* window) {
 
 	gameObjects.push_back(chunkManager);
 
-	//gameObjects.push_back(make_shared<Chunk>(vec3(0.0f, 0.0f, 0.0f), vec3(120.0f, 120.0f, 120.0f)));
+	//gameObjects.push_back(make_shared<Chunk>(vec3(16.0f, 0.0f, 0.0f), vec3(16.0f, 16.0f, 16.0f)));
 
 	// Init game objects
 	for (auto& gameObject : gameObjects) {
@@ -71,7 +74,7 @@ void Game::run() {
 }
 
 void Game::updatePlayer() {
-	while (isRunning) {
+	while (gameStates->isRunning) {
 		// Get the first game object which is the player
 		auto player = gameObjects[0];
 
@@ -83,7 +86,7 @@ void Game::updatePlayer() {
 }
 
 void Game::update() {
-	while (isRunning) {
+	while (gameStates->isRunning) {
 		// Update everything else except the first game object which is the player
 		for (int i = 1; i < gameObjects.size(); i++) {
 			gameObjects[i]->update(0.016f);
@@ -97,7 +100,7 @@ void Game::update() {
 void Game::render() {
 	float deltaTime = 0.0f, lastTime = 0.0f;
 
-	while (isRunning) {
+	while (gameStates->isRunning) {
 		float currentTime = (float)glfwGetTime();
 
 		deltaTime = currentTime - lastTime;
@@ -119,12 +122,14 @@ void Game::render() {
 		glfwPollEvents();
 
 		if (glfwWindowShouldClose(window)) {
-			isRunning = false;
+			gameStates->isRunning = false;
 		}
 	}
 }
 
 void Game::destroy() {
+	printf("Calling destroy...\n");
+
 	// Destroy the game here and free up memory
 	for (auto& gameObject : gameObjects) {
 		gameObject->destroy();

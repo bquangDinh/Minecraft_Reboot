@@ -29,7 +29,13 @@ void Camera::update(float deltaTime) {
 }
 
 void Camera::render(float deltaTime) {
-	// Render the camera here
+	shaderManager->getShaderProgram(MAIN_SHADER_PROGRAM)->SetMatrix4("view", getViewMatrix());
+
+	shaderManager->getShaderProgram(MAIN_SHADER_PROGRAM)->SetMatrix4("projection", getProjectionMatrix());
+	
+	shaderManager->getShaderProgram(OCTREE_SHADER_PROGRAM)->SetMatrix4("view", getViewMatrix());
+
+	shaderManager->getShaderProgram(OCTREE_SHADER_PROGRAM)->SetMatrix4("projection", getProjectionMatrix());
 }
 
 void Camera::destroy() {

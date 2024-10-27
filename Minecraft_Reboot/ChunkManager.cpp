@@ -2,18 +2,29 @@
 
 ChunkManager::ChunkManager(shared_ptr<Player> player):
 	player(player),
-	CHUNK_SIZE(32),
-	CHUNK_RENDER_DISTANCE(4)
+	CHUNK_SIZE(32, 64, 32),
+	CHUNK_RENDER_DISTANCE(2)
 {
 }
 
 void ChunkManager::init()
 {
+	// Create a thread pool
+	unsigned int threadCount = std::thread::hardware_concurrency();
 
+	printf("Creating %d threads for chunk creation\n", threadCount);
+
+	for (unsigned int i = 0; i < threadCount; i++)
+	{
+		chunkCreationThreads.emplace_back(make_unique<std::thread>(&ChunkManager::createPendingChunks, this));
+	}
 }
 
 void ChunkManager::update(float deltaTime)
 {
+	// Lock mutex
+	std::lock_guard<std::mutex> lock(chunksMutex);
+
 	tuple<int, int> playerCoord = getChunkCoordsFromPlayerPos(player->playerCamera->transform.position);
 
 	for (auto it = chunks.begin(); it != chunks.end();)
@@ -32,9 +43,11 @@ void ChunkManager::update(float deltaTime)
 		{
 			if (chunks.find(make_tuple(x, z)) == chunks.end())
 			{
-				loadChunk(make_tuple(x, z));
+				//loadChunk(make_tuple(x, z));
 
 				//cout << "Loaded chunk: " << x << ", " << z << endl;
+
+				queueChunkForCreation(make_tuple(x, z));
 			}
 			else {
 				//updateChunk(make_tuple(x, z), deltaTime);
@@ -58,6 +71,18 @@ void ChunkManager::render(float deltaTime)
 
 void ChunkManager::destroy()
 {
+	printf("Destroying chunk manager...\n");
+
+	// Clear the chunks map
+	while (!chunksToDelete.empty())
+	{
+		//chunksToDelete.front()->destroy();
+
+		chunksToDelete.pop();
+	}
+
+	printf("Emptied chunks to delete queue\n");
+
 	for (auto& chunk : chunks)
 	{
 		chunk.second->destroy();
@@ -65,17 +90,63 @@ void ChunkManager::destroy()
 
 	chunks.clear();
 
-	// Clear the chunks map
-	while (!chunksToDelete.empty())
-	{
-		chunksToDelete.front()->destroy();
+	printf("Destroyed all chunks\n");
 
-		chunksToDelete.pop();
+	// Stop all workers
+	done = true;
+
+	queueCondition.notify_all();
+
+	for (auto& thread : chunkCreationThreads)
+	{
+		if (thread->joinable())
+		{
+			thread->join();
+		}
+	}
+
+	printf("Stopped all chunk creation threads\n");
+
+	chunkCreationThreads.clear();
+
+	printf("Cleared chunk creation threads\n");
+
+	// Clear the chunks to create queue
+	while (!chunksToCreate.empty())
+	{
+		chunksToCreate.pop();
+	}
+
+	printf("Emptied chunks to create queue\n");
+}
+
+void ChunkManager::createPendingChunks() {
+	while (gameStates->isRunning)
+	{
+		tuple<int, int> chunkCoord;
+
+		{
+			std::unique_lock<std::mutex> lock(queueMutex);
+
+			// Wait until there are chunks to create
+			queueCondition.wait(lock, [this] { return !chunksToCreate.empty() || done; });
+
+			if (!chunksToCreate.empty()) {
+				chunkCoord = chunksToCreate.front();
+
+				chunksToCreate.pop();
+			}
+			else {
+				continue;
+			}
+		}
+
+		loadChunk(chunkCoord);
 	}
 }
 
 void ChunkManager::deletePendingChunks() {
-	int deleteLimit = 5; // Limit the number of chunks deleted per frame
+	int deleteLimit = 10; // Limit the number of chunks deleted per frame
 
 	while (!chunksToDelete.empty() && deleteLimit > 0)
 	{
@@ -95,7 +166,7 @@ void ChunkManager::deletePendingChunks() {
 
 tuple<int, int> ChunkManager::getChunkCoordsFromPlayerPos(const vec3& pos)
 {
-	return make_tuple((int)floor(pos.x / CHUNK_SIZE), (int)floor(pos.z / CHUNK_SIZE));
+	return make_tuple((int)floor(pos.x / CHUNK_SIZE.x), (int)floor(pos.z / CHUNK_SIZE.z));
 }
 
 bool ChunkManager::isChunkInRenderDistance(const tuple<int, int>& chunkCoord, const tuple<int, int>& playerCoord)
@@ -119,9 +190,22 @@ void ChunkManager::queueChunkForDelete(const tuple<int, int>& chunkCoord)
 	chunksToDelete.push(chunks[chunkCoord]);
 }
 
+void ChunkManager::queueChunkForCreation(const tuple<int, int>& chunkCoord) {
+	{
+		std::lock_guard<std::mutex> lock(queueMutex);
+
+		chunksToCreate.push(chunkCoord);
+	}
+
+	queueCondition.notify_all();
+}
+
 void ChunkManager::loadChunk(const tuple<int, int>& chunkCoord)
 {
-	shared_ptr<Chunk> chunk = make_shared<Chunk>(vec3(get<0>(chunkCoord) * CHUNK_SIZE, 0.0f, get<1>(chunkCoord) * CHUNK_SIZE), vec3(CHUNK_SIZE, CHUNK_SIZE, CHUNK_SIZE));
+	// Lock mutex
+	std::lock_guard<std::mutex> lock(chunksMutex);
+
+	shared_ptr<Chunk> chunk = make_shared<Chunk>(vec3(get<0>(chunkCoord) * CHUNK_SIZE.x, 0.0f, get<1>(chunkCoord) * CHUNK_SIZE.z), CHUNK_SIZE);
 
 	chunk->chunkCoord = new tuple<int, int>(chunkCoord);
 
