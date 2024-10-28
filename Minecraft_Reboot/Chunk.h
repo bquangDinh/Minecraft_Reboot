@@ -12,6 +12,10 @@
 
 using namespace glm;
 
+//#define VISUAL_OCTREE
+
+#undef VISUAL_OCTREE
+
 enum MESHING_METHOD {
 	STUPID,
 	CULLING,

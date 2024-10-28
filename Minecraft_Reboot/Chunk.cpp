@@ -13,8 +13,9 @@ Chunk::Chunk(const vec3 position, const vec3 dimensions) :
 	model = glm::translate(mat4(1.0f), position);
 
 	meshBuilder = new MeshBuilder();
-
+#ifdef VISUAL_OCTREE
 	octreeVisual = new OctreeVisual(nullptr, position);
+#endif
 }
 
 Chunk::~Chunk()
@@ -43,11 +44,13 @@ void Chunk::init()
 
 	voxelsData = MeshGenerator::GenerateTerrain(dimensions, position, TERRAIN_GENERATION_METHODS::PERLIN);
 
+#ifdef VISUAL_OCTREE
 	octreeVisual->setOctree(&voxelsData);
 
 	octreeVisual->init();
+#endif
 
-	//voxelsData->printMemoryUsage();
+	voxelsData->printMemoryUsage();
 
 	// Perform meshing on voxels data
 	greedyMeshing();
@@ -76,8 +79,10 @@ void Chunk::render(float deltaTime)
 
 	meshBuilder->render();
 
+#ifdef VISUAL_OCTREE
 	// Render octree visual
-	//octreeVisual->render(deltaTime);
+	octreeVisual->render(deltaTime);
+#endif
 }
 
 void Chunk::destroy()
@@ -88,11 +93,13 @@ void Chunk::destroy()
 
 	meshBuilder = nullptr;
 
+#ifdef VISUAL_OCTREE
 	octreeVisual->destroy();
 
 	delete octreeVisual;
 
 	octreeVisual = nullptr;
+#endif
 }
 
 int Chunk::getActualFaceIndex(int direction, bool backface)

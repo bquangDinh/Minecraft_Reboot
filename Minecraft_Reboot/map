@@ -1,6 +1,6 @@
  Minecraft_Reboot
 
- Timestamp is 671dd45f (Sun Oct 27 01:49:19 2024)
+ Timestamp is 671fc40d (Mon Oct 28 13:04:13 2024)
 
  Preferred load address is 0000000140000000
 
@@ -99,8 +99,8 @@
  0002:00009000       _vsscanf_s_l               000000014005c000 f i glad.obj
  0002:000096c0       ?unlock@_Mutex_base@std@@QEAAXXZ 000000014005c6c0 f i ChunkManager.obj
  0002:00009700       __local_stdio_printf_options 000000014005c700 f i ChunkManager.obj
- 0002:00009770       ??$construct@V?$shared_ptr@VGameObject@@@std@@V12@@?$_Default_allocator_traits@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@SAXAEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@1@QEAV?$shared_ptr@VGameObject@@@1@$$QEAV31@@Z 000000014005c770 f i Game.obj
- 0002:00009a00       ??$invoke@P8Game@@EAAXXZPEAV1@$$V@std@@YAX$$QEAP8Game@@EAAXXZ$$QEAPEAV1@@Z 000000014005ca00 f i Game.obj
+ 0002:00009730       ??$duration_cast@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z 000000014005c730 f i Game.obj
+ 0002:00009a00       ?get@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEBAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@XZ 000000014005ca00 f i Game.obj
  0002:00009af0       gladLoadGL                 000000014005caf0 f   glad.obj
  0002:00009b60       gladLoadGLLoader           000000014005cb60 f   glad.obj
  0002:00009d20       ??0?$shared_ptr@VGameObject@@@std@@QEAA@$$QEAV01@@Z 000000014005cd20 f i Game.obj
@@ -109,17 +109,23 @@
  0002:0000a3c0       ?_Incref@?$_Ptr_base@VChunkManager@@@std@@IEBAXXZ 000000014005d3c0 f i Game.obj
  0002:0000a5b0       ??$destroy@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@?$_Default_allocator_traits@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@std@@@std@@SAXAEAV?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@1@QEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@1@@Z 000000014005d5b0 f i ChunkManager.obj
  0002:0000a8e0       ??$_Construct_in_place@V?$shared_ptr@VGameObject@@@std@@V12@@std@@YAXAEAV?$shared_ptr@VGameObject@@@0@$$QEAV10@@Z 000000014005d8e0 f i Game.obj
+ 0002:0000b140       ?push_back@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAAX$$QEAV?$shared_ptr@VGameObject@@@2@@Z 000000014005e140 f i Game.obj
  0002:0000b190       ??$_Clamped_rel_time_ms_count@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@std@@YA?AU_Clamped_rel_time_ms_count_result@0@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@0@@Z 000000014005e190 f i Game.obj
- 0002:0000ba60       ??$_Destroy_range@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@YAXPEAV?$shared_ptr@VGameObject@@@0@QEAV10@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@0@@Z 000000014005ea60 f i Game.obj
- 0002:0000bae0       ??$_Emplace_back@V?$shared_ptr@VGameObject@@@std@@@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAX$$QEAV?$shared_ptr@VGameObject@@@1@@Z 000000014005eae0 f i Game.obj
+ 0002:0000ba60       ??$_Emplace_back@V?$shared_ptr@VGameObject@@@std@@@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAX$$QEAV?$shared_ptr@VGameObject@@@1@@Z 000000014005ea60 f i Game.obj
+ 0002:0000baf0       ??$get@$0A@P8Game@@EAAXXZPEAV1@@std@@YAAEAP8Game@@EAAXXZAEAV?$tuple@P8Game@@EAAXXZPEAV1@@0@@Z 000000014005eaf0 f i Game.obj
  0002:0000bb60       ??$_Move_construct_from@VGameObject@@@?$_Ptr_base@VGameObject@@@std@@IEAAX$$QEAV01@@Z 000000014005eb60 f i Game.obj
- 0002:0000bd80       ?allocate@?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@QEAAPEAV?$shared_ptr@VGameObject@@@2@_K@Z 000000014005ed80 f i Game.obj
- 0002:0000c4c0       ??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z 000000014005f4c0 f i Game.obj
- 0002:0000c9c0       ??$ceil@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z 000000014005f9c0 f i Game.obj
- 0002:0000d1f0       ??$_Start@P8Game@@EAAXXZPEAV1@@thread@std@@AEAAX$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z 00000001400601f0 f i Game.obj
- 0002:0000d4f0       ?capacity@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEBA_KXZ 00000001400604f0 f i Game.obj
- 0002:0000d970       ??1?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAA@XZ 0000000140060970 f i Game.obj
- 0002:0000e4d0       ??$_Uninitialized_move@PEAV?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@QEAV10@0PEAV10@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@0@@Z 00000001400614d0 f i Game.obj
+ 0002:0000bd80       ?release@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@XZ 000000014005ed80 f i Game.obj
+ 0002:0000bf90       ??1?$shared_ptr@VGameStates@@@std@@QEAA@XZ 000000014005ef90 f i Game.obj
+ 0002:0000c500       ??$addressof@V?$shared_ptr@VGameObject@@@std@@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@AEAV10@@Z 000000014005f500 f i Game.obj
+ 0002:0000c9c0       ?size@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEBA_KXZ 000000014005f9c0 f i Game.obj
+ 0002:0000ca30       ??0?$shared_ptr@VShaderManager@@@std@@QEAA@$$QEAV01@@Z 000000014005fa30 f i Game.obj
+ 0002:0000d230       ??$construct@V?$shared_ptr@VGameObject@@@std@@V12@@?$_Default_allocator_traits@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@SAXAEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@1@QEAV?$shared_ptr@VGameObject@@@1@$$QEAV31@@Z 0000000140060230 f i Game.obj
+ 0002:0000d290       ?_Calculate_growth@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEBA_K_K@Z 0000000140060290 f i Game.obj
+ 0002:0000d350       ??1?$shared_ptr@VShaderManager@@@std@@QEAA@XZ 0000000140060350 f i Game.obj
+ 0002:0000d4f0       ?swap@?$shared_ptr@VGameStates@@@std@@QEAAXAEAV12@@Z 00000001400604f0 f i Game.obj
+ 0002:0000d930       ??1?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAA@XZ 0000000140060930 f i Game.obj
+ 0002:0000d990       ?swap@?$shared_ptr@VShaderManager@@@std@@QEAAXAEAV12@@Z 0000000140060990 f i Game.obj
+ 0002:0000e580       ?swap@?$shared_ptr@VTextureManager@@@std@@QEAAXAEAV12@@Z 0000000140061580 f i Game.obj
  0002:0000e8b0       sscanf_s                   00000001400618b0 f i glad.obj
  0002:0000e9a0       vsscanf_s                  00000001400619a0 f i glad.obj
  0002:0000ea10       ??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@@Z 0000000140061a10 f i Camera.obj
@@ -161,9 +167,11 @@
  0002:0000fdc0       ??$inversesqrt@M@glm@@YAMM@Z 0000000140062dc0 f i Camera.obj
  0002:0000fe20       ??$lookAt@M$0A@@glm@@YA?AU?$mat@$03$03M$0A@@0@AEBU?$vec@$02M$0A@@0@00@Z 0000000140062e20 f i Camera.obj
  0002:0000fee0       ??$lookAtLH@M$0A@@glm@@YA?AU?$mat@$03$03M$0A@@0@AEBU?$vec@$02M$0A@@0@00@Z 0000000140062ee0 f i Camera.obj
- 0002:00010220       ??0Game@@QEAA@HH@Z         0000000140063220 f   Game.obj
+ 0002:00010260       ??1?$shared_ptr@VGameObject@@@std@@QEAA@XZ 0000000140063260 f i Game.obj
+ 0002:000102a0       ?time_since_epoch@?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@XZ 00000001400632a0 f i Game.obj
  0002:000102f0       ??$lookAtRH@M$0A@@glm@@YA?AU?$mat@$03$03M$0A@@0@AEBU?$vec@$02M$0A@@0@00@Z 00000001400632f0 f i Camera.obj
- 0002:00010670       ??1?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAA@XZ 0000000140063670 f i Game.obj
+ 0002:00010670       ?eq_int_type@?$_Narrow_char_traits@DH@std@@SA_NHH@Z 0000000140063670 f i Chunk.obj
+ 0002:000106d0       ?_Get_first@?$_Compressed_pair@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$shared_ptr@VGameObject@@@std@@@std@@@2@$00@std@@QEAAAEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@XZ 00000001400636d0 f i Game.obj
  0002:00010740       ??$max@_K@std@@YAAEB_KAEB_K0@Z 0000000140063740 f i Camera.obj
  0002:000107e0       ??$min@_K@std@@YAAEB_KAEB_K0@Z 00000001400637e0 f i Camera.obj
  0002:00010880       ??$normalize@$02M$0A@@glm@@YA?AU?$vec@$02M$0A@@0@AEBU10@@Z 0000000140063880 f i Camera.obj
@@ -178,7 +186,7 @@
  0002:00010f30       ??0?$mat@$03$03M$0A@@glm@@QEAA@AEBM@Z 0000000140063f30 f i Camera.obj
  0002:00011050       ??0?$vec@$02M$0A@@glm@@QEAA@MMM@Z 0000000140064050 f i Camera.obj
  0002:000110f0       ??0Camera@@QEAA@XZ         00000001400640f0 f   Camera.obj
- 0002:000112c0       ??4?$shared_ptr@VTextureManager@@@std@@QEAAAEAV01@$$QEAV01@@Z 00000001400642c0 f i Game.obj
+ 0002:000112c0       ?allocate@?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@QEAAPEAV?$shared_ptr@VGameObject@@@2@_K@Z 00000001400642c0 f i Game.obj
  0002:00011330       ??0_Basic_container_proxy_ptr12@std@@IEAA@XZ 0000000140064330 f i Camera.obj
  0002:00011380       ??0_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QEAA@XZ 0000000140064380 f i Camera.obj
  0002:000113e0       ??0_Container_base12@std@@QEAA@XZ 00000001400643e0 f i Camera.obj
@@ -210,7 +218,7 @@
  0002:00011d80       ??_Eexception@std@@UEAAPEAXI@Z 0000000140064d80 f i Camera.obj
  0002:00011d80       ??_Gexception@std@@UEAAPEAXI@Z 0000000140064d80 f i Camera.obj
  0002:00011df0       ?_Adjust_manually_vector_aligned@std@@YAXAEAPEAXAEA_K@Z 0000000140064df0 f i Camera.obj
- 0002:00011fc0       ?_Delete_this@?$_Ref_count_obj2@VChunkManager@@@std@@EEAAXXZ 0000000140064fc0 f i Game.obj
+ 0002:00011fc0       ?render@Chunk@@UEAAXM@Z    0000000140064fc0 f   Chunk.obj
  0002:00012030       ?_Allocate@_Default_allocate_traits@std@@SAPEAX_K@Z 0000000140065030 f i Camera.obj
  0002:00012080       ?_Calculate_growth@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CA_K_K00@Z 0000000140065080 f i Camera.obj
  0002:00012190       ??0?$atomic@_N@std@@QEAA@XZ 0000000140065190 f i ChunkManager.obj
@@ -258,13 +266,12 @@
  0002:00013620       ?processKeyInputs@Camera@@AEAAXM@Z 0000000140066620 f   Camera.obj
  0002:00013740       ?_Adopt@_Iterator_base12@std@@QEAAXPEBU_Container_base12@2@@Z 0000000140066740 f i ChunkManager.obj
  0002:00013790       ?render@Camera@@UEAAXM@Z   0000000140066790 f   Camera.obj
- 0002:00013ad0       ?_Calculate_growth@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEBA_K_K@Z 0000000140066ad0 f i Game.obj
+ 0002:00013b10       ?count@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEBA_JXZ 0000000140066b10 f i Game.obj
  0002:00013b90       ?setPosition@Transform@@QEAAXU?$vec@$02M$0A@@glm@@@Z 0000000140066b90 f i Camera.obj
  0002:00013bf0       ?sin@@YAMM@Z               0000000140066bf0 f i Camera.obj
  0002:00013c40       ?sqrt@@YAMM@Z              0000000140066c40 f i Camera.obj
  0002:00013c90       ?tan@@YAMM@Z               0000000140066c90 f i Camera.obj
  0002:00013ce0       ?turnAround@Camera@@AEAAXMM@Z 0000000140066ce0 f   Camera.obj
- 0002:00014000       ?_Delete_this@?$_Ref_count_obj2@VPlayer@@@std@@EEAAXXZ 0000000140067000 f i Game.obj
  0002:00014070       ??1_Iterator_base12@std@@QEAA@XZ 0000000140067070 f i ChunkManager.obj
  0002:000140c0       ?update@Camera@@UEAAXM@Z   00000001400670c0 f   Camera.obj
  0002:00014190       ?what@exception@std@@UEBAPEBDXZ 0000000140067190 f i Camera.obj
@@ -286,8 +293,8 @@
  0002:00014f80       ??$_Destroy_range@V?$allocator@I@std@@@std@@YAXPEAIQEAIAEAV?$allocator@I@0@@Z 0000000140067f80 f i Chunk.obj
  0002:00014fd0       ??$_Destroy_range@V?$allocator@M@std@@@std@@YAXPEAMQEAMAEAV?$allocator@M@0@@Z 0000000140067fd0 f i Chunk.obj
  0002:000151d0       ?swap@?$shared_ptr@VChunk@@@std@@QEAAXAEAV12@@Z 00000001400681d0 f i ChunkManager.obj
- 0002:00015450       ?max_size@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEBA_KXZ 0000000140068450 f i Game.obj
- 0002:00015910       ?processKeyInput@Game@@QEAAXHH@Z 0000000140068910 f   Game.obj
+ 0002:00015450       ?processKeyInput@Game@@QEAAXHH@Z 0000000140068450 f   Game.obj
+ 0002:00015910       ?processMouseInput@Game@@QEAAXMM@Z 0000000140068910 f   Game.obj
  0002:000159a0       ??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z 00000001400689a0 f i Chunk.obj
  0002:00015a40       ??$exchange@PEAU_Container_proxy@std@@$$T@std@@YAPEAU_Container_proxy@0@AEAPEAU10@$$QEA$$T@Z 0000000140068a40 f i Chunk.obj
  0002:00015ab0       ??$exchange@PEAU_Iterator_base12@std@@$$T@std@@YAPEAU_Iterator_base12@0@AEAPEAU10@$$QEA$$T@Z 0000000140068ab0 f i Chunk.obj
@@ -295,12 +302,13 @@
  0002:00015f90       ??$perlin@M@db@@YAMMM@Z    0000000140068f90 f i Chunk.obj
  0002:00016200       ?clear@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAAXXZ 0000000140069200 f i Game.obj
  0002:000162a0       ??$perlin@M@db@@YAMMMM@Z   00000001400692a0 f i Chunk.obj
- 0002:00016830       ??$make_shared@VChunkManager@@AEAV?$shared_ptr@VPlayer@@@std@@@std@@YA?AV?$shared_ptr@VChunkManager@@@0@AEAV?$shared_ptr@VPlayer@@@0@@Z 0000000140069830 f i Game.obj
+ 0002:00016880       ??0?$shared_ptr@VShaderManager@@@std@@QEAA@$$T@Z 0000000140069880 f i Game.obj
  0002:00016990       ??$perlin@N@db@@YANN@Z     0000000140069990 f i Chunk.obj
  0002:00016ac0       ??$perlin@N@db@@YANNN@Z    0000000140069ac0 f i Chunk.obj
  0002:00016d30       ??$_Set_ptr_rep_and_enable_shared@VChunk@@@?$shared_ptr@VChunk@@@std@@AEAAXQEAVChunk@@QEAV_Ref_count_base@1@@Z 0000000140069d30 f i ChunkManager.obj
  0002:00016dd0       ??$perlin@N@db@@YANNNN@Z   0000000140069dd0 f i Chunk.obj
- 0002:00017360       ??$make_shared@VPlayer@@$$V@std@@YA?AV?$shared_ptr@VPlayer@@@0@XZ 000000014006a360 f i Game.obj
+ 0002:00017360       ??0Game@@QEAA@HH@Z         000000014006a360 f   Game.obj
+ 0002:00017430       ??1?$shared_ptr@VTexture2DArray@@@std@@QEAA@XZ 000000014006a430 f i Game.obj
  0002:000174c0       ??$translate@M$0A@@glm@@YA?AU?$mat@$03$03M$0A@@0@AEBU10@AEBU?$vec@$02M$0A@@0@@Z 000000014006a4c0 f i Chunk.obj
  0002:000176a0       ??$_Get_size_of_n@$0CI@@std@@YA_K_K@Z 000000014006a6a0 f i ChunkManager.obj
  0002:00017720       ??0?$vec@$03M$0A@@glm@@QEAA@M@Z 000000014006a720 f i Chunk.obj
@@ -340,37 +348,31 @@
  0002:00018bf0       ?_Tidy@?$vector@IV?$allocator@I@std@@@std@@AEAAXXZ 000000014006bbf0 f i Chunk.obj
  0002:00018d20       ?_Tidy@?$vector@MV?$allocator@M@std@@@std@@AEAAXXZ 000000014006bd20 f i Chunk.obj
  0002:00018e50       ?__autoclassinit2@MeshBuilder@@QEAAX_K@Z 000000014006be50 f i Chunk.obj
- 0002:00018e90       ?__autoclassinit2@OctreeVisual@@QEAAX_K@Z 000000014006be90 f i Chunk.obj
- 0002:00018ed0       ?call@?$compute_vec4_add@M$0A@$0A@@detail@glm@@SA?AU?$vec@$03M$0A@@3@AEBU43@0@Z 000000014006bed0 f i Chunk.obj
- 0002:00018fd0       ?call@?$compute_vec4_mul@M$0A@$0A@@detail@glm@@SA?AU?$vec@$03M$0A@@3@AEBU43@0@Z 000000014006bfd0 f i Chunk.obj
- 0002:000190d0       ?cullingMeshing@Chunk@@AEAAXXZ 000000014006c0d0 f   Chunk.obj
- 0002:000198e0       ??A?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAAAEAV?$shared_ptr@VGameObject@@@1@_K@Z 000000014006c8e0 f i Game.obj
+ 0002:00018ed0       ?call@?$compute_vec4_mul@M$0A@$0A@@detail@glm@@SA?AU?$vec@$03M$0A@@3@AEBU43@0@Z 000000014006bed0 f i Chunk.obj
+ 0002:00018fa0       ?getActualFaceIndex@Chunk@@AEAAHH_N@Z 000000014006bfa0 f   Chunk.obj
+ 0002:000190d0       ?deallocate@?$allocator@I@std@@QEAAXQEAI_K@Z 000000014006c0d0 f i Chunk.obj
+ 0002:000191b0       ?shouldMergeTwoVoxel@Chunk@@AEAA_NU?$vec@$02M$0A@@glm@@0H_N@Z 000000014006c1b0 f   Chunk.obj
+ 0002:000192b0       ?init@Chunk@@UEAAXXZ       000000014006c2b0 f   Chunk.obj
+ 0002:000198e0       ?_Delete_this@?$_Ref_count_obj2@VChunkManager@@@std@@EEAAXXZ 000000014006c8e0 f i Game.obj
  0002:000199d0       ?_Orphan_range_unlocked@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEBAXPEAV?$shared_ptr@VGameObject@@@2@0@Z 000000014006c9d0 f i Game.obj
  0002:00019a80       ??0?$shared_ptr@VChunk@@@std@@QEAA@AEBV01@@Z 000000014006ca80 f i ChunkManager.obj
- 0002:00019ae0       ?deallocate@?$allocator@I@std@@QEAAXQEAI_K@Z 000000014006cae0 f i Chunk.obj
- 0002:00019c00       ?deallocate@?$allocator@M@std@@QEAAXQEAM_K@Z 000000014006cc00 f i Chunk.obj
- 0002:00019d20       ?destroy@Chunk@@UEAAXXZ    000000014006cd20 f   Chunk.obj
- 0002:00019e80       ?eof@?$_Narrow_char_traits@DH@std@@SAHXZ 000000014006ce80 f i Chunk.obj
- 0002:00019ec0       ?eq_int_type@?$_Narrow_char_traits@DH@std@@SA_NHH@Z 000000014006cec0 f i Chunk.obj
- 0002:00019f30       ?getActualFaceIndex@Chunk@@AEAAHH_N@Z 000000014006cf30 f   Chunk.obj
- 0002:0001a070       ?greedyMeshing@Chunk@@AEAAXXZ 000000014006d070 f   Chunk.obj
+ 0002:00019ae0       ?deallocate@?$allocator@M@std@@QEAAXQEAM_K@Z 000000014006cae0 f i Chunk.obj
+ 0002:00019c00       ?destroy@Chunk@@UEAAXXZ    000000014006cc00 f   Chunk.obj
+ 0002:00019d20       ?eof@?$_Narrow_char_traits@DH@std@@SAHXZ 000000014006cd20 f i Chunk.obj
+ 0002:0001a1b0       ?stupidMeshing@Chunk@@AEAAXXZ 000000014006d1b0 f   Chunk.obj
  0002:0001b460       ?updateChunk@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@M@Z 000000014006e460 f   ChunkManager.obj
  0002:0001b4e0       ??$make_unique@VVoxel@@W4VOXEL_TYPE@@_NU?$vec@$02M$0A@@glm@@$0A@@std@@YA?AV?$unique_ptr@VVoxel@@U?$default_delete@VVoxel@@@std@@@0@$$QEAW4VOXEL_TYPE@@$$QEA_N$$QEAU?$vec@$02M$0A@@glm@@@Z 000000014006e4e0 f i MeshGenerator.obj
  0002:0001b620       ??0?$vec@$02M$0A@@glm@@QEAA@M@Z 000000014006e620 f i MeshGenerator.obj
  0002:0001b6a0       ?_Get_first@?$_Compressed_pair@U?$default_delete@VVoxel@@@std@@PEAVVoxel@@$00@std@@QEAAAEAU?$default_delete@VVoxel@@@2@XZ 000000014006e6a0 f i MeshGenerator.obj
  0002:0001b700       ??$?0U?$default_delete@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@@2@@std@@QEAA@$$QEAV01@@Z 000000014006e700 f i ChunkManager.obj
- 0002:0001b790       ?_Change_array@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAXQEAV?$shared_ptr@VGameObject@@@2@_K1@Z 000000014006e790 f i Game.obj
+ 0002:0001b7d0       ?_Delete_this@?$_Ref_count_obj2@VPlayer@@@std@@EEAAXXZ 000000014006e7d0 f i Game.obj
  0002:0001b8b0       ??$_Copy_construct_from@VChunk@@@?$_Ptr_base@VChunk@@@std@@IEAAXAEBV?$shared_ptr@VChunk@@@1@@Z 000000014006e8b0 f i ChunkManager.obj
- 0002:0001b960       ?init@Chunk@@UEAAXXZ       000000014006e960 f   Chunk.obj
+ 0002:0001b960       ?isFaceBlocking@Chunk@@AEAA_NU?$vec@$02M$0A@@glm@@H_N@Z 000000014006e960 f   Chunk.obj
  0002:0001bae0       ??$construct@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V12@@?$_Default_allocator_traits@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@std@@@std@@SAXAEAV?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@1@QEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@1@$$QEAV31@@Z 000000014006eae0 f i ChunkManager.obj
- 0002:0001bb40       ?isFaceBlocking@Chunk@@AEAA_NU?$vec@$02M$0A@@glm@@H_N@Z 000000014006eb40 f   Chunk.obj
- 0002:0001bcc0       ?length@?$vec@$02M$0A@@glm@@SAHXZ 000000014006ecc0 f i Chunk.obj
- 0002:0001bd00       ?render@Chunk@@UEAAXM@Z    000000014006ed00 f   Chunk.obj
- 0002:0001bdc0       ?shouldMergeTwoVoxel@Chunk@@AEAA_NU?$vec@$02M$0A@@glm@@0H_N@Z 000000014006edc0 f   Chunk.obj
- 0002:0001bf00       ?stupidMeshing@Chunk@@AEAAXXZ 000000014006ef00 f   Chunk.obj
+ 0002:0001bb40       ?length@?$vec@$02M$0A@@glm@@SAHXZ 000000014006eb40 f i Chunk.obj
+ 0002:0001bf00       ?update@Chunk@@UEAAXM@Z    000000014006ef00 f   Chunk.obj
  0002:0001c6e0       ?_Tidy@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAXXZ 000000014006f6e0 f i Game.obj
  0002:0001c7d0       ?deallocate@?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@QEAAXQEAV?$shared_ptr@VGameObject@@@2@_K@Z 000000014006f7d0 f i Game.obj
- 0002:0001c8e0       ?update@Chunk@@UEAAXM@Z    000000014006f8e0 f   Chunk.obj
  0002:0001c920       ??$?0$$V@?$_Compressed_pair@V?$allocator@V?$shared_ptr@VChunk@@@std@@@std@@V?$_Deque_val@U?$_Deque_simple_types@V?$shared_ptr@VChunk@@@std@@@std@@@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@@Z 000000014006f920 f i ChunkManager.obj
  0002:0001c990       ??$?0$$V@?$_Compressed_pair@V?$allocator@V?$tuple@HH@std@@@std@@V?$_Deque_val@U?$_Deque_simple_types@V?$tuple@HH@std@@@std@@@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@@Z 000000014006f990 f i ChunkManager.obj
  0002:0001ca00       ??$?0$$V@?$_Compressed_pair@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@std@@@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@@Z 000000014006fa00 f i ChunkManager.obj
@@ -539,6 +541,7 @@
  0002:00021e20       ?_Delete_this@?$_Ref_count_obj2@VChunk@@@std@@EEAAXXZ 0000000140074e20 f i ChunkManager.obj
  0002:00021ed0       ??$make_unique@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@P8ChunkManager@@EAAXXZPEAV3@$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@@2@@0@$$QEAP8ChunkManager@@EAAXXZ$$QEAPEAV2@@Z 0000000140074ed0 f i ChunkManager.obj
  0002:00021fb0       ?release@?$unique_ptr@VVoxel@@U?$default_delete@VVoxel@@@std@@@std@@QEAAPEAVVoxel@@XZ 0000000140074fb0 f i MeshGenerator.obj
+ 0002:00022000       ??$?0PEAVGame@@@?$_Tuple_val@PEAVGame@@@std@@QEAA@$$QEAPEAVGame@@@Z 0000000140075000 f i Game.obj
  0002:00022120       ??$uninitialized_copy@PEAPEAV?$shared_ptr@VChunk@@@std@@PEAPEAV12@@std@@YAPEAPEAV?$shared_ptr@VChunk@@@0@QEAPEAV10@0PEAPEAV10@@Z 0000000140075120 f i ChunkManager.obj
  0002:00022230       ?_Desired_grow_bucket_count@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@IEBA_K_K@Z 0000000140075230 f i ChunkManager.obj
  0002:000222e0       ??$make_tuple@AEAHAEAH@std@@YA?AV?$tuple@HH@0@AEAH0@Z 00000001400752e0 f i ChunkManager.obj
@@ -585,11 +588,13 @@
  0002:00023e10       ??1_Clear_guard@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@QEAA@XZ 0000000140076e10 f i ChunkManager.obj
  0002:00023ec0       ??0?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@QEAA@PEAU?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@1@PEBV?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@1@@Z 0000000140076ec0 f i ChunkManager.obj
  0002:00023f40       ??0?$_List_unchecked_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@U_Iterator_base0@2@@std@@QEAA@PEAU?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@1@PEBV?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@1@@Z 0000000140076f40 f i ChunkManager.obj
+ 0002:00023fa0       ??$?0U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@1@@?$_Compressed_pair@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAU?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@1@$$QEAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@1@@Z 0000000140076fa0 f i Game.obj
  0002:00024030       ??0?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@QEAA@PEAU?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@1@PEBV?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@1@@Z 0000000140077030 f i ChunkManager.obj
  0002:000240b0       ??0?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@QEAA@XZ 00000001400770b0 f i ChunkManager.obj
  0002:00024120       ??0?$_Ptr_base@VChunk@@@std@@IEAA@XZ 0000000140077120 f i ChunkManager.obj
  0002:00024190       ??0?$_Ptr_base@VPlayer@@@std@@IEAA@XZ 0000000140077190 f i ChunkManager.obj
  0002:000241e0       ??0?$_Tuple_val@H@std@@QEAA@XZ 00000001400771e0 f i ChunkManager.obj
+ 0002:00024220       ??$_Destroy_range@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@YAXPEAV?$shared_ptr@VGameObject@@@0@QEAV10@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@0@@Z 0000000140077220 f i Game.obj
  0002:000242c0       ??0?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@QEAA@AEBV?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@1@@Z 00000001400772c0 f i ChunkManager.obj
  0002:00024330       ??0?$_Uninitialized_backout@PEAPEAV?$shared_ptr@VChunk@@@std@@@std@@QEAA@PEAPEAV?$shared_ptr@VChunk@@@1@@Z 0000000140077330 f i ChunkManager.obj
  0002:000243a0       ??0?$_Uninitialized_backout@PEAPEAV?$tuple@HH@std@@@std@@QEAA@PEAPEAV?$tuple@HH@1@@Z 00000001400773a0 f i ChunkManager.obj
@@ -653,6 +658,7 @@
  0002:00026260       ??1thread@std@@QEAA@XZ     0000000140079260 f i ChunkManager.obj
  0002:000262e0       ??4?$atomic@_N@std@@QEAA_N_N@Z 00000001400792e0 f i ChunkManager.obj
  0002:00026330       ?_Decref@?$_Ptr_base@VChunk@@@std@@IEAAXXZ 0000000140079330 f i ChunkManager.obj
+ 0002:00026380       ??4?$shared_ptr@VTextureManager@@@std@@QEAAAEAV01@$$QEAV01@@Z 0000000140079380 f i Game.obj
  0002:00026430       ??4?$shared_ptr@VChunk@@@std@@QEAAAEAV01@AEBV01@@Z 0000000140079430 f i ChunkManager.obj
  0002:00026520       ?_Tidy@?$list@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@@std@@AEAAXXZ 0000000140079520 f i ChunkManager.obj
  0002:000265b0       ??9?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@QEBA_NAEBV01@@Z 00000001400795b0 f i ChunkManager.obj
@@ -681,6 +687,7 @@
  0002:00027300       ??_Gthread@std@@QEAAPEAXI@Z 000000014007a300 f i ChunkManager.obj
  0002:00027360       ?_Mycnd@condition_variable@std@@AEAAPEAU_Cnd_internal_imp_t@@XZ 000000014007a360 f i ChunkManager.obj
  0002:00027450       ?_Adopt@_Iterator_base0@std@@QEAAXPEBX@Z 000000014007a450 f i ChunkManager.obj
+ 0002:00027480       ??1?$shared_ptr@VChunkManager@@@std@@QEAA@XZ 000000014007a480 f i Game.obj
  0002:00027550       ?_Rehash_for_1@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@IEAAXXZ 000000014007a550 f i ChunkManager.obj
  0002:00027650       ?_Orphan_off@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@AEBAX_K@Z 000000014007a650 f i ChunkManager.obj
  0002:000278a0       ?_Make_iter@?$list@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@@std@@QEBA?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@2@PEAU?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@2@@Z 000000014007a8a0 f i ChunkManager.obj
@@ -701,7 +708,7 @@
  0002:000283c0       ?_Floor_of_log_2@std@@YAK_K@Z 000000014007b3c0 f i ChunkManager.obj
  0002:000284b0       ?_Orphan_ptr2@?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@QEAAXPEAU?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@2@@Z 000000014007b4b0 f i ChunkManager.obj
  0002:00028650       ?_Reset_map@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@AEAAXXZ 000000014007b650 f i ChunkManager.obj
- 0002:000287e0       ?update@Game@@AEAAXXZ      000000014007b7e0 f   Game.obj
+ 0002:000287b0       ??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z 000000014007b7b0 f i Game.obj
  0002:000288e0       ?_Unchecked_splice@?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@SAPEAU?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@2@QEAU32@00@Z 000000014007b8e0 f i ChunkManager.obj
  0002:000289a0       ?_Get_data@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEBAAEBV?$_Deque_val@U?$_Deque_simple_types@V?$shared_ptr@VChunk@@@std@@@std@@@2@XZ 000000014007b9a0 f i ChunkManager.obj
  0002:000289e0       ?_Get_data@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@AEAAAEAV?$_Deque_val@U?$_Deque_simple_types@V?$tuple@HH@std@@@std@@@2@XZ 000000014007b9e0 f i ChunkManager.obj
@@ -740,20 +747,26 @@
  0002:00029330       ?_Getblock@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEBA_J_K@Z 000000014007c330 f i ChunkManager.obj
  0002:000293b0       ?_Getblock@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@AEBA_J_K@Z 000000014007c3b0 f i ChunkManager.obj
  0002:00029400       ?_Subscript@?$_Deque_val@U?$_Deque_simple_types@V?$shared_ptr@VChunk@@@std@@@std@@@std@@QEAAAEAV?$shared_ptr@VChunk@@@2@_K@Z 000000014007c400 f i ChunkManager.obj
+ 0002:00029470       ?_Get_first@?$_Compressed_pair@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$shared_ptr@VGameObject@@@std@@@std@@@2@$00@std@@QEBAAEBV?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@XZ 000000014007c470 f i Game.obj
  0002:00029560       ?_Tidy@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEAAXXZ 000000014007c560 f i ChunkManager.obj
  0002:00029630       ?_Unchecked_begin@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@QEAA?AV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@2@XZ 000000014007c630 f i ChunkManager.obj
  0002:00029720       ?_Verify_ownership_levels@_Mutex_base@std@@IEAA_NXZ 000000014007c720 f i ChunkManager.obj
  0002:000297e0       ??$_Construct_in_place@VChunk@@U?$vec@$02M$0A@@glm@@AEBU23@@std@@YAXAEAVChunk@@$$QEAU?$vec@$02M$0A@@glm@@AEBU23@@Z 000000014007c7e0 f i ChunkManager.obj
- 0002:00029890       ?run@Game@@QEAAXXZ         000000014007c890 f   Game.obj
+ 0002:00029890       ??$_Start@P8Game@@EAAXXZPEAV1@@thread@std@@AEAAX$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z 000000014007c890 f i Game.obj
  0002:00029a20       ?cubeCheckFunc@MeshGenerator@@CA_NU?$vec@$02M$0A@@glm@@0@Z 000000014007ca20 f   MeshGenerator.obj
  0002:00029a60       ?deletePendingChunks@ChunkManager@@AEAAXXZ 000000014007ca60 f   ChunkManager.obj
  0002:00029bb0       ?loadChunk@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@@Z 000000014007cbb0 f   ChunkManager.obj
  0002:00029dd0       ?front@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@QEAAAEAV?$tuple@HH@2@XZ 000000014007cdd0 f i ChunkManager.obj
- 0002:00029ed0       ?updatePlayer@Game@@AEAAXXZ 000000014007ced0 f   Game.obj
+ 0002:00029ea0       ??$_Uninitialized_move@PEAV?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@QEAV10@0PEAV10@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@0@@Z 000000014007cea0 f i Game.obj
+ 0002:0002a000       ?_Unchecked_begin@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAAPEAV?$shared_ptr@VGameObject@@@2@XZ 000000014007d000 f i Game.obj
+ 0002:0002a040       ?call@?$compute_vec4_add@M$0A@$0A@@detail@glm@@SA?AU?$vec@$03M$0A@@3@AEBU43@0@Z 000000014007d040 f i Chunk.obj
  0002:0002a110       ?_Incref@?$_Ptr_base@VPlayer@@@std@@IEBAXXZ 000000014007d110 f i ChunkManager.obj
  0002:0002a160       ?front@?$queue@V?$shared_ptr@VChunk@@@std@@V?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@2@@std@@QEAAAEAV?$shared_ptr@VChunk@@@2@XZ 000000014007d160 f i ChunkManager.obj
  0002:0002a230       ?get_deleter@?$unique_ptr@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@@2@@std@@QEAAAEAU?$default_delete@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@@2@XZ 000000014007d230 f i ChunkManager.obj
+ 0002:0002a270       ?get@?$_Ptr_base@VGameObject@@@std@@IEBAPEAVGameObject@@XZ 000000014007d270 f i Game.obj
  0002:0002a380       ?_Incref@_Ref_count_base@std@@QEAAXXZ 000000014007d380 f i ChunkManager.obj
+ 0002:0002a3c0       ??$invoke@P8Game@@EAAXXZPEAV1@$$V@std@@YAX$$QEAP8Game@@EAAXXZ$$QEAPEAV1@@Z 000000014007d3c0 f i Game.obj
+ 0002:0002a410       ??1?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAA@XZ 000000014007d410 f i Game.obj
  0002:0002a4f0       ?_Map@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@AEAAAEAPEAPEAV?$tuple@HH@2@XZ 000000014007d4f0 f i ChunkManager.obj
  0002:0002a540       ?_Map_distance@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEBA_JXZ 000000014007d540 f i ChunkManager.obj
  0002:0002a590       ?_Map_distance@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@AEBA_JXZ 000000014007d590 f i ChunkManager.obj
@@ -779,10 +792,13 @@
  0002:0002b1b0       ??$_Copy_memmove@PEAPEAV?$shared_ptr@VChunk@@@std@@PEAPEAV12@@std@@YAPEAPEAV?$shared_ptr@VChunk@@@0@PEAPEAV10@00@Z 000000014007e1b0 f i ChunkManager.obj
  0002:0002b3a0       ?lock@_Mutex_base@std@@QEAAXXZ 000000014007e3a0 f i ChunkManager.obj
  0002:0002b410       ?queueChunkForDelete@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@@Z 000000014007e410 f   ChunkManager.obj
+ 0002:0002b5b0       ??$_Set_ptr_rep_and_enable_shared@VChunkManager@@@?$shared_ptr@VChunkManager@@@std@@AEAAXQEAVChunkManager@@QEAV_Ref_count_base@1@@Z 000000014007e5b0 f i Game.obj
+ 0002:0002b610       ??$ceil@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z 000000014007e610 f i Game.obj
  0002:0002b7e0       ?_Release@?$_Uninitialized_backout@PEAPEAV?$shared_ptr@VChunk@@@std@@@std@@QEAAPEAPEAV?$shared_ptr@VChunk@@@2@XZ 000000014007e7e0 f i ChunkManager.obj
  0002:0002b840       ?_Release@?$_Uninitialized_backout@PEAPEAV?$tuple@HH@std@@@std@@QEAAPEAPEAV?$tuple@HH@2@XZ 000000014007e840 f i ChunkManager.obj
  0002:0002b8a0       ?_Release@?$_Uninitialized_backout@PEAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@QEAAPEAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@2@XZ 000000014007e8a0 f i ChunkManager.obj
  0002:0002b8f0       ?size@?$_Hash_vec@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@@std@@QEBA_KXZ 000000014007e8f0 f i ChunkManager.obj
+ 0002:0002b940       ??A?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAAAEAV?$shared_ptr@VGameObject@@@1@_K@Z 000000014007e940 f i Game.obj
  0002:0002ba60       ?_Release@?$_Uninitialized_backout_al@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@std@@@std@@QEAAPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@2@XZ 000000014007ea60 f i ChunkManager.obj
  0002:0002bab0       ??$_Start@P8ChunkManager@@EAAXXZPEAV1@@thread@std@@AEAAX$$QEAP8ChunkManager@@EAAXXZ$$QEAPEAV2@@Z 000000014007eab0 f i ChunkManager.obj
  0002:0002bc70       ??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@QEBAAEBU?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@1@XZ 000000014007ec70 f i ChunkManager.obj
@@ -847,6 +863,7 @@
  0002:0002ebd0       ?join@thread@std@@QEAAXXZ  0000000140081bd0 f i ChunkManager.obj
  0002:0002ed50       ?joinable@thread@std@@QEBA_NXZ 0000000140081d50 f i ChunkManager.obj
  0002:0002ee20       ?push@?$queue@V?$shared_ptr@VChunk@@@std@@V?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@2@@std@@QEAAXAEBV?$shared_ptr@VChunk@@@2@@Z 0000000140081e20 f i ChunkManager.obj
+ 0002:0002ee70       ?max_size@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEBA_KXZ 0000000140081e70 f i Game.obj
  0002:0002efd0       ?load@?$_Atomic_storage@_N$00@std@@QEBA_NW4memory_order@2@@Z 0000000140081fd0 f i ChunkManager.obj
  0002:0002f150       ?max_size@?$_Default_allocator_traits@V?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@std@@@std@@SA_KAEBV?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@2@@Z 0000000140082150 f i ChunkManager.obj
  0002:0002f1a0       ?max_size@?$_Default_allocator_traits@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@@std@@SA_KAEBV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@2@@Z 00000001400821a0 f i ChunkManager.obj
@@ -856,23 +873,29 @@
  0002:0002f350       ?max_size@?$_Hash_vec@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@@std@@QEBA_KXZ 0000000140082350 f i ChunkManager.obj
  0002:0002f3d0       ?max_size@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@QEBA_KXZ 00000001400823d0 f i ChunkManager.obj
  0002:0002f450       ?max_size@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@QEBA_KXZ 0000000140082450 f i ChunkManager.obj
+ 0002:0002f4c0       ?update@Game@@AEAAXXZ      00000001400824c0 f   Game.obj
  0002:0002f5c0       ?notify_all@condition_variable@std@@QEAAXXZ 00000001400825c0 f i ChunkManager.obj
  0002:0002f610       ?pointer_to@?$pointer_traits@PEAU?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@SAPEAU?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@2@AEAU32@@Z 0000000140082610 f i ChunkManager.obj
  0002:0002f660       ?pop@?$queue@V?$shared_ptr@VChunk@@@std@@V?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@2@@std@@QEAAXXZ 0000000140082660 f i ChunkManager.obj
  0002:0002f6a0       ?deallocate@?$_Default_allocator_traits@V?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@std@@@std@@SAXAEAV?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@2@QEAU?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@2@_K@Z 00000001400826a0 f i ChunkManager.obj
+ 0002:0002f6f0       ??$make_shared@VChunkManager@@AEAV?$shared_ptr@VPlayer@@@std@@@std@@YA?AV?$shared_ptr@VChunkManager@@@0@AEAV?$shared_ptr@VPlayer@@@0@@Z 00000001400826f0 f i Game.obj
  0002:0002f840       ?pop@?$queue@V?$tuple@HH@std@@V?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@2@@std@@QEAAXXZ 0000000140082840 f i ChunkManager.obj
  0002:0002f880       ?_Assign_grow@?$_Hash_vec@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@@std@@QEAAX_KV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@2@@Z 0000000140082880 f i ChunkManager.obj
  0002:0002fa60       ?createPendingChunks@ChunkManager@@AEAAXXZ 0000000140082a60 f   ChunkManager.obj
  0002:0002fc20       ?pop_back@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@QEAAXXZ 0000000140082c20 f i ChunkManager.obj
+ 0002:0002fda0       ??$make_shared@VPlayer@@$$V@std@@YA?AV?$shared_ptr@VPlayer@@@0@XZ 0000000140082da0 f i Game.obj
  0002:0002ff50       ?push@?$queue@V?$tuple@HH@std@@V?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@2@@std@@QEAAXAEBV?$tuple@HH@2@@Z 0000000140082f50 f i ChunkManager.obj
  0002:0002ffc0       ?push_back@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@QEAAXAEBV?$shared_ptr@VChunk@@@2@@Z 0000000140082fc0 f i ChunkManager.obj
  0002:000300d0       ?push_back@?$deque@V?$tuple@HH@std@@V?$allocator@V?$tuple@HH@std@@@2@@std@@QEAAXAEBV?$tuple@HH@2@@Z 00000001400830d0 f i ChunkManager.obj
  0002:000303a0       ?release@?$unique_ptr@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@@2@@std@@QEAAPEAV?$tuple@P8ChunkManager@@EAAXXZPEAV1@@2@XZ 00000001400833a0 f i ChunkManager.obj
+ 0002:000303f0       ?_Change_array@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAXQEAV?$shared_ptr@VGameObject@@@2@_K1@Z 00000001400833f0 f i Game.obj
  0002:00030540       ?release@?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@QEAAPEAVthread@2@XZ 0000000140083540 f i ChunkManager.obj
  0002:00030640       ?store@?$_Atomic_storage@_N$00@std@@QEAAX_N@Z 0000000140083640 f i ChunkManager.obj
- 0002:000306d0       ??$_Emplace_reallocate@V?$shared_ptr@VGameObject@@@std@@@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAPEAV?$shared_ptr@VGameObject@@@1@QEAV21@$$QEAV21@@Z 00000001400836d0 f i Game.obj
+ 0002:000306a0       ?run@Game@@QEAAXXZ         00000001400836a0 f   Game.obj
+ 0002:000307c0       ??$destroy@V?$shared_ptr@VGameObject@@@std@@@?$_Default_allocator_traits@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@SAXAEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@1@QEAV?$shared_ptr@VGameObject@@@1@@Z 00000001400837c0 f i Game.obj
+ 0002:00030800       ?render@Game@@AEAAXXZ      0000000140083800 f   Game.obj
  0002:00030a10       ?unloadChunk@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@@Z 0000000140083a10 f   ChunkManager.obj
- 0002:00030a60       ?render@Game@@AEAAXXZ      0000000140083a60 f   Game.obj
+ 0002:00030a40       ?updatePlayer@Game@@AEAAXXZ 0000000140083a40 f   Game.obj
  0002:00030c10       ?wait@condition_variable@std@@QEAAXAEAV?$unique_lock@Vmutex@std@@@2@@Z 0000000140083c10 f i ChunkManager.obj
  0002:00030d00       ??$?0AEAPEAV_Facet_base@std@@@?$_Compressed_pair@U?$default_delete@V_Facet_base@std@@@std@@PEAV_Facet_base@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV_Facet_base@1@@Z 0000000140083d00 f i FileUtils.obj
  0002:00030d70       ??$?0AEBV?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@AEBV?$allocator@D@1@@Z 0000000140083d70 f i FileUtils.obj
@@ -1004,10 +1027,8 @@
  0002:000378b0       ??$?0P8Game@@EAAXXZ@?$_Tuple_val@P8Game@@EAAXXZ@std@@QEAA@$$QEAP8Game@@EAAXXZ@Z 000000014008a8b0 f i Game.obj
  0002:00037910       ??$?0P8Game@@EAAXXZPEAV0@$0A@@?$tuple@P8Game@@EAAXXZPEAV1@@std@@QEAA@$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z 000000014008a910 f i Game.obj
  0002:00037990       ??$?0P8Game@@EAAXXZPEAV0@$0A@@thread@std@@QEAA@$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z 000000014008a990 f i Game.obj
- 0002:00037a00       ??$?0PEAVGame@@@?$_Tuple_val@PEAVGame@@@std@@QEAA@$$QEAPEAVGame@@@Z 000000014008aa00 f i Game.obj
  0002:00037a60       ??$?0U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAA@$$QEAV01@@Z 000000014008aa60 f i Game.obj
  0002:00037af0       ??$?0U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAA@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@1@@Z 000000014008aaf0 f i Game.obj
- 0002:00037b60       ??$?0U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@1@@?$_Compressed_pair@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAU?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@1@$$QEAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@1@@Z 000000014008ab60 f i Game.obj
  0002:00037bd0       ??$?0U_Exact_args_t@std@@P8Game@@EAAXXZPEAV2@$0A@@?$tuple@P8Game@@EAAXXZPEAV1@@std@@QEAA@U_Exact_args_t@1@$$QEAP8Game@@EAAXXZ$$QEAPEAV3@@Z 000000014008abd0 f i Game.obj
  0002:00037c70       ??$?0U_Exact_args_t@std@@PEAVGame@@$$V$0A@@?$tuple@PEAVGame@@@std@@QEAA@U_Exact_args_t@1@$$QEAPEAVGame@@@Z 000000014008ac70 f i Game.obj
  0002:00037cf0       ??$?0V?$shared_ptr@VGameObject@@@std@@@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@V?$shared_ptr@VGameObject@@@std@@@1@@Z 000000014008acf0 f i Game.obj
@@ -1037,27 +1058,23 @@
  0002:00038ab0       ??$_Copy_construct_from@VPlayer@@@?$_Ptr_base@VGameObject@@@std@@IEAAXAEBV?$shared_ptr@VPlayer@@@1@@Z 000000014008bab0 f i Game.obj
  0002:00038b30       ??$_Destroy_in_place@VChunkManager@@@std@@YAXAEAVChunkManager@@@Z 000000014008bb30 f i Game.obj
  0002:00038bb0       ??$_Destroy_in_place@VPlayer@@@std@@YAXAEAVPlayer@@@Z 000000014008bbb0 f i Game.obj
- 0002:00038cd0       ??$_Emplace_back_with_unused_capacity@V?$shared_ptr@VGameObject@@@std@@@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAAEAV?$shared_ptr@VGameObject@@@1@$$QEAV21@@Z 000000014008bcd0 f i Game.obj
  0002:00038d70       ??$_Emplace_one_at_back@V?$shared_ptr@VGameObject@@@std@@@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAAEAV?$shared_ptr@VGameObject@@@1@$$QEAV21@@Z 000000014008bd70 f i Game.obj
  0002:00038ed0       ??$_Get_unwrapped@AEBQEAV?$shared_ptr@VGameObject@@@std@@@std@@YA?A_TAEBQEAV?$shared_ptr@VGameObject@@@0@@Z 000000014008bed0 f i Game.obj
  0002:00038f80       ??$_Invoke@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@$0A@$00@thread@std@@CAIPEAX@Z 000000014008bf80 f i Game.obj
  0002:00039300       ??$_Move_construct_from@VGameStates@@@?$_Ptr_base@VGameStates@@@std@@IEAAX$$QEAV01@@Z 000000014008c300 f i Game.obj
  0002:00039430       ??$_Move_construct_from@VShaderManager@@@?$_Ptr_base@VShaderManager@@@std@@IEAAX$$QEAV01@@Z 000000014008c430 f i Game.obj
  0002:000394d0       ??$_Move_construct_from@VTextureManager@@@?$_Ptr_base@VTextureManager@@@std@@IEAAX$$QEAV01@@Z 000000014008c4d0 f i Game.obj
- 0002:00039570       ??$_Set_ptr_rep_and_enable_shared@VChunkManager@@@?$shared_ptr@VChunkManager@@@std@@AEAAXQEAVChunkManager@@QEAV_Ref_count_base@1@@Z 000000014008c570 f i Game.obj
  0002:00039610       ??$_Set_ptr_rep_and_enable_shared@VPlayer@@@?$shared_ptr@VPlayer@@@std@@AEAAXQEAVPlayer@@QEAV_Ref_count_base@1@@Z 000000014008c610 f i Game.obj
  0002:00039790       ??$_Unfancy@V?$shared_ptr@VGameObject@@@std@@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@PEAV10@@Z 000000014008c790 f i Game.obj
  0002:00039950       ??$_Unfancy_maybe_null@V?$shared_ptr@VGameObject@@@std@@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@PEAV10@@Z 000000014008c950 f i Game.obj
- 0002:00039b10       ??$addressof@V?$shared_ptr@VGameObject@@@std@@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@AEAV10@@Z 000000014008cb10 f i Game.obj
+ 0002:00039990       ?capacity@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEBA_KXZ 000000014008c990 f i Game.obj
  0002:00039b50       ??$addressof@VChunkManager@@@std@@YAPEAVChunkManager@@AEAV1@@Z 000000014008cb50 f i Game.obj
  0002:00039cb0       ??$addressof@VPlayer@@@std@@YAPEAVPlayer@@AEAV1@@Z 000000014008ccb0 f i Game.obj
- 0002:00039d70       ??$destroy@V?$shared_ptr@VGameObject@@@std@@@?$_Default_allocator_traits@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@SAXAEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@1@QEAV?$shared_ptr@VGameObject@@@1@@Z 000000014008cd70 f i Game.obj
+ 0002:0003a2f0       ?_Unchecked_end@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAAPEAV?$shared_ptr@VGameObject@@@2@XZ 000000014008d2f0 f i Game.obj
  0002:0003a4c0       ??$duration_cast@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@_JU?$ratio@$00$0DOI@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z 000000014008d4c0 f i Game.obj
- 0002:0003a630       ??$duration_cast@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z 000000014008d630 f i Game.obj
  0002:0003a6a0       ?destroy@Game@@QEAAXXZ     000000014008d6a0 f   Game.obj
  0002:0003a8f0       ??$exchange@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@std@@$$T@std@@YAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@0@AEAPEAV10@$$QEA$$T@Z 000000014008d8f0 f i Game.obj
  0002:0003abc0       ??$get@$00P8Game@@EAAXXZPEAV1@@std@@YAAEAPEAVGame@@AEAV?$tuple@P8Game@@EAAXXZPEAV1@@0@@Z 000000014008dbc0 f i Game.obj
- 0002:0003ac40       ??$get@$0A@P8Game@@EAAXXZPEAV1@@std@@YAAEAP8Game@@EAAXXZAEAV?$tuple@P8Game@@EAAXXZPEAV1@@0@@Z 000000014008dc40 f i Game.obj
  0002:0003ac80       ??$_Emplace_back_internal@AEBV?$shared_ptr@VChunk@@@std@@@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEAAXAEBV?$shared_ptr@VChunk@@@1@@Z 000000014008dc80 f i ChunkManager.obj
  0002:0003aeb0       ??$make_unique@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@P8Game@@EAAXXZPEAV3@$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@0@$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z 000000014008deb0 f i Game.obj
  0002:0003b020       ??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z 000000014008e020 f i Game.obj
@@ -1077,19 +1094,12 @@
  0002:0003b960       ??0?$shared_ptr@VGameStates@@@std@@QEAA@$$QEAV01@@Z 000000014008e960 f i Game.obj
  0002:0003b9d0       ??0?$shared_ptr@VGameStates@@@std@@QEAA@$$T@Z 000000014008e9d0 f i Game.obj
  0002:0003ba40       ??0?$shared_ptr@VPlayer@@@std@@QEAA@XZ 000000014008ea40 f i Game.obj
- 0002:0003bab0       ??0?$shared_ptr@VShaderManager@@@std@@QEAA@$$QEAV01@@Z 000000014008eab0 f i Game.obj
- 0002:0003bb10       ??0?$shared_ptr@VShaderManager@@@std@@QEAA@$$T@Z 000000014008eb10 f i Game.obj
  0002:0003bb60       ??0?$shared_ptr@VTextureManager@@@std@@QEAA@$$QEAV01@@Z 000000014008eb60 f i Game.obj
  0002:0003bbd0       ??0?$shared_ptr@VTextureManager@@@std@@QEAA@$$T@Z 000000014008ebd0 f i Game.obj
  0002:0003bc30       ??0?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEAA@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@@Z 000000014008ec30 f i Game.obj
  0002:0003bd60       ??1?$_Ref_count_obj2@VChunkManager@@@std@@UEAA@XZ 000000014008ed60 f i Game.obj
  0002:0003bdf0       ??1?$_Ref_count_obj2@VPlayer@@@std@@UEAA@XZ 000000014008edf0 f i Game.obj
  0002:0003bef0       ??1?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAA@XZ 000000014008eef0 f i Game.obj
- 0002:0003bf50       ??1?$shared_ptr@VChunkManager@@@std@@QEAA@XZ 000000014008ef50 f i Game.obj
- 0002:0003bfb0       ??1?$shared_ptr@VGameObject@@@std@@QEAA@XZ 000000014008efb0 f i Game.obj
- 0002:0003c020       ??1?$shared_ptr@VGameStates@@@std@@QEAA@XZ 000000014008f020 f i Game.obj
- 0002:0003c070       ??1?$shared_ptr@VShaderManager@@@std@@QEAA@XZ 000000014008f070 f i Game.obj
- 0002:0003c0c0       ??1?$shared_ptr@VTexture2DArray@@@std@@QEAA@XZ 000000014008f0c0 f i Game.obj
  0002:0003c110       ??1?$shared_ptr@VTextureManager@@@std@@QEAA@XZ 000000014008f110 f i Game.obj
  0002:0003c270       ??4?$shared_ptr@VGameStates@@@std@@QEAAAEAV01@$$QEAV01@@Z 000000014008f270 f i Game.obj
  0002:0003c380       ??4?$shared_ptr@VShaderManager@@@std@@QEAAAEAV01@$$QEAV01@@Z 000000014008f380 f i Game.obj
@@ -1110,8 +1120,6 @@
  0002:0003ce00       ?_Destroy@?$_Ref_count_obj2@VChunkManager@@@std@@EEAAXXZ 000000014008fe00 f i Game.obj
  0002:0003ce60       ?_Destroy@?$_Ref_count_obj2@VPlayer@@@std@@EEAAXXZ 000000014008fe60 f i Game.obj
  0002:0003cef0       ?_Get_first@?$_Compressed_pair@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@$00@std@@QEAAAEAU?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@XZ 000000014008fef0 f i Game.obj
- 0002:0003cf80       ?_Get_first@?$_Compressed_pair@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$shared_ptr@VGameObject@@@std@@@std@@@2@$00@std@@QEAAAEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@XZ 000000014008ff80 f i Game.obj
- 0002:0003cfd0       ?_Get_first@?$_Compressed_pair@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$shared_ptr@VGameObject@@@std@@@std@@@2@$00@std@@QEBAAEBV?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@XZ 000000014008ffd0 f i Game.obj
  0002:0003d020       ?_Getal@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAAEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@XZ 0000000140090020 f i Game.obj
  0002:0003d060       ?_Getal@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEBAAEBV?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@XZ 0000000140090060 f i Game.obj
  0002:0003d0e0       ?_Incref@?$_Ptr_base@VGameObject@@@std@@IEBAXXZ 00000001400900e0 f i Game.obj
@@ -1119,32 +1127,19 @@
  0002:0003d240       ?_Release@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAPEAV?$shared_ptr@VGameObject@@@2@XZ 0000000140090240 f i Game.obj
  0002:0003d2b0       ?_Swap@?$_Ptr_base@VGameStates@@@std@@IEAAXAEAV12@@Z 00000001400902b0 f i Game.obj
  0002:0003d390       ?_Swap@?$_Ptr_base@VShaderManager@@@std@@IEAAXAEAV12@@Z 0000000140090390 f i Game.obj
- 0002:0003d550       ?_Unchecked_begin@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAAPEAV?$shared_ptr@VGameObject@@@2@XZ 0000000140090550 f i Game.obj
- 0002:0003d5d0       ?_Unchecked_end@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAAPEAV?$shared_ptr@VGameObject@@@2@XZ 00000001400905d0 f i Game.obj
  0002:0003d650       ?_Xlength@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@CAXXZ 0000000140090650 f i Game.obj
  0002:0003d780       ?__autoclassinit2@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAX_K@Z 0000000140090780 f i Game.obj
  0002:0003d7d0       ?__autoclassinit2@?$shared_ptr@VChunkManager@@@std@@QEAAX_K@Z 00000001400907d0 f i Game.obj
  0002:0003d820       ?__autoclassinit2@?$shared_ptr@VGameObject@@@std@@QEAAX_K@Z 0000000140090820 f i Game.obj
- 0002:0003d860       ?__autoclassinit2@?$shared_ptr@VPlayer@@@std@@QEAAX_K@Z 0000000140090860 f i Game.obj
  0002:0003d8a0       ?__autoclassinit2@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAAX_K@Z 00000001400908a0 f i Game.obj
- 0002:0003d9a0       ?count@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEBA_JXZ 00000001400909a0 f i Game.obj
  0002:0003da00       ?count@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEBA_JXZ 0000000140090a00 f i Game.obj
- 0002:0003db70       ?get@?$_Ptr_base@VGameObject@@@std@@IEBAPEAVGameObject@@XZ 0000000140090b70 f i Game.obj
  0002:0003dbc0       ?get@?$_Ptr_base@VTextureManager@@@std@@IEBAPEAVTextureManager@@XZ 0000000140090bc0 f i Game.obj
- 0002:0003dcd0       ?get@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEBAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@XZ 0000000140090cd0 f i Game.obj
  0002:0003dd10       ?_Insert_new_node_before@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@IEAAPEAU?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@2@_KQEAU32@1@Z 0000000140090d10 f i ChunkManager.obj
  0002:0003df00       ?get_deleter@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAAAEAU?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@XZ 0000000140090f00 f i Game.obj
  0002:0003dfa0       ?max_size@?$_Default_allocator_traits@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@SA_KAEBV?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@Z 0000000140090fa0 f i Game.obj
  0002:0003e040       ?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ 0000000140091040 f i Game.obj
  0002:0003e200       ??$_Emplace_reallocate@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@AEAAPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@1@QEAV21@$$QEAV21@@Z 0000000140091200 f i ChunkManager.obj
- 0002:0003e4c0       ?processMouseInput@Game@@QEAAXMM@Z 00000001400914c0 f   Game.obj
- 0002:0003e540       ?push_back@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEAAX$$QEAV?$shared_ptr@VGameObject@@@2@@Z 0000000140091540 f i Game.obj
- 0002:0003e770       ?release@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@XZ 0000000140091770 f i Game.obj
- 0002:0003e920       ?size@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@QEBA_KXZ 0000000140091920 f i Game.obj
- 0002:0003e980       ?swap@?$shared_ptr@VGameStates@@@std@@QEAAXAEAV12@@Z 0000000140091980 f i Game.obj
- 0002:0003eb90       ?swap@?$shared_ptr@VShaderManager@@@std@@QEAAXAEAV12@@Z 0000000140091b90 f i Game.obj
- 0002:0003ecf0       ?swap@?$shared_ptr@VTextureManager@@@std@@QEAAXAEAV12@@Z 0000000140091cf0 f i Game.obj
- 0002:0003ed50       ?time_since_epoch@?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@XZ 0000000140091d50 f i Game.obj
+ 0002:0003e480       ??$_Emplace_reallocate@V?$shared_ptr@VGameObject@@@std@@@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAPEAV?$shared_ptr@VGameObject@@@1@QEAV21@$$QEAV21@@Z 0000000140091480 f i Game.obj
  0002:0003eda0       ?_Get_data@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEAAAEAV?$_Deque_val@U?$_Deque_simple_types@V?$shared_ptr@VChunk@@@std@@@std@@@2@XZ 0000000140091da0 f i ChunkManager.obj
  0002:0003ede0       ?destroy@ChunkManager@@UEAAXXZ 0000000140091de0 f   ChunkManager.obj
  0002:0003f200       ??0GameObject@@QEAA@XZ     0000000140092200 f   GameObject.obj
@@ -1318,6 +1313,7 @@
  0002:000471f0       ??1?$unique_ptr@VVoxel@@U?$default_delete@VVoxel@@@std@@@std@@QEAA@XZ 000000014009a1f0 f i MeshGenerator.obj
  0002:00047460       ?GenerateShape@MeshGenerator@@SAPEAVVoxel@@AEBU?$vec@$02M$0A@@glm@@0W4SHAPE_GENERATION_METHODS@@@Z 000000014009a460 f   MeshGenerator.obj
  0002:00047790       ?get_deleter@?$unique_ptr@VVoxel@@U?$default_delete@VVoxel@@@std@@@std@@QEAAAEAU?$default_delete@VVoxel@@@2@XZ 000000014009a790 f i MeshGenerator.obj
+ 0002:000477d0       ??$_Emplace_back_with_unused_capacity@V?$shared_ptr@VGameObject@@@std@@@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAAEAV?$shared_ptr@VGameObject@@@1@$$QEAV21@@Z 000000014009a7d0 f i Game.obj
  0002:00047a90       ??$_Try_emplace@AEBV?$tuple@HH@std@@$$V@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@IEAA?AU?$pair@PEAU?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@_N@1@AEBV?$tuple@HH@1@@Z 000000014009aa90 f i ChunkManager.obj
  0002:00047cb0       ?ShapeGenerator@MeshGenerator@@CAPEAVVoxel@@U?$vec@$02M$0A@@glm@@0P6A_N00@Z@Z 000000014009acb0 f   MeshGenerator.obj
  0002:00048410       ?__autoclassinit2@Octree@@QEAAX_K@Z 000000014009b410 f i MeshGenerator.obj
@@ -1847,6 +1843,7 @@
  0002:00062aa0       ?perlinNoise3DF@MeshGenerator@@CA_NU?$vec@$02M$0A@@glm@@0AEAM@Z 00000001400b5aa0 f   MeshGenerator.obj
  0002:00067fd0       ?GenerateTerrain@MeshGenerator@@SAPEAVOctree@@AEBU?$vec@$02M$0A@@glm@@0W4TERRAIN_GENERATION_METHODS@@@Z 00000001400bafd0 f   MeshGenerator.obj
  0002:0006de10       ?perlinNoise2D@MeshGenerator@@CAMMMMMMMMM@Z 00000001400c0e10 f   MeshGenerator.obj
+ 0002:000708f0       ?__autoclassinit2@?$shared_ptr@VPlayer@@@std@@QEAAX_K@Z 00000001400c38f0 f i Game.obj
  0002:00070dd0       ?_Incref@?$_Ptr_base@VChunk@@@std@@IEBAXXZ 00000001400c3dd0 f i ChunkManager.obj
  0002:000816a0       ?swap@?$shared_ptr@VTexture2DArray@@@std@@QEAAXAEAV12@@Z 00000001400d46a0 f i TextureManager.obj
  0002:00081700       ldexpf                     00000001400d4700 f i TextureManager.obj
@@ -2096,6 +2093,7 @@
  0002:00090cc0       _glfwPlatformGetPhysicalDevicePresentationSupport 00000001400e3cc0 f   glfw3:win32_window.obj
  0002:00090d30       _glfwPlatformCreateWindowSurface 00000001400e3d30 f   glfw3:win32_window.obj
  0002:00094210       glfwGetWin32Window         00000001400e7210 f   glfw3:win32_window.obj
+ 0002:00094250       ?cullingMeshing@Chunk@@AEAAXXZ 00000001400e7250 f   Chunk.obj
  0002:00095900       _glfwPlatformCreateTls     00000001400e8900 f   glfw3:win32_thread.obj
  0002:00095980       _glfwPlatformDestroyTls    00000001400e8980 f   glfw3:win32_thread.obj
  0002:000959c0       _glfwPlatformGetTls        00000001400e89c0 f   glfw3:win32_thread.obj
@@ -2693,6 +2691,7 @@
  0002:000a93a0       __vcrt_uninitialize_critical 00000001400fc3a0 f   MSVCRTD:ucrt_stubs.obj
  0002:000a93b0       __scrt_stub_for_is_c_termination_complete 00000001400fc3b0 f   MSVCRTD:ucrt_stubs.obj
  0002:000a93b0       _is_c_termination_complete 00000001400fc3b0 f   MSVCRTD:ucrt_stubs.obj
+ 0002:000a93c0       ?greedyMeshing@Chunk@@AEAAXXZ 00000001400fc3c0 f   Chunk.obj
  0002:000ab9a0       _guard_dispatch_icall_nop  00000001400fe9a0 f   MSVCRTD:guard_dispatch.obj
  0002:000ab9c0       _guard_xfg_dispatch_icall_nop 00000001400fe9c0 f   MSVCRTD:guard_xfg_dispatch.obj
  0003:00000000       __xc_a                     0000000140105000     MSVCRTD:initializers.obj
@@ -3414,9 +3413,9 @@
  0003:00005840       ??_C@_05KBEOJPB@?$CFd?4?$CFd@ 000000014010a840     glad.obj
  0003:00005930       ??_C@_0BA@FOIKENOD@vector?5too?5long@ 000000014010a930     ChunkManager.obj
  0003:000059b0       ??_C@_0BL@GOIGLPKN@unordered_map?1set?5too?5long@ 000000014010a9b0     ChunkManager.obj
+ 0003:00005a88       ??_7?$_Ref_count_obj2@VChunkManager@@@std@@6B@ 000000014010aa88     Game.obj
  0003:00005d60       ??_C@_0BM@BALDKKHE@list?5iterators?5incompatible@ 000000014010ad60     ChunkManager.obj
  0003:00005ed0       ??_C@_0DB@ENBCPNKO@cannot?5increment?5value?9initiali@ 000000014010aed0     ChunkManager.obj
- 0003:00005fc8       ??_7?$_Ref_count_obj2@VChunkManager@@@std@@6B@ 000000014010afc8     Game.obj
  0003:00006070       ??_7exception@std@@6B@     000000014010b070     Camera.obj
  0003:00006088       ??_C@_0BC@EOODALEL@Unknown?5exception@ 000000014010b088     Camera.obj
  0003:000060a8       ??_7bad_alloc@std@@6B@     000000014010b0a8     Camera.obj
@@ -3907,10 +3906,10 @@
  0003:0001a288       ??_R3?$_Ref_count_obj2@VPlayer@@@std@@8 000000014011f288     Game.obj
  0003:0001a2a0       ??_R2?$_Ref_count_obj2@VPlayer@@@std@@8 000000014011f2a0     Game.obj
  0003:0001a2b8       ??_R1A@?0A@EA@?$_Ref_count_obj2@VPlayer@@@std@@8 000000014011f2b8     Game.obj
- 0003:0001a2e8       ??_R4?$_Ref_count_obj2@VChunkManager@@@std@@6B@ 000000014011f2e8     Game.obj
- 0003:0001a318       ??_R3?$_Ref_count_obj2@VChunkManager@@@std@@8 000000014011f318     Game.obj
- 0003:0001a330       ??_R2?$_Ref_count_obj2@VChunkManager@@@std@@8 000000014011f330     Game.obj
- 0003:0001a348       ??_R1A@?0A@EA@?$_Ref_count_obj2@VChunkManager@@@std@@8 000000014011f348     Game.obj
+ 0003:0001a2e0       ??_R4?$_Ref_count_obj2@VChunkManager@@@std@@6B@ 000000014011f2e0     Game.obj
+ 0003:0001a308       ??_R3?$_Ref_count_obj2@VChunkManager@@@std@@8 000000014011f308     Game.obj
+ 0003:0001a320       ??_R2?$_Ref_count_obj2@VChunkManager@@@std@@8 000000014011f320     Game.obj
+ 0003:0001a338       ??_R1A@?0A@EA@?$_Ref_count_obj2@VChunkManager@@@std@@8 000000014011f338     Game.obj
  0003:0001a378       ??_R4GameObject@@6B@       000000014011f378     GameObject.obj
  0003:0001a3a8       ??_R4?$_Ref_count@VGameStates@@@std@@6B@ 000000014011f3a8     GameStates.obj
  0003:0001a3d8       ??_R3?$_Ref_count@VGameStates@@@std@@8 000000014011f3d8     GameStates.obj
@@ -4019,7 +4018,7 @@
  0004:0002e900       ??_R0?AV?$basic_filebuf@DU?$char_traits@D@std@@@std@@@8 000000014015d900     FileUtils.obj
  0004:0002e950       ??_R0?AV?$basic_ifstream@DU?$char_traits@D@std@@@std@@@8 000000014015d950     FileUtils.obj
  0004:0002e9a0       ??_R0?AV?$_Ref_count_obj2@VPlayer@@@std@@@8 000000014015d9a0     Game.obj
- 0004:0002e9e0       ??_R0?AV?$_Ref_count_obj2@VChunkManager@@@std@@@8 000000014015d9e0     Game.obj
+ 0004:0002e9d8       ??_R0?AV?$_Ref_count_obj2@VChunkManager@@@std@@@8 000000014015d9d8     Game.obj
  0004:0002ea28       ??_R0?AV?$_Ref_count@VGameStates@@@std@@@8 000000014015da28     GameStates.obj
  0004:0002ea68       ??_R0?AVOctreeVisual@@@8   000000014015da68     OctreeVisual.obj
  0004:0002ea98       ??_R0?AV?$_Func_base@XPEAUNode@@@std@@@8 000000014015da98     OctreeVisual.obj
@@ -5195,7 +5194,6 @@
  0003:ffefb000       $unwind$?length@?$mat@$03$03M$0A@@glm@@SAHXZ 0000000140000000     Chunk.obj
  0003:ffefb000       $unwind$?length@?$vec@$03M$0A@@glm@@SAHXZ 0000000140000000     Chunk.obj
  0003:ffefb000       $unwind$?what@exception@std@@UEBAPEBDXZ 0000000140000000     Chunk.obj
- 0000:00000000       _volmd                     0000000140000000     Chunk.obj
  0000:00000000       _volmd                     0000000140000000     Chunk.obj
  0000:00000000       _volmd                     0000000140000000     Chunk.obj
  0000:00000000       _volmd                     0000000140000000     Chunk.obj
@@ -7677,16 +7675,15 @@
  0002:0000b390       load_GL_VERSION_3_0        000000014005e390 f   glad.obj
  0002:0000bc10       load_GL_VERSION_3_1        000000014005ec10 f   glad.obj
  0002:0000bdd0       load_GL_VERSION_3_2        000000014005edd0 f   glad.obj
- 0002:0000bf90       ??$lerp@M@db@@YAMMMM@Z     000000014005ef90 f   Game.obj
  0002:0000c000       load_GL_VERSION_3_3        000000014005f000 f   glad.obj
+ 0002:0000c540       ??$fade@N@db@@YANN@Z       000000014005f540 f   Game.obj
  0002:0000c5f0       load_GL_VERSION_4_0        000000014005f5f0 f   glad.obj
  0002:0000cac0       load_GL_VERSION_4_1        000000014005fac0 f   glad.obj
- 0002:0000d350       ??$lerp@N@db@@YANNNN@Z     0000000140060350 f   Game.obj
  0002:0000d3c0       load_GL_VERSION_4_2        00000001400603c0 f   glad.obj
  0002:0000d540       load_GL_VERSION_4_3        0000000140060540 f   glad.obj
- 0002:0000d8f0       ??$fade@N@db@@YANN@Z       00000001400608f0 f   Game.obj
  0002:0000d9e0       load_GL_VERSION_4_4        00000001400609e0 f   glad.obj
  0002:0000db10       load_GL_VERSION_4_5        0000000140060b10 f   glad.obj
+ 0002:0000e510       ??$lerp@N@db@@YANNNN@Z     0000000140061510 f   Game.obj
  0002:0000e5f0       ??$dot_grad@M@db@@YAMHMM@Z 00000001400615f0 f   Game.obj
  0002:0000e6ec       $LN14                      00000001400616ec     Game.obj
  0002:0000e740       load_GL_VERSION_4_6        0000000140061740 f   glad.obj
@@ -7722,6 +7719,7 @@
  0002:000230e0       ??$lerp@N@db@@YANNNN@Z     00000001400760e0 f   ChunkManager.obj
  0002:00023b20       ??0<lambda_1>@?4??createPendingChunks@ChunkManager@@AEAAXXZ@QEAA@PEAV2@@Z 0000000140076b20 f   ChunkManager.obj
  0002:00026da0       ??R<lambda_1>@?4??createPendingChunks@ChunkManager@@AEAAXXZ@QEBA@XZ 0000000140079da0 f   ChunkManager.obj
+ 0002:0002b280       ??$lerp@M@db@@YAMMMM@Z     000000014007e280 f   Game.obj
  0002:0002f0e0       $LN17                      00000001400820e0     ChunkManager.obj
  0002:00030120       ??$dot_grad@M@db@@YAMHMMM@Z 0000000140083120 f   MeshGenerator.obj
  0002:0003030c       $LN22                      000000014008330c     MeshGenerator.obj
@@ -7731,11 +7729,11 @@
  0002:0003a000       ??$dot_grad@N@db@@YANHN@Z  000000014008d000 f   Game.obj
  0002:0003a170       ??$dot_grad@N@db@@YANHNN@Z 000000014008d170 f   Game.obj
  0002:0003a26c       $LN14                      000000014008d26c     Game.obj
- 0002:0003a290       ??$dot_grad@N@db@@YANHNNN@Z 000000014008d290 f   Game.obj
- 0002:0003a47c       $LN22                      000000014008d47c     Game.obj
  0002:0003a980       ??$fade@M@db@@YAMM@Z       000000014008d980 f   Game.obj
  0002:0003aa80       ??$floor@M@db@@YAHM@Z      000000014008da80 f   Game.obj
  0002:0003ab20       ??$floor@N@db@@YAHN@Z      000000014008db20 f   Game.obj
+ 0002:0003e710       ??$dot_grad@N@db@@YANHNNN@Z 0000000140091710 f   Game.obj
+ 0002:0003e8fc       $LN22                      00000001400918fc     Game.obj
  0002:000404b0       time                       00000001400934b0 f   main.obj
  0002:000462a0       ??$dot_grad@M@db@@YAMHM@Z  00000001400992a0 f   MeshGenerator.obj
  0002:00046410       ??$dot_grad@M@db@@YAMHMM@Z 0000000140099410 f   MeshGenerator.obj
@@ -8063,8 +8061,7 @@
  0002:000acb64       __catch$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z$0 00000001400ffb64 f   Chunk.obj
  0002:000acbc0       ?dtor$0@?0???0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z@4HA 00000001400ffbc0 f   Chunk.obj
  0002:000acbf0       ?dtor$1@?0???0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z@4HA 00000001400ffbf0 f   Chunk.obj
- 0002:000acc30       ?dtor$2@?0???0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z@4HA 00000001400ffc30 f   Chunk.obj
- 0002:000acc70       ?dtor$0@?0???0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z@4HA 00000001400ffc70 f   Chunk.obj
+ 0002:000acc30       ?dtor$0@?0???0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z@4HA 00000001400ffc30 f   Chunk.obj
  0002:000acca0       ?dtor$0@?0???$?0AEBUpiecewise_construct_t@std@@V?$tuple@AEBV?$tuple@HH@std@@@1@V?$tuple@$$V@1@@?$_List_node_emplace_op2@V?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@std@@@std@@QEAA@AEAV?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@1@AEBUpiecewise_construct_t@1@$$QEAV?$tuple@AEBV?$tuple@HH@std@@@1@$$QEAV?$tuple@$$V@1@@Z@4HA 00000001400ffca0 f   ChunkManager.obj
  0002:000accd0       ?dtor$0@?0???$?0U?$vec@$02M$0A@@glm@@AEBU01@@?$_Ref_count_obj2@VChunk@@@std@@QEAA@$$QEAU?$vec@$02M$0A@@glm@@AEBU23@@Z@4HA 00000001400ffcd0 f   ChunkManager.obj
  0002:000acd00       ?catch$0@?0???$_Emplace_reallocate@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@AEAAPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@1@QEAV21@$$QEAV21@@Z@4HA 00000001400ffd00 f   ChunkManager.obj
@@ -9690,75 +9687,72 @@
  0003:0001c890       $unwind$?__autoclassinit2@MeshBuilder@@QEAAX_K@Z 0000000140121890     Chunk.obj
  0003:0001c8a4       $unwind$??_GMeshBuilder@@QEAAPEAXI@Z 00000001401218a4     Chunk.obj
  0003:0001c8b8       $unwind$??A?$mat@$03$03M$0A@@glm@@QEBAAEBU?$vec@$03M$0A@@1@H@Z 00000001401218b8     Chunk.obj
- 0003:0001c8cc       $unwind$?__autoclassinit2@OctreeVisual@@QEAAX_K@Z 00000001401218cc     Chunk.obj
- 0003:0001c8e0       $unwind$?stupidMeshing@Chunk@@AEAAXXZ 00000001401218e0     Chunk.obj
- 0003:0001c8fc       $unwind$?cullingMeshing@Chunk@@AEAAXXZ 00000001401218fc     Chunk.obj
- 0003:0001c918       $unwind$?greedyMeshing@Chunk@@AEAAXXZ 0000000140121918     Chunk.obj
- 0003:0001c934       $unwind$?getActualFaceIndex@Chunk@@AEAAHH_N@Z 0000000140121934     Chunk.obj
- 0003:0001c948       $unwind$?isFaceBlocking@Chunk@@AEAA_NU?$vec@$02M$0A@@glm@@H_N@Z 0000000140121948     Chunk.obj
- 0003:0001c95c       $unwind$?shouldMergeTwoVoxel@Chunk@@AEAA_NU?$vec@$02M$0A@@glm@@0H_N@Z 000000014012195c     Chunk.obj
- 0003:0001c970       $unwind$??0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z 0000000140121970     Chunk.obj
+ 0003:0001c8c8       $unwind$?stupidMeshing@Chunk@@AEAAXXZ 00000001401218c8     Chunk.obj
+ 0003:0001c8e0       $unwind$?cullingMeshing@Chunk@@AEAAXXZ 00000001401218e0     Chunk.obj
+ 0003:0001c8fc       $unwind$?greedyMeshing@Chunk@@AEAAXXZ 00000001401218fc     Chunk.obj
+ 0003:0001c918       $unwind$?getActualFaceIndex@Chunk@@AEAAHH_N@Z 0000000140121918     Chunk.obj
+ 0003:0001c934       $unwind$?isFaceBlocking@Chunk@@AEAA_NU?$vec@$02M$0A@@glm@@H_N@Z 0000000140121934     Chunk.obj
+ 0003:0001c948       $unwind$?shouldMergeTwoVoxel@Chunk@@AEAA_NU?$vec@$02M$0A@@glm@@0H_N@Z 0000000140121948     Chunk.obj
+ 0003:0001c958       $unwind$??0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z 0000000140121958     Chunk.obj
+ 0003:0001c970       $unwind$?dtor$0@?0???0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z@4HA 0000000140121970     Chunk.obj
  0003:0001c98a       $cppxdata$??0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z 000000014012198a     Chunk.obj
  0003:0001c993       $stateUnwindMap$??0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z 0000000140121993     Chunk.obj
  0003:0001c9a4       $ip2state$??0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z 00000001401219a4     Chunk.obj
- 0003:0001c9b8       $unwind$?dtor$0@?0???0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z@4HA 00000001401219b8     Chunk.obj
- 0003:0001c9c8       $unwind$?dtor$1@?0???0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z@4HA 00000001401219c8     Chunk.obj
- 0003:0001c9d8       $unwind$?dtor$2@?0???0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z@4HA 00000001401219d8     Chunk.obj
- 0003:0001c9e8       $unwind$??1Chunk@@UEAA@XZ  00000001401219e8     Chunk.obj
- 0003:0001c9fc       $unwind$?init@Chunk@@UEAAXXZ 00000001401219fc     Chunk.obj
- 0003:0001ca10       $unwind$?update@Chunk@@UEAAXM@Z 0000000140121a10     Chunk.obj
- 0003:0001ca24       $unwind$?render@Chunk@@UEAAXM@Z 0000000140121a24     Chunk.obj
- 0003:0001ca38       $unwind$?destroy@Chunk@@UEAAXXZ 0000000140121a38     Chunk.obj
- 0003:0001ca4c       $unwind$??_GChunk@@UEAAPEAXI@Z 0000000140121a4c     Chunk.obj
- 0003:0001ca60       $unwind$??$translate@M$0A@@glm@@YA?AU?$mat@$03$03M$0A@@0@AEBU10@AEBU?$vec@$02M$0A@@0@@Z 0000000140121a60     Chunk.obj
- 0003:0001ca74       $unwind$??$?0HHH@?$vec@$02M$0A@@glm@@QEAA@HHH@Z 0000000140121a74     Chunk.obj
- 0003:0001ca88       $unwind$??$?0MM$0A@@?$vec@$03M$0A@@glm@@QEAA@AEBU?$vec@$02M$0A@@1@M@Z 0000000140121a88     Chunk.obj
- 0003:0001ca9c       $unwind$??$?DM$0A@@glm@@YA?AU?$vec@$03M$0A@@0@AEBU?$mat@$03$03M$0A@@0@AEBU10@@Z 0000000140121a9c     Chunk.obj
- 0003:0001cab8       $unwind$??$?0M$0A@@?$vec@$02M$0A@@glm@@QEAA@AEBU?$vec@$03M$0A@@1@@Z 0000000140121ab8     Chunk.obj
- 0003:0001cacc       $unwind$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z 0000000140121acc     Chunk.obj
+ 0003:0001c9b8       $unwind$?dtor$1@?0???0Chunk@@QEAA@U?$vec@$02M$0A@@glm@@0@Z@4HA 00000001401219b8     Chunk.obj
+ 0003:0001c9c8       $unwind$??1Chunk@@UEAA@XZ  00000001401219c8     Chunk.obj
+ 0003:0001c9d8       $unwind$?init@Chunk@@UEAAXXZ 00000001401219d8     Chunk.obj
+ 0003:0001c9e8       $unwind$?update@Chunk@@UEAAXM@Z 00000001401219e8     Chunk.obj
+ 0003:0001c9fc       $unwind$?render@Chunk@@UEAAXM@Z 00000001401219fc     Chunk.obj
+ 0003:0001ca10       $unwind$?destroy@Chunk@@UEAAXXZ 0000000140121a10     Chunk.obj
+ 0003:0001ca24       $unwind$??_GChunk@@UEAAPEAXI@Z 0000000140121a24     Chunk.obj
+ 0003:0001ca38       $unwind$??$translate@M$0A@@glm@@YA?AU?$mat@$03$03M$0A@@0@AEBU10@AEBU?$vec@$02M$0A@@0@@Z 0000000140121a38     Chunk.obj
+ 0003:0001ca4c       $unwind$??$?0HHH@?$vec@$02M$0A@@glm@@QEAA@HHH@Z 0000000140121a4c     Chunk.obj
+ 0003:0001ca60       $unwind$??$?0MM$0A@@?$vec@$03M$0A@@glm@@QEAA@AEBU?$vec@$02M$0A@@1@M@Z 0000000140121a60     Chunk.obj
+ 0003:0001ca70       $unwind$??$?DM$0A@@glm@@YA?AU?$vec@$03M$0A@@0@AEBU?$mat@$03$03M$0A@@0@AEBU10@@Z 0000000140121a70     Chunk.obj
+ 0003:0001ca88       $unwind$??$?0M$0A@@?$vec@$02M$0A@@glm@@QEAA@AEBU?$vec@$03M$0A@@1@@Z 0000000140121a88     Chunk.obj
+ 0003:0001ca9c       $unwind$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z 0000000140121a9c     Chunk.obj
+ 0003:0001cab8       $unwind$?dtor$0@?0???$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z@4HA 0000000140121ab8     Chunk.obj
+ 0003:0001cacc       $unwind$?catch$1@?0???$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z@4HA 0000000140121acc     Chunk.obj
  0003:0001caea       $cppxdata$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z 0000000140121aea     Chunk.obj
  0003:0001caf8       $stateUnwindMap$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z 0000000140121af8     Chunk.obj
  0003:0001cb00       $tryMap$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z 0000000140121b00     Chunk.obj
  0003:0001cb08       $handlerMap$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z 0000000140121b08     Chunk.obj
  0003:0001cb0f       $ip2state$??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z 0000000140121b0f     Chunk.obj
- 0003:0001cb20       $unwind$?dtor$0@?0???$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z@4HA 0000000140121b20     Chunk.obj
- 0003:0001cb30       $unwind$?catch$1@?0???$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z@4HA 0000000140121b30     Chunk.obj
- 0003:0001cb40       $unwind$??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z 0000000140121b40     Chunk.obj
- 0003:0001cb54       $unwind$??$?0M@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@M@1@@Z 0000000140121b54     Chunk.obj
- 0003:0001cb68       $unwind$??$exchange@PEAU_Container_proxy@std@@$$T@std@@YAPEAU_Container_proxy@0@AEAPEAU10@$$QEA$$T@Z 0000000140121b68     Chunk.obj
- 0003:0001cb7c       $unwind$??$?0I@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@I@1@@Z 0000000140121b7c     Chunk.obj
- 0003:0001cb90       $unwind$??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z 0000000140121b90     Chunk.obj
- 0003:0001cba4       $unwind$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ 0000000140121ba4     Chunk.obj
+ 0003:0001cb20       $unwind$??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z 0000000140121b20     Chunk.obj
+ 0003:0001cb30       $unwind$??$?0M@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@M@1@@Z 0000000140121b30     Chunk.obj
+ 0003:0001cb40       $unwind$??$exchange@PEAU_Container_proxy@std@@$$T@std@@YAPEAU_Container_proxy@0@AEAPEAU10@$$QEA$$T@Z 0000000140121b40     Chunk.obj
+ 0003:0001cb54       $unwind$??$?0I@?$allocator@U_Container_proxy@std@@@std@@QEAA@AEBV?$allocator@I@1@@Z 0000000140121b54     Chunk.obj
+ 0003:0001cb68       $unwind$??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z 0000000140121b68     Chunk.obj
+ 0003:0001cb78       $unwind$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ 0000000140121b78     Chunk.obj
+ 0003:0001cba4       $unwind$?dtor$0@?0???0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z@4HA 0000000140121ba4     Chunk.obj
  0003:0001cbbe       $cppxdata$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ 0000000140121bbe     Chunk.obj
  0003:0001cbc3       $ip2state$??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ 0000000140121bc3     Chunk.obj
- 0003:0001cbc8       $unwind$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z 0000000140121bc8     Chunk.obj
+ 0003:0001cbc8       $unwind$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ 0000000140121bc8     Chunk.obj
  0003:0001cbe2       $cppxdata$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z 0000000140121be2     Chunk.obj
  0003:0001cbeb       $stateUnwindMap$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z 0000000140121beb     Chunk.obj
  0003:0001cbf1       $ip2state$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z 0000000140121bf1     Chunk.obj
- 0003:0001cbfc       $unwind$?dtor$0@?0???0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z@4HA 0000000140121bfc     Chunk.obj
- 0003:0001cc0c       $unwind$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ 0000000140121c0c     Chunk.obj
- 0003:0001cc20       $unwind$??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEBA_NXZ 0000000140121c20     Chunk.obj
- 0003:0001cc34       $unwind$??$_Destroy_range@V?$allocator@M@std@@@std@@YAXPEAMQEAMAEAV?$allocator@M@0@@Z 0000000140121c34     Chunk.obj
- 0003:0001cc48       $unwind$??$_Destroy_range@V?$allocator@I@std@@@std@@YAXPEAIQEAIAEAV?$allocator@I@0@@Z 0000000140121c48     Chunk.obj
- 0003:0001cc5c       $unwind$??$?XM@?$vec@$03M$0A@@glm@@QEAAAEAU01@M@Z 0000000140121c5c     Chunk.obj
- 0003:0001cc70       $unwind$??$floor@M@db@@YAHM@Z 0000000140121c70     Chunk.obj
- 0003:0001cc84       $unwind$??$fade@M@db@@YAMM@Z 0000000140121c84     Chunk.obj
- 0003:0001cc98       $unwind$??$dot_grad@M@db@@YAMHM@Z 0000000140121c98     Chunk.obj
- 0003:0001ccac       $unwind$??$lerp@M@db@@YAMMMM@Z 0000000140121cac     Chunk.obj
- 0003:0001ccc0       $unwind$??$dot_grad@M@db@@YAMHMM@Z 0000000140121cc0     Chunk.obj
- 0003:0001ccd4       $unwind$??$dot_grad@M@db@@YAMHMMM@Z 0000000140121cd4     Chunk.obj
- 0003:0001cce8       $unwind$??$floor@N@db@@YAHN@Z 0000000140121ce8     Chunk.obj
- 0003:0001ccfc       $unwind$??$fade@N@db@@YANN@Z 0000000140121cfc     Chunk.obj
- 0003:0001cd10       $unwind$??$dot_grad@N@db@@YANHN@Z 0000000140121d10     Chunk.obj
- 0003:0001cd24       $unwind$??$lerp@N@db@@YANNNN@Z 0000000140121d24     Chunk.obj
- 0003:0001cd38       $unwind$??$dot_grad@N@db@@YANHNN@Z 0000000140121d38     Chunk.obj
- 0003:0001cd4c       $unwind$??$dot_grad@N@db@@YANHNNN@Z 0000000140121d4c     Chunk.obj
- 0003:0001cd60       $unwind$??$?HM$0A@@glm@@YA?AU?$vec@$03M$0A@@0@AEBU10@0@Z 0000000140121d60     Chunk.obj
- 0003:0001cd74       $unwind$??$?DM$0A@@glm@@YA?AU?$vec@$03M$0A@@0@AEBU10@0@Z 0000000140121d74     Chunk.obj
- 0003:0001cd88       $unwind$?call@?$compute_vec4_mul@M$0A@$0A@@detail@glm@@SA?AU?$vec@$03M$0A@@3@AEBU43@0@Z 0000000140121d88     Chunk.obj
- 0003:0001cd9c       $unwind$??$?YM@?$vec@$03M$0A@@glm@@QEAAAEAU01@AEBU01@@Z 0000000140121d9c     Chunk.obj
- 0003:0001cdb0       $unwind$??$?XM@?$vec@$03M$0A@@glm@@QEAAAEAU01@AEBU01@@Z 0000000140121db0     Chunk.obj
- 0003:0001cdc4       $unwind$?call@?$compute_vec4_add@M$0A@$0A@@detail@glm@@SA?AU?$vec@$03M$0A@@3@AEBU43@0@Z 0000000140121dc4     Chunk.obj
+ 0003:0001cbfc       $unwind$??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEBA_NXZ 0000000140121bfc     Chunk.obj
+ 0003:0001cc0c       $unwind$??$_Destroy_range@V?$allocator@M@std@@@std@@YAXPEAMQEAMAEAV?$allocator@M@0@@Z 0000000140121c0c     Chunk.obj
+ 0003:0001cc20       $unwind$??$_Destroy_range@V?$allocator@I@std@@@std@@YAXPEAIQEAIAEAV?$allocator@I@0@@Z 0000000140121c20     Chunk.obj
+ 0003:0001cc34       $unwind$??$?XM@?$vec@$03M$0A@@glm@@QEAAAEAU01@M@Z 0000000140121c34     Chunk.obj
+ 0003:0001cc48       $unwind$??$floor@M@db@@YAHM@Z 0000000140121c48     Chunk.obj
+ 0003:0001cc5c       $unwind$??$fade@M@db@@YAMM@Z 0000000140121c5c     Chunk.obj
+ 0003:0001cc70       $unwind$??$dot_grad@M@db@@YAMHM@Z 0000000140121c70     Chunk.obj
+ 0003:0001cc84       $unwind$??$lerp@M@db@@YAMMMM@Z 0000000140121c84     Chunk.obj
+ 0003:0001cc98       $unwind$??$dot_grad@M@db@@YAMHMM@Z 0000000140121c98     Chunk.obj
+ 0003:0001ccac       $unwind$??$dot_grad@M@db@@YAMHMMM@Z 0000000140121cac     Chunk.obj
+ 0003:0001ccc0       $unwind$??$floor@N@db@@YAHN@Z 0000000140121cc0     Chunk.obj
+ 0003:0001ccd4       $unwind$??$fade@N@db@@YANN@Z 0000000140121cd4     Chunk.obj
+ 0003:0001cce8       $unwind$??$dot_grad@N@db@@YANHN@Z 0000000140121ce8     Chunk.obj
+ 0003:0001ccfc       $unwind$??$lerp@N@db@@YANNNN@Z 0000000140121cfc     Chunk.obj
+ 0003:0001cd10       $unwind$??$dot_grad@N@db@@YANHNN@Z 0000000140121d10     Chunk.obj
+ 0003:0001cd24       $unwind$??$dot_grad@N@db@@YANHNNN@Z 0000000140121d24     Chunk.obj
+ 0003:0001cd38       $unwind$??$?HM$0A@@glm@@YA?AU?$vec@$03M$0A@@0@AEBU10@0@Z 0000000140121d38     Chunk.obj
+ 0003:0001cd4c       $unwind$??$?DM$0A@@glm@@YA?AU?$vec@$03M$0A@@0@AEBU10@0@Z 0000000140121d4c     Chunk.obj
+ 0003:0001cd60       $unwind$?call@?$compute_vec4_mul@M$0A@$0A@@detail@glm@@SA?AU?$vec@$03M$0A@@3@AEBU43@0@Z 0000000140121d60     Chunk.obj
+ 0003:0001cd74       $unwind$??$?YM@?$vec@$03M$0A@@glm@@QEAAAEAU01@AEBU01@@Z 0000000140121d74     Chunk.obj
+ 0003:0001cd88       $unwind$??$?XM@?$vec@$03M$0A@@glm@@QEAAAEAU01@AEBU01@@Z 0000000140121d88     Chunk.obj
+ 0003:0001cd9c       $unwind$?call@?$compute_vec4_add@M$0A@$0A@@detail@glm@@SA?AU?$vec@$03M$0A@@3@AEBU43@0@Z 0000000140121d9c     Chunk.obj
  0003:0001cdd8       $unwind$?_Fnv1a_append_bytes@std@@YA_K_KQEBE_K@Z 0000000140121dd8     ChunkManager.obj
  0003:0001cdec       $unwind$__local_stdio_printf_options 0000000140121dec     ChunkManager.obj
  0003:0001ce00       $unwind$_vfprintf_l        0000000140121e00     ChunkManager.obj
@@ -9881,6 +9875,7 @@
  0003:0001d71f       $ip2state$?clear@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@QEAAXXZ 000000014012271f     ChunkManager.obj
  0003:0001d724       $unwind$?erase@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@QEAA_KAEBV?$tuple@HH@2@@Z 0000000140122724     ChunkManager.obj
  0003:0001d734       $unwind$?clear@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@QEAAXXZ 0000000140122734     ChunkManager.obj
+ 0003:0001d74c       $unwind$?dtor$1@?0???$_Start@P8Game@@EAAXXZPEAV1@@thread@std@@AEAAX$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z@4HA 000000014012274c     Game.obj
  0003:0001d75c       $unwind$?_Check_max_size@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@IEBAXXZ 000000014012275c     ChunkManager.obj
  0003:0001d774       $unwind$?_Check_rehash_required_1@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@IEBA_NXZ 0000000140122774     ChunkManager.obj
  0003:0001d78c       $unwind$?_Get_first@?$_Compressed_pair@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@@2@$00@std@@QEBAAEBV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@2@XZ 000000014012278c     ChunkManager.obj
@@ -9904,9 +9899,11 @@
  0003:0001d8d3       $ip2state$?_Tidy@?$_Hash_vec@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@@std@@QEAAXXZ 00000001401228d3     ChunkManager.obj
  0003:0001d8d8       $unwind$?_Assign_grow@?$_Hash_vec@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@@std@@QEAAX_KV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@2@@Z 00000001401228d8     ChunkManager.obj
  0003:0001d8e8       $unwind$?_Tidy@?$_Hash_vec@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@@std@@QEAAXXZ 00000001401228e8     ChunkManager.obj
+ 0003:0001d900       $unwind$??0?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAA@PEAV?$shared_ptr@VGameObject@@@1@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@1@@Z 0000000140122900     Game.obj
  0003:0001d910       $unwind$?_Get_first@?$_Compressed_pair@V?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@V?$_Vector_val@U?$_Simple_types@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@std@@@2@$00@std@@QEAAAEAV?$allocator@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@@2@XZ 0000000140122910     ChunkManager.obj
  0003:0001d928       $unwind$?max_size@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@QEBA_KXZ 0000000140122928     ChunkManager.obj
  0003:0001d938       $unwind$?_Getal@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEBAAEBV?$allocator@V?$shared_ptr@VChunk@@@std@@@2@XZ 0000000140122938     ChunkManager.obj
+ 0003:0001d948       $unwind$??1?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAA@XZ 0000000140122948     Game.obj
  0003:0001d958       $unwind$??1?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@QEAA@XZ 0000000140122958     ChunkManager.obj
  0003:0001d96c       $unwind$??0?$unordered_map@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@@std@@QEAA@XZ 000000014012296c     ChunkManager.obj
  0003:0001d980       $unwind$??A?$unordered_map@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@@std@@QEAAAEAV?$shared_ptr@VChunk@@@1@AEBV?$tuple@HH@1@@Z 0000000140122980     ChunkManager.obj
@@ -9948,6 +9945,7 @@
  0003:0001dc30       $unwind$?_Xlen@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@CAXXZ 0000000140122c30     ChunkManager.obj
  0003:0001dc4e       $cppxdata$?_Reset_map@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEAAXXZ 0000000140122c4e     ChunkManager.obj
  0003:0001dc53       $ip2state$?_Reset_map@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEAAXXZ 0000000140122c53     ChunkManager.obj
+ 0003:0001dc58       $unwind$?_Release@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAPEAV?$shared_ptr@VGameObject@@@2@XZ 0000000140122c58     Game.obj
  0003:0001dc68       $unwind$?_Reset_map@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEAAXXZ 0000000140122c68     ChunkManager.obj
  0003:0001dc84       $unwind$?_Orphan_off@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEBAX_K@Z 0000000140122c84     ChunkManager.obj
  0003:0001dca8       $unwind$?_Getblock@?$deque@V?$shared_ptr@VChunk@@@std@@V?$allocator@V?$shared_ptr@VChunk@@@std@@@2@@std@@AEBA_J_K@Z 0000000140122ca8     ChunkManager.obj
@@ -10027,7 +10025,9 @@
  0003:0001e260       $unwind$?allocate@?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@std@@QEAAPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@2@_K@Z 0000000140123260     ChunkManager.obj
  0003:0001e27a       $cppxdata$??0?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@QEAA@XZ 000000014012327a     ChunkManager.obj
  0003:0001e27f       $ip2state$??0?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@QEAA@XZ 000000014012327f     ChunkManager.obj
+ 0003:0001e284       $unwind$?__autoclassinit2@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAX_K@Z 0000000140123284     Game.obj
  0003:0001e294       $unwind$??0?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@QEAA@XZ 0000000140123294     ChunkManager.obj
+ 0003:0001e2ac       $unwind$??$_Emplace_back@V?$shared_ptr@VGameObject@@@std@@@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAX$$QEAV?$shared_ptr@VGameObject@@@1@@Z 00000001401232ac     Game.obj
  0003:0001e2bc       $unwind$?clear@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@QEAAXXZ 00000001401232bc     ChunkManager.obj
  0003:0001e2d4       $unwind$?_Unchecked_begin@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@QEAAPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@2@XZ 00000001401232d4     ChunkManager.obj
  0003:0001e2e4       $unwind$?_Unchecked_end@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@QEAAPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@2@XZ 00000001401232e4     ChunkManager.obj
@@ -10042,6 +10042,7 @@
  0003:0001e396       $cppxdata$?_Orphan_range_locked@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@AEBAXPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@2@0@Z 0000000140123396     ChunkManager.obj
  0003:0001e39f       $stateUnwindMap$?_Orphan_range_locked@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@AEBAXPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@2@0@Z 000000014012339f     ChunkManager.obj
  0003:0001e3a5       $ip2state$?_Orphan_range_locked@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@AEBAXPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@2@0@Z 00000001401233a5     ChunkManager.obj
+ 0003:0001e3ac       $unwind$??$_Move_construct_from@VGameObject@@@?$_Ptr_base@VGameObject@@@std@@IEAAX$$QEAV01@@Z 00000001401233ac     Game.obj
  0003:0001e3bc       $stateUnwindMap$?update@ChunkManager@@UEAAXM@Z 00000001401233bc     ChunkManager.obj
  0003:0001e3cc       $unwind$?dtor$1@?0???0ChunkManager@@QEAA@V?$shared_ptr@VPlayer@@@std@@@Z@4HA 00000001401233cc     ChunkManager.obj
  0003:0001e3d8       $unwind$??$make_unique@VVoxel@@W4VOXEL_TYPE@@_NU?$vec@$02M$0A@@glm@@$0A@@std@@YA?AV?$unique_ptr@VVoxel@@U?$default_delete@VVoxel@@@std@@@0@$$QEAW4VOXEL_TYPE@@$$QEA_N$$QEAU?$vec@$02M$0A@@glm@@@Z 00000001401233d8     MeshGenerator.obj
@@ -10066,11 +10067,14 @@
  0003:0001e513       $ip2state$?loadChunk@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@@Z 0000000140123513     ChunkManager.obj
  0003:0001e524       $unwind$?dtor$0@?0??queueChunkForCreation@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@@Z@4HA 0000000140123524     ChunkManager.obj
  0003:0001e534       $unwind$?dtor$0@?0??loadChunk@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@@Z@4HA 0000000140123534     ChunkManager.obj
+ 0003:0001e540       $unwind$??$?0U_Exact_args_t@std@@P8Game@@EAAXXZPEAV2@$0A@@?$tuple@P8Game@@EAAXXZPEAV1@@std@@QEAA@U_Exact_args_t@1@$$QEAP8Game@@EAAXXZ$$QEAPEAV3@@Z 0000000140123540     Game.obj
  0003:0001e550       $unwind$?dtor$1@?0??loadChunk@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@@Z@4HA 0000000140123550     ChunkManager.obj
+ 0003:0001e55c       $unwind$??$?0AEAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@std@@@?$_Compressed_pair@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@1@@Z 000000014012355c     Game.obj
  0003:0001e56c       $unwind$?unloadChunk@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@@Z 000000014012356c     ChunkManager.obj
  0003:0001e58a       $cppxdata$?deletePendingChunks@ChunkManager@@AEAAXXZ 000000014012358a     ChunkManager.obj
  0003:0001e593       $stateUnwindMap$?deletePendingChunks@ChunkManager@@AEAAXXZ 0000000140123593     ChunkManager.obj
  0003:0001e599       $ip2state$?deletePendingChunks@ChunkManager@@AEAAXXZ 0000000140123599     ChunkManager.obj
+ 0003:0001e5a4       $unwind$??$?M_JU?$ratio@$00$0DOI@@std@@_JU?$ratio@$00$0DLJKMKAA@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z 00000001401235a4     Game.obj
  0003:0001e5b4       $unwind$?deletePendingChunks@ChunkManager@@AEAAXXZ 00000001401235b4     ChunkManager.obj
  0003:0001e5d2       $cppxdata$?createPendingChunks@ChunkManager@@AEAAXXZ 00000001401235d2     ChunkManager.obj
  0003:0001e5db       $stateUnwindMap$?createPendingChunks@ChunkManager@@AEAAXXZ 00000001401235db     ChunkManager.obj
@@ -10080,18 +10084,22 @@
  0003:0001e61f       $stateUnwindMap$??0ChunkManager@@QEAA@V?$shared_ptr@VPlayer@@@std@@@Z 000000014012361f     ChunkManager.obj
  0003:0001e63b       $ip2state$??0ChunkManager@@QEAA@V?$shared_ptr@VPlayer@@@std@@@Z 000000014012363b     ChunkManager.obj
  0003:0001e64c       $unwind$?dtor$0@?0??createPendingChunks@ChunkManager@@AEAAXXZ@4HA 000000014012364c     ChunkManager.obj
+ 0003:0001e658       $unwind$??$duration_cast@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z 0000000140123658     Game.obj
  0003:0001e66c       $unwind$?dtor$0@?0???0ChunkManager@@QEAA@V?$shared_ptr@VPlayer@@@std@@@Z@4HA 000000014012366c     ChunkManager.obj
  0003:0001e678       $unwind$??$_Freenode0@V?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@std@@@?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@SAXAEAV?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@1@PEAU01@@Z 0000000140123678     ChunkManager.obj
  0003:0001e69c       $unwind$?dtor$3@?0???0ChunkManager@@QEAA@V?$shared_ptr@VPlayer@@@std@@@Z@4HA 000000014012369c     ChunkManager.obj
  0003:0001e6b6       $cppxdata$?init@ChunkManager@@UEAAXXZ 00000001401236b6     ChunkManager.obj
  0003:0001e6bf       $stateUnwindMap$?init@ChunkManager@@UEAAXXZ 00000001401236bf     ChunkManager.obj
  0003:0001e6c5       $ip2state$?init@ChunkManager@@UEAAXXZ 00000001401236c5     ChunkManager.obj
+ 0003:0001e6d0       $unwind$??$?0U_Exact_args_t@std@@PEAVGame@@$$V$0A@@?$tuple@PEAVGame@@@std@@QEAA@U_Exact_args_t@1@$$QEAPEAVGame@@@Z 00000001401236d0     Game.obj
  0003:0001e6e0       $unwind$?init@ChunkManager@@UEAAXXZ 00000001401236e0     ChunkManager.obj
  0003:0001e6fe       $cppxdata$?update@ChunkManager@@UEAAXM@Z 00000001401236fe     ChunkManager.obj
  0003:0001e713       $ip2state$?update@ChunkManager@@UEAAXM@Z 0000000140123713     ChunkManager.obj
  0003:0001e724       $unwind$?dtor$0@?0??init@ChunkManager@@UEAAXXZ@4HA 0000000140123724     ChunkManager.obj
+ 0003:0001e730       $unwind$??$?0P8Game@@EAAXXZ@?$_Tuple_val@P8Game@@EAAXXZ@std@@QEAA@$$QEAP8Game@@EAAXXZ@Z 0000000140123730     Game.obj
  0003:0001e744       $unwind$?dtor$0@?0??update@ChunkManager@@UEAAXM@Z@4HA 0000000140123744     ChunkManager.obj
  0003:0001e750       $unwind$?dtor$1@?0??update@ChunkManager@@UEAAXM@Z@4HA 0000000140123750     ChunkManager.obj
+ 0003:0001e75c       $unwind$??$?0PEAVGame@@@?$_Tuple_val@PEAVGame@@@std@@QEAA@$$QEAPEAVGame@@@Z 000000014012375c     Game.obj
  0003:0001e76c       $unwind$?dtor$3@?0??update@ChunkManager@@UEAAXM@Z@4HA 000000014012376c     ChunkManager.obj
  0003:0001e778       $unwind$??$_Freenode@V?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@std@@@?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@SAXAEAV?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@1@PEAU01@@Z 0000000140123778     ChunkManager.obj
  0003:0001e790       $unwind$?destroy@ChunkManager@@UEAAXXZ 0000000140123790     ChunkManager.obj
@@ -10315,6 +10323,7 @@
  0003:0001f7e5       $ip2state$??$_Uninitialized_move@PEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@YAPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@0@QEAV10@0PEAV10@AEAV?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@0@@Z 00000001401247e5     ChunkManager.obj
  0003:0001f7f0       $unwind$??$_Construct_in_place@VChunk@@U?$vec@$02M$0A@@glm@@AEBU23@@std@@YAXAEAVChunk@@$$QEAU?$vec@$02M$0A@@glm@@AEBU23@@Z 00000001401247f0     ChunkManager.obj
  0003:0001f810       $unwind$??$_To_address@PEAPEAV?$shared_ptr@VChunk@@@std@@@std@@YA?A_PAEBQEAPEAV?$shared_ptr@VChunk@@@0@@Z 0000000140124810     ChunkManager.obj
+ 0003:0001f820       $unwind$?_Incref@?$_Ptr_base@VGameObject@@@std@@IEBAXXZ 0000000140124820     Game.obj
  0003:0001f838       $unwind$?dtor$0@?0???$_Uninitialized_move@PEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@YAPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@0@QEAV10@0PEAV10@AEAV?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@0@@Z@4HA 0000000140124838     ChunkManager.obj
  0003:0001f856       $cppxdata$??$?0AEBV?$tuple@HH@std@@$0A@@?$tuple@AEBV?$tuple@HH@std@@@std@@QEAA@AEBV?$tuple@HH@1@@Z 0000000140124856     ChunkManager.obj
  0003:0001f85b       $ip2state$??$?0AEBV?$tuple@HH@std@@$0A@@?$tuple@AEBV?$tuple@HH@std@@@std@@QEAA@AEBV?$tuple@HH@1@@Z 000000014012485b     ChunkManager.obj
@@ -10329,6 +10338,7 @@
  0003:0001f905       $ip2state$??$_Uninitialized_copy_unchecked@PEAPEAV?$tuple@HH@std@@PEAPEAV12@@std@@YAPEAPEAV?$tuple@HH@0@PEAPEAV10@QEAPEAV10@0@Z 0000000140124905     ChunkManager.obj
  0003:0001f908       $unwind$??$_Get_unwrapped_n@AEAPEAPEAV?$shared_ptr@VChunk@@@std@@_J@std@@YA?A_TAEAPEAPEAV?$shared_ptr@VChunk@@@0@_J@Z 0000000140124908     ChunkManager.obj
  0003:0001f928       $unwind$?_Get_first@?$_Compressed_pair@V?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@std@@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@2@$00@std@@QEBAAEBV?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@2@XZ 0000000140124928     ChunkManager.obj
+ 0003:0001f938       $unwind$??$?CVGameObject@@$0A@@?$shared_ptr@VGameObject@@@std@@QEBAPEAVGameObject@@XZ 0000000140124938     Game.obj
  0003:0001f950       $unwind$??0Game@@QEAA@HH@Z 0000000140124950     Game.obj
  0003:0001f968       $unwind$??$_Seek_wrapped@PEAPEAV?$tuple@HH@std@@PEAPEAV12@@std@@YAXAEAPEAPEAV?$tuple@HH@0@$$QEAPEAPEAV10@@Z 0000000140124968     ChunkManager.obj
  0003:0001f97c       $unwind$??$_Zero_range@PEAPEAV?$tuple@HH@std@@@std@@YAPEAPEAV?$tuple@HH@0@QEAPEAV10@0@Z 000000014012497c     ChunkManager.obj
@@ -10383,6 +10393,7 @@
  0003:0001fd4b       $ip2state$??$?0P8ChunkManager@@EAAXXZPEAV0@$0A@@?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@QEAA@$$QEAP8ChunkManager@@EAAXXZ$$QEAPEAV2@@Z 0000000140124d4b     ChunkManager.obj
  0003:0001fd60       $unwind$??$_Free_non_head@V?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@std@@@?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@SAXAEAV?$allocator@U?$_List_node@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@PEAX@std@@@1@PEAU01@@Z 0000000140124d60     ChunkManager.obj
  0003:0001fd70       $unwind$?dtor$0@?0???$uninitialized_fill@PEAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@std@@V12@@std@@YAXQEAV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@std@@@std@@@0@0AEBV10@@Z@4HA 0000000140124d70     ChunkManager.obj
+ 0003:0001fd7c       $unwind$??$dot_grad@N@db@@YANHNN@Z 0000000140124d7c     Game.obj
  0003:0001fd9c       $unwind$??$_Destroy_range@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@YAXPEAV?$shared_ptr@VGameObject@@@0@QEAV10@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@0@@Z 0000000140124d9c     Game.obj
  0003:0001fdb4       $unwind$??$?0U?$default_delete@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8ChunkManager@@EAAXXZPEAV1@@1@@?$_Compressed_pair@U?$default_delete@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8ChunkManager@@EAAXXZPEAV1@@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAU?$default_delete@V?$tuple@P8ChunkManager@@EAAXXZPEAV1@@std@@@1@$$QEAPEAV?$tuple@P8ChunkManager@@EAAXXZPEAV1@@1@@Z 0000000140124db4     ChunkManager.obj
  0003:0001fdc8       $unwind$??$get@$0A@P8ChunkManager@@EAAXXZPEAV1@@std@@YAAEAP8ChunkManager@@EAAXXZAEAV?$tuple@P8ChunkManager@@EAAXXZPEAV1@@0@@Z 0000000140124dc8     ChunkManager.obj
@@ -10671,7 +10682,6 @@
  0003:000212a3       $stateUnwindMap$??$make_shared@VChunkManager@@AEAV?$shared_ptr@VPlayer@@@std@@@std@@YA?AV?$shared_ptr@VChunkManager@@@0@AEAV?$shared_ptr@VPlayer@@@0@@Z 00000001401262a3     Game.obj
  0003:000212a9       $ip2state$??$make_shared@VChunkManager@@AEAV?$shared_ptr@VPlayer@@@std@@@std@@YA?AV?$shared_ptr@VChunkManager@@@0@AEAV?$shared_ptr@VPlayer@@@0@@Z 00000001401262a9     Game.obj
  0003:000212b0       $unwind$??0?$_Ptr_base@VGameObject@@@std@@IEAA@XZ 00000001401262b0     Game.obj
- 0003:000212c0       $unwind$?_Incref@?$_Ptr_base@VGameObject@@@std@@IEBAXXZ 00000001401262c0     Game.obj
  0003:000212d4       $unwind$?_Decref@?$_Ptr_base@VGameObject@@@std@@IEAAXXZ 00000001401262d4     Game.obj
  0003:000212e8       $unwind$??0?$shared_ptr@VGameObject@@@std@@QEAA@AEBV01@@Z 00000001401262e8     Game.obj
  0003:000212fc       $unwind$??0?$shared_ptr@VGameObject@@@std@@QEAA@$$QEAV01@@Z 00000001401262fc     Game.obj
@@ -10680,7 +10690,7 @@
  0003:00021338       $unwind$??_G?$shared_ptr@VGameObject@@@std@@QEAAPEAXI@Z 0000000140126338     Game.obj
  0003:0002134c       $unwind$??$?0VPlayer@@$0A@@?$shared_ptr@VGameObject@@@std@@QEAA@AEBV?$shared_ptr@VPlayer@@@1@@Z 000000014012634c     Game.obj
  0003:00021360       $unwind$??$?0VChunkManager@@$0A@@?$shared_ptr@VGameObject@@@std@@QEAA@AEBV?$shared_ptr@VChunkManager@@@1@@Z 0000000140126360     Game.obj
- 0003:00021374       $unwind$??$?CVGameObject@@$0A@@?$shared_ptr@VGameObject@@@std@@QEBAPEAVGameObject@@XZ 0000000140126374     Game.obj
+ 0003:00021370       $unwind$??_G?$_Ref_count_obj2@VPlayer@@@std@@UEAAPEAXI@Z 0000000140126370     Game.obj
  0003:00021388       $unwind$??$?0P8Game@@EAAXXZPEAV0@$0A@@thread@std@@QEAA@$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z 0000000140126388     Game.obj
  0003:0002139c       $unwind$??$?0H$0A@@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEAA@AEBH@Z 000000014012639c     Game.obj
  0003:000213b0       $unwind$??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z 00000001401263b0     Game.obj
@@ -10708,15 +10718,14 @@
  0003:00021550       $unwind$??$fade@N@db@@YANN@Z 0000000140126550     Game.obj
  0003:00021564       $unwind$??$dot_grad@N@db@@YANHN@Z 0000000140126564     Game.obj
  0003:00021578       $unwind$??$lerp@N@db@@YANNNN@Z 0000000140126578     Game.obj
- 0003:0002158c       $unwind$??$dot_grad@N@db@@YANHNN@Z 000000014012658c     Game.obj
+ 0003:00021588       $unwind$?dtor$0@?0???$?0AEAV?$shared_ptr@VPlayer@@@std@@@?$_Ref_count_obj2@VChunkManager@@@std@@QEAA@AEAV?$shared_ptr@VPlayer@@@1@@Z@4HA 0000000140126588     Game.obj
  0003:000215a0       $unwind$??$dot_grad@N@db@@YANHNNN@Z 00000001401265a0     Game.obj
  0003:000215b4       $unwind$??1?$_Ref_count_obj2@VPlayer@@@std@@UEAA@XZ 00000001401265b4     Game.obj
  0003:000215c8       $unwind$?_Destroy@?$_Ref_count_obj2@VPlayer@@@std@@EEAAXXZ 00000001401265c8     Game.obj
  0003:000215dc       $unwind$?_Delete_this@?$_Ref_count_obj2@VPlayer@@@std@@EEAAXXZ 00000001401265dc     Game.obj
- 0003:000215f0       $unwind$??_G?$_Ref_count_obj2@VPlayer@@@std@@UEAAPEAXI@Z 00000001401265f0     Game.obj
  0003:00021600       $unwind$??$?0P8Game@@EAAXXZPEAV0@$0A@@?$tuple@P8Game@@EAAXXZPEAV1@@std@@QEAA@$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z 0000000140126600     Game.obj
  0003:00021618       $unwind$?dtor$0@?0???$?0$$V@?$_Ref_count_obj2@VPlayer@@@std@@QEAA@XZ@4HA 0000000140126618     Game.obj
- 0003:0002162c       $unwind$??$addressof@VPlayer@@@std@@YAPEAVPlayer@@AEAV1@@Z 000000014012662c     Game.obj
+ 0003:00021628       $unwind$?get_deleter@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAAAEAU?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@XZ 0000000140126628     Game.obj
  0003:00021640       $unwind$??$_Set_ptr_rep_and_enable_shared@VPlayer@@@?$shared_ptr@VPlayer@@@std@@AEAAXQEAVPlayer@@QEAV_Ref_count_base@1@@Z 0000000140126640     Game.obj
  0003:00021654       $unwind$??1?$_Ref_count_obj2@VChunkManager@@@std@@UEAA@XZ 0000000140126654     Game.obj
  0003:0002166e       $cppxdata$??$?0$$V@?$_Ref_count_obj2@VPlayer@@@std@@QEAA@XZ 000000014012666e     Game.obj
@@ -10726,7 +10735,6 @@
  0003:00021694       $unwind$?_Delete_this@?$_Ref_count_obj2@VChunkManager@@@std@@EEAAXXZ 0000000140126694     Game.obj
  0003:000216a8       $unwind$??_G?$_Ref_count_obj2@VChunkManager@@@std@@UEAAPEAXI@Z 00000001401266a8     Game.obj
  0003:000216b8       $unwind$??$ceil@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z 00000001401266b8     Game.obj
- 0003:000216d0       $unwind$?dtor$0@?0???$?0AEAV?$shared_ptr@VPlayer@@@std@@@?$_Ref_count_obj2@VChunkManager@@@std@@QEAA@AEAV?$shared_ptr@VPlayer@@@1@@Z@4HA 00000001401266d0     Game.obj
  0003:000216e4       $unwind$??$addressof@VChunkManager@@@std@@YAPEAVChunkManager@@AEAV1@@Z 00000001401266e4     Game.obj
  0003:000216f8       $unwind$??$_Set_ptr_rep_and_enable_shared@VChunkManager@@@?$shared_ptr@VChunkManager@@@std@@AEAAXQEAVChunkManager@@QEAV_Ref_count_base@1@@Z 00000001401266f8     Game.obj
  0003:0002170c       $unwind$??$_Copy_construct_from@VPlayer@@@?$_Ptr_base@VGameObject@@@std@@IEAAXAEBV?$shared_ptr@VPlayer@@@1@@Z 000000014012670c     Game.obj
@@ -10734,7 +10742,7 @@
  0003:0002172f       $stateUnwindMap$??$?0AEAV?$shared_ptr@VPlayer@@@std@@@?$_Ref_count_obj2@VChunkManager@@@std@@QEAA@AEAV?$shared_ptr@VPlayer@@@1@@Z 000000014012672f     Game.obj
  0003:00021735       $ip2state$??$?0AEAV?$shared_ptr@VPlayer@@@std@@@?$_Ref_count_obj2@VChunkManager@@@std@@QEAA@AEAV?$shared_ptr@VPlayer@@@1@@Z 0000000140126735     Game.obj
  0003:0002173c       $unwind$??$_Copy_construct_from@VChunkManager@@@?$_Ptr_base@VGameObject@@@std@@IEAAXAEBV?$shared_ptr@VChunkManager@@@1@@Z 000000014012673c     Game.obj
- 0003:00021760       $unwind$?dtor$1@?0???$_Start@P8Game@@EAAXXZPEAV1@@thread@std@@AEAAX$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z@4HA 0000000140126760     Game.obj
+ 0003:0002174c       $unwind$??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z 000000014012674c     Chunk.obj
  0003:0002176c       $unwind$??$_Invoke@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@$0A@$00@thread@std@@CAIPEAX@Z 000000014012676c     Game.obj
  0003:00021788       $unwind$??$?O_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z 0000000140126788     Game.obj
  0003:0002179c       $unwind$??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@_JU?$ratio@$00$0DOI@@2@@chrono@std@@YA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z 000000014012679c     Game.obj
@@ -10749,7 +10757,7 @@
  0003:0002183c       $unwind$??$_Emplace_back_with_unused_capacity@V?$shared_ptr@VGameObject@@@std@@@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAAEAV?$shared_ptr@VGameObject@@@1@$$QEAV21@@Z 000000014012683c     Game.obj
  0003:00021850       $unwind$??$_Emplace_reallocate@V?$shared_ptr@VGameObject@@@std@@@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAPEAV?$shared_ptr@VGameObject@@@1@QEAV21@$$QEAV21@@Z 0000000140126850     Game.obj
  0003:0002186c       $unwind$?catch$0@?0???$_Emplace_reallocate@V?$shared_ptr@VGameObject@@@std@@@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAPEAV?$shared_ptr@VGameObject@@@1@QEAV21@$$QEAV21@@Z@4HA 000000014012686c     Game.obj
- 0003:00021880       $unwind$??$_Destroy_in_place@VChunkManager@@@std@@YAXAEAVChunkManager@@@Z 0000000140126880     Game.obj
+ 0003:0002187c       $unwind$??$?M_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z 000000014012687c     Game.obj
  0003:00021894       $unwind$??$_Destroy_in_place@VPlayer@@@std@@YAXAEAVPlayer@@@Z 0000000140126894     Game.obj
  0003:000218a8       $unwind$??$_Construct_in_place@VPlayer@@$$V@std@@YAXAEAVPlayer@@@Z 00000001401268a8     Game.obj
  0003:000218c6       $cppxdata$??$_Emplace_reallocate@V?$shared_ptr@VGameObject@@@std@@@?$vector@V?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@AEAAPEAV?$shared_ptr@VGameObject@@@1@QEAV21@$$QEAV21@@Z 00000001401268c6     Game.obj
@@ -10761,14 +10769,12 @@
  0003:00021900       $unwind$??$make_unique@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@P8Game@@EAAXXZPEAV3@$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@0@$$QEAP8Game@@EAAXXZ$$QEAPEAV2@@Z 0000000140126900     Game.obj
  0003:00021914       $unwind$??R?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@QEBAXPEAV?$tuple@P8Game@@EAAXXZPEAV1@@1@@Z 0000000140126914     Game.obj
  0003:00021928       $unwind$??1?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAA@XZ 0000000140126928     Game.obj
- 0003:0002193c       $unwind$?get_deleter@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAAAEAU?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@XZ 000000014012693c     Game.obj
+ 0003:00021938       $unwind$??$_Allocate_at_least_helper@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@0@AEA_K@Z 0000000140126938     Game.obj
  0003:00021950       $unwind$?get@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEBAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@XZ 0000000140126950     Game.obj
  0003:00021964       $unwind$?release@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@XZ 0000000140126964     Game.obj
  0003:00021978       $unwind$?_Get_first@?$_Compressed_pair@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@$00@std@@QEAAAEAU?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@XZ 0000000140126978     Game.obj
- 0003:0002198c       $unwind$?__autoclassinit2@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAAX_K@Z 000000014012698c     Game.obj
  0003:000219a0       $unwind$??$?0U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAA@$$QEAV01@@Z 00000001401269a0     Game.obj
  0003:000219b0       $unwind$?dtor$0@?0??_Orphan_range_locked@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@AEBAXPEAV?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@2@0@Z@4HA 00000001401269b0     ChunkManager.obj
- 0003:000219c8       $unwind$??$?M_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z 00000001401269c8     Game.obj
  0003:000219dc       $unwind$??$?G_JU?$ratio@$00$0DLJKMKAA@@std@@_JU?$ratio@$00$0DOI@@1@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z 00000001401269dc     Game.obj
  0003:000219f0       $unwind$??$?M_JU?$ratio@$00$0DLJKMKAA@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@0@Z 00000001401269f0     Game.obj
  0003:00021a04       $unwind$??$duration_cast@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@_JU?$ratio@$00$0DOI@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z 0000000140126a04     Game.obj
@@ -10778,7 +10784,6 @@
  0003:00021a40       $unwind$??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z 0000000140126a40     Game.obj
  0003:00021a50       $unwind$??C?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@QEBAPEAVthread@1@XZ 0000000140126a50     ChunkManager.obj
  0003:00021a68       $unwind$??$_Construct_in_place@V?$shared_ptr@VGameObject@@@std@@V12@@std@@YAXAEAV?$shared_ptr@VGameObject@@@0@$$QEAV10@@Z 0000000140126a68     Game.obj
- 0003:00021a7c       $unwind$??$_Allocate_at_least_helper@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@0@AEA_K@Z 0000000140126a7c     Game.obj
  0003:00021a90       $unwind$??$construct@V?$shared_ptr@VGameObject@@@std@@V12@@?$_Default_allocator_traits@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@SAXAEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@1@QEAV?$shared_ptr@VGameObject@@@1@$$QEAV31@@Z 0000000140126a90     Game.obj
  0003:00021aa4       $unwind$??$_Uninitialized_move@PEAV?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@QEAV10@0PEAV10@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@0@@Z 0000000140126aa4     Game.obj
  0003:00021ac0       $unwind$?dtor$0@?0???$_Uninitialized_move@PEAV?$shared_ptr@VGameObject@@@std@@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@2@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@QEAV10@0PEAV10@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@0@@Z@4HA 0000000140126ac0     Game.obj
@@ -10799,19 +10804,6 @@
  0003:00021bb4       $unwind$?sphereCheckFunc@MeshGenerator@@CA_NU?$vec@$02M$0A@@glm@@0@Z 0000000140126bb4     MeshGenerator.obj
  0003:00021bcc       $unwind$??$addressof@V?$shared_ptr@VGameObject@@@std@@@std@@YAPEAV?$shared_ptr@VGameObject@@@0@AEAV10@@Z 0000000140126bcc     Game.obj
  0003:00021be0       $unwind$??$_Get_unwrapped@AEBQEAV?$shared_ptr@VGameObject@@@std@@@std@@YA?A_TAEBQEAV?$shared_ptr@VGameObject@@@0@@Z 0000000140126be0     Game.obj
- 0003:00021bf4       $unwind$??0?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAA@PEAV?$shared_ptr@VGameObject@@@1@AEAV?$allocator@V?$shared_ptr@VGameObject@@@std@@@1@@Z 0000000140126bf4     Game.obj
- 0003:00021c08       $unwind$??1?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAA@XZ 0000000140126c08     Game.obj
- 0003:00021c24       $unwind$?_Release@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAPEAV?$shared_ptr@VGameObject@@@2@XZ 0000000140126c24     Game.obj
- 0003:00021c38       $unwind$?__autoclassinit2@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAX_K@Z 0000000140126c38     Game.obj
- 0003:00021c4c       $unwind$??$_Emplace_back@V?$shared_ptr@VGameObject@@@std@@@?$_Uninitialized_backout_al@V?$allocator@V?$shared_ptr@VGameObject@@@std@@@std@@@std@@QEAAX$$QEAV?$shared_ptr@VGameObject@@@1@@Z 0000000140126c4c     Game.obj
- 0003:00021c60       $unwind$??$_Move_construct_from@VGameObject@@@?$_Ptr_base@VGameObject@@@std@@IEAAX$$QEAV01@@Z 0000000140126c60     Game.obj
- 0003:00021c74       $unwind$??$?0U_Exact_args_t@std@@P8Game@@EAAXXZPEAV2@$0A@@?$tuple@P8Game@@EAAXXZPEAV1@@std@@QEAA@U_Exact_args_t@1@$$QEAP8Game@@EAAXXZ$$QEAPEAV3@@Z 0000000140126c74     Game.obj
- 0003:00021c88       $unwind$??$?0AEAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@std@@@?$_Compressed_pair@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@std@@PEAV?$tuple@P8Game@@EAAXXZPEAV1@@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV?$tuple@P8Game@@EAAXXZPEAV1@@1@@Z 0000000140126c88     Game.obj
- 0003:00021c9c       $unwind$??$?M_JU?$ratio@$00$0DOI@@std@@_JU?$ratio@$00$0DLJKMKAA@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z 0000000140126c9c     Game.obj
- 0003:00021cb0       $unwind$??$duration_cast@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z 0000000140126cb0     Game.obj
- 0003:00021cc4       $unwind$??$?0U_Exact_args_t@std@@PEAVGame@@$$V$0A@@?$tuple@PEAVGame@@@std@@QEAA@U_Exact_args_t@1@$$QEAPEAVGame@@@Z 0000000140126cc4     Game.obj
- 0003:00021cd8       $unwind$??$?0P8Game@@EAAXXZ@?$_Tuple_val@P8Game@@EAAXXZ@std@@QEAA@$$QEAP8Game@@EAAXXZ@Z 0000000140126cd8     Game.obj
- 0003:00021cec       $unwind$??$?0PEAVGame@@@?$_Tuple_val@PEAVGame@@@std@@QEAA@$$QEAPEAVGame@@@Z 0000000140126cec     Game.obj
  0003:00021cfc       $unwind$?_Max_bucket_size@?$_Hash@V?$_Umap_traits@V?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@V?$_Uhash_compare@V?$tuple@HH@std@@UChunkHash@@U?$equal_to@V?$tuple@HH@std@@@2@@2@V?$allocator@U?$pair@$$CBV?$tuple@HH@std@@V?$shared_ptr@VChunk@@@2@@std@@@2@$0A@@std@@@std@@IEAAAEAMXZ 0000000140126cfc     ChunkManager.obj
  0003:00021d18       $unwind$?_Getal@?$vector@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@V?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@@std@@AEBAAEBV?$allocator@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@2@XZ 0000000140126d18     ChunkManager.obj
  0003:00021d34       $unwind$?updateChunk@ChunkManager@@AEAAXAEBV?$tuple@HH@std@@M@Z 0000000140126d34     ChunkManager.obj
@@ -12649,6 +12641,9 @@
  0003:0002957c       $unwind$?GenerateShape@MeshGenerator@@SAPEAVVoxel@@AEBU?$vec@$02M$0A@@glm@@0W4SHAPE_GENERATION_METHODS@@@Z 000000014012e57c     MeshGenerator.obj
  0003:00029598       $unwind$??0?$_Vector_val@U?$_Simple_types@V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@@std@@@std@@QEAA@XZ 000000014012e598     ChunkManager.obj
  0003:000295b4       $unwind$?dtor$2@?0???0ChunkManager@@QEAA@V?$shared_ptr@VPlayer@@@std@@@Z@4HA 000000014012e5b4     ChunkManager.obj
+ 0003:000295c0       $unwind$??$addressof@VPlayer@@@std@@YAPEAVPlayer@@AEAV1@@Z 000000014012e5c0     Game.obj
+ 0003:000295dc       $unwind$??$_Destroy_in_place@VChunkManager@@@std@@YAXAEAVChunkManager@@@Z 000000014012e5dc     Game.obj
+ 0003:000295f8       $unwind$?__autoclassinit2@?$unique_ptr@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@U?$default_delete@V?$tuple@P8Game@@EAAXXZPEAV1@@std@@@2@@std@@QEAAX_K@Z 000000014012e5f8     Game.obj
  0004:00000018       ?stbi__stdio_callbacks@@3Ustbi_io_callbacks@@A 000000014012f018     TextureManager.obj
  0004:00000030       ?stbi__l2h_gamma@@3MA      000000014012f030     TextureManager.obj
  0004:00000034       ?stbi__l2h_scale@@3MA      000000014012f034     TextureManager.obj

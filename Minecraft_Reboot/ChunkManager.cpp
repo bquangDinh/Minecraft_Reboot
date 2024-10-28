@@ -2,8 +2,8 @@
 
 ChunkManager::ChunkManager(shared_ptr<Player> player):
 	player(player),
-	CHUNK_SIZE(32, 64, 32),
-	CHUNK_RENDER_DISTANCE(2)
+	CHUNK_SIZE(32, 32, 32),
+	CHUNK_RENDER_DISTANCE(4)
 {
 }
 

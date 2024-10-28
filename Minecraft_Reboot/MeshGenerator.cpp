@@ -100,7 +100,7 @@ Voxel* MeshGenerator::ShapeGenerator(const vec3 pos, const vec3 dimensions, bool
 }
 
 bool MeshGenerator::perlinNoise3DF(vec3 pos, vec3 dimensions, float& height) {
-	float scale = dimensions.y;
+	float scale = 50;
 
 	vec3 normalizedPos = pos / vec3(scale);
 

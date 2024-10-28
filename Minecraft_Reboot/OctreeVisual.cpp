@@ -65,6 +65,11 @@ void OctreeVisual::addQuad(const vec3& a, const vec3& b, const vec3& c, const ve
 
 void OctreeVisual::onOctreeTraverse(Node* node)
 {
+	// Skip leaf nodes
+	if (node->isLeaf()) {
+		return;
+	}
+
 	// Add bounding box vertices to the vertices vector
 	BoundingBox box = node->box;
 
@@ -199,7 +204,7 @@ void OctreeVisual::render(float deltaTime)
 	// Draw
 	glBindVertexArray(VAO);
 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	// Disable CULL_FACE
 	glDisable(GL_CULL_FACE);

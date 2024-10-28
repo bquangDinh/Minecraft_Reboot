@@ -49,7 +49,7 @@ void Game::init(GLFWwindow* window) {
 
 	gameObjects.push_back(chunkManager);
 
-	//gameObjects.push_back(make_shared<Chunk>(vec3(16.0f, 0.0f, 0.0f), vec3(16.0f, 16.0f, 16.0f)));
+	//gameObjects.push_back(make_shared<Chunk>(vec3(0.0f, 0.0f, 0.0f), vec3(32.0f, 32.0f, 32.0f)));
 
 	// Init game objects
 	for (auto& gameObject : gameObjects) {
